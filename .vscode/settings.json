@@ -1,6 +1,6 @@
 {
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": "explicit"
 	},
 	"eslint.validate": [
 		"javascript",
@@ -9,5 +9,9 @@
 			"language": "vue",
 			"autoFix": true
 		}
-	]
+	],
+	"emmet.includeLanguages": {
+		"vue-html": "html",
+		"vue": "html"
+	}
 }
