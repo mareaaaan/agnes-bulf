@@ -20,9 +20,10 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
 
 .navbar-container {
-	position: sticky;
+	position: fixed;
+	width: 100%;
 	top: 0;
-	z-index: 1000;
+	background-color: white;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
