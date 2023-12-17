@@ -6,7 +6,9 @@ export default {
 
 <template>
 	<nav class="navbar-container">
-		<i-material-symbols-menu-rounded class="menu-icon" />
+		<button @click="$emit('toggleSideBar')" class="menu-button">
+			<i-material-symbols-menu-rounded class="menu-icon" />
+		</button>
 		<h1 class="logo">Agnes Maria Priseceanu</h1>
 
 		<div class="links-container">
@@ -19,9 +21,9 @@ export default {
 	</nav>
 </template>
 
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Whisper&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700&display=swap");
 
 .navbar-container {
 	position: fixed;
@@ -36,7 +38,7 @@ export default {
 	box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
 }
 
-.menu-icon {
+.menu-button {
 	display: none;
 }
 
@@ -51,18 +53,15 @@ export default {
 	justify-content: center;
 }
 
-a:link {
-	text-decoration: none;
-}
-
+a:link,
 a:visited {
 	text-decoration: none;
 }
 
 .link {
-	font-family: "Kalam", cursive;
-	font-weight: 300;
-	text-transform: uppercase;
+	font-family: "Josefin Slab", serif;
+	font-weight: 500;
+	text-transform: capitalize;
 	font-size: 25px;
 	color: black;
 	position: relative;
@@ -74,7 +73,7 @@ a:visited {
 	position: absolute;
 	width: 100%;
 	height: 2px;
-	border-radius: 2px;
+	border-radius: 5px;
 	background-color: #000000;
 	bottom: 0;
 	left: 0;
@@ -101,11 +100,18 @@ a:visited {
 		display: none;
 	}
 
-	.menu-icon {
+	.menu-button {
 		position: absolute;
 		display: block;
 		height: 100%;
 		left: 5px;
+		background: none;
+		color: inherit;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+		outline: inherit;
 	}
 }
 </style>
