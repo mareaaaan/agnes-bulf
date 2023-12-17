@@ -1,6 +1,14 @@
+<script>
+export default {
+	name: "NavBar",
+};
+</script>
+
 <template>
 	<nav class="navbar-container">
+		<i-material-symbols-menu-rounded class="menu-icon" />
 		<h1 class="logo">Agnes Maria Priseceanu</h1>
+
 		<div class="links-container">
 			<a class="link" href="">Home</a>
 			<a class="link" href="">Servicii</a>
@@ -10,11 +18,7 @@
 		</div>
 	</nav>
 </template>
-<script>
-export default {
-	name: "NavBar",
-};
-</script>
+
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Whisper&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap");
@@ -26,9 +30,14 @@ export default {
 	background-color: white;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 10px;
 	-webkit-box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
 	box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
+}
+
+.menu-icon {
+	display: none;
 }
 
 .logo {
@@ -77,5 +86,26 @@ a:visited {
 .link:hover::before {
 	transform-origin: left;
 	transform: scaleX(1);
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 1024px) {
+	.navbar-container {
+		display: block;
+	}
+	.logo {
+		font-size: 30px;
+	}
+
+	.links-container {
+		display: none;
+	}
+
+	.menu-icon {
+		position: absolute;
+		display: block;
+		height: 100%;
+		left: 5px;
+	}
 }
 </style>

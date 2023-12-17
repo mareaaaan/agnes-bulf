@@ -1,10 +1,24 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-extraneous-dependencies */
+import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import vue from "@vitejs/plugin-vue";
+import Icons from "unplugin-icons/vite";
+import IconsResolver from "unplugin-icons/resolver";
+import Components from "unplugin-vue-components/vite";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [vue()],
+	plugins: [
+		vue(),
+		Components({
+			resolvers: [IconsResolver()],
+		}),
+		Icons(),
+	],
 	base: "/agnes-maria-priseceanu/",
+	resolve: {
+		alias: {
+			"@": fileURLToPath(new URL("./src", import.meta.url)),
+		},
+	},
 });
