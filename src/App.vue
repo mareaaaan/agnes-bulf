@@ -3,6 +3,8 @@ import { ref } from "vue";
 import NavBar from "./components/NavBar.vue";
 import SideBar from "./components/SideBar.vue";
 import BlurLayer from "./components/BlurLayer.vue";
+import SlideTransition from "./components/transitions/SlideTransition.vue";
+import BlurTransition from "./components/transitions/BlurTransition.vue";
 
 const isSideBarOpen = ref(false);
 function toggleSideBar() {
@@ -12,20 +14,12 @@ function toggleSideBar() {
 
 <template>
 	<NavBar @toggle-side-bar="toggleSideBar" />
-	<BlurLayer v-if="isSideBarOpen" />
-	<Transition>
+	<BlurTransition>
+		<BlurLayer v-show="isSideBarOpen" />
+	</BlurTransition>
+	<SlideTransition>
 		<SideBar @toggle-side-bar="toggleSideBar" v-show="isSideBarOpen" />
-	</Transition>
+	</SlideTransition>
 </template>
 
-<style scoped>
-.v-enter-active,
-.v-leave-active {
-	transition: transform 0.2s ease-out;
-}
-
-.v-enter-from,
-.v-leave-to {
-	transform: translateX(-100%);
-}
-</style>
+<style scoped></style>

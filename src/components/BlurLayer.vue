@@ -1,5 +1,5 @@
 <template>
-	<div class="blur"></div>
+	<div class="blur-layer"></div>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style scoped>
-.blur {
+.blur-layer {
 	position: absolute;
 	background-color: #00000050;
 	width: 100%;
