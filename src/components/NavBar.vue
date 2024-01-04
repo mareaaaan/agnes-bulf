@@ -1,15 +1,14 @@
-<script>
-export default {
-	name: "NavBar",
-};
-</script>
+<script setup></script>
 
 <template>
 	<nav class="navbar-container">
 		<button @click="$emit('toggleSideBar')" class="menu-button">
 			<i-material-symbols-menu-rounded class="menu-icon" />
 		</button>
-		<h1 class="logo">Agnes Maria Priseceanu</h1>
+		<div class="logo">
+			<h1 class="logo__title">Agnes Maria Priseceanu</h1>
+			<h2 class="logo__subtitle">psiholog clinician & psihoterapeut</h2>
+		</div>
 
 		<div class="links-container">
 			<a class="link" href="">Home</a>
@@ -22,14 +21,11 @@ export default {
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Whisper&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700&display=swap");
-
 .navbar-container {
 	position: fixed;
 	width: 100%;
 	top: 0;
-	background-color: white;
+	background-color: var(--primary-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -43,9 +39,21 @@ export default {
 }
 
 .logo {
-	font-family: "Whisper", cursive;
-	font-size: 60px;
 	padding: 10px;
+	color: var(--secondary-color);
+}
+
+.logo__title {
+	font-family: "Playfair Display", serif;
+	font-size: 60px;
+}
+
+.logo__subtitle {
+	position: relative;
+	left: 25%;
+	padding-top: 10px;
+	font-family: "Halimun", "Whisper", sans-serif;
+	font-size: 25px;
 }
 
 .links-container {
@@ -59,11 +67,11 @@ a:visited {
 }
 
 .link {
-	font-family: "Josefin Slab", serif;
+	font-family: "Lato", sans-serif;
 	font-weight: 500;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	font-size: 25px;
-	color: black;
+	color: var(--secondary-color);
 	position: relative;
 	padding: 10px;
 }
@@ -74,7 +82,7 @@ a:visited {
 	width: 100%;
 	height: 2px;
 	border-radius: 5px;
-	background-color: #000000;
+	background-color: var(--secondary-color);
 	bottom: 0;
 	left: 0;
 	transform-origin: right;
@@ -92,8 +100,15 @@ a:visited {
 	.navbar-container {
 		display: block;
 	}
-	.logo {
-		font-size: 30px;
+
+	.logo__title {
+		font-size: 25px;
+	}
+
+	.logo__subtitle {
+		padding-top: 5px;
+		font-size: 10px;
+		left: 10%;
 	}
 
 	.links-container {

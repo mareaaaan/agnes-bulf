@@ -4,11 +4,7 @@
 	</Transition>
 </template>
 
-<script>
-export default {
-	name: "SlideTransition",
-};
-</script>
+<script setup></script>
 
 <style>
 .slide-enter-active,

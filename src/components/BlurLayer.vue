@@ -2,11 +2,7 @@
 	<div class="blur-layer"></div>
 </template>
 
-<script>
-export default {
-	name: "BlurLayer",
-};
-</script>
+<script setup></script>
 
 <style scoped>
 .blur-layer {

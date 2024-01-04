@@ -11,18 +11,13 @@
 	</div>
 </template>
 
-<script>
-export default {
-	name: "SideBar",
-};
-</script>
+<script setup></script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700&display=swap");
 .links-container {
 	position: absolute;
 	height: 100%;
-	background-color: black;
+	background-color: var(--secondary-color);
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
@@ -35,15 +30,15 @@ a:visited {
 }
 
 .link:first-of-type {
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 .link {
-	font-family: "Josefin Slab", serif;
-	font-weight: 600;
-	text-transform: capitalize;
+	font-family: "Lato", sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
 	font-size: 20px;
-	color: white;
+	color: var(--primary-color);
 	padding: 15px;
 }
 
@@ -63,7 +58,7 @@ a:visited {
 }
 
 .close-icon {
-	color: white;
+	color: var(--primary-color);
 	width: 100%;
 	height: 100%;
 }

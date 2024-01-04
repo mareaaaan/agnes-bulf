@@ -4,11 +4,7 @@
 	</Transition>
 </template>
 
-<script>
-export default {
-	name: "BlurTransition",
-};
-</script>
+<script setup></script>
 
 <style>
 .blur-enter-active,
