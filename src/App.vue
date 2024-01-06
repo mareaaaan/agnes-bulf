@@ -10,15 +10,27 @@ const isSideBarOpen = ref(false);
 function toggleSideBar() {
 	isSideBarOpen.value = !isSideBarOpen.value;
 }
+
+const pages = [
+	{ name: "Povestea mea", path: "" },
+	{ name: "Servicii", path: "" },
+	{ name: "Ateliere", path: "" },
+	{ name: "Tender Melt", path: "" },
+	{ name: "Blog", path: "" },
+];
 </script>
 
 <template>
-	<NavBar @toggle-side-bar="toggleSideBar" />
+	<NavBar @toggle-side-bar="toggleSideBar" :pages="pages" />
 	<BlurTransition>
 		<BlurLayer v-show="isSideBarOpen" />
 	</BlurTransition>
 	<SlideTransition>
-		<SideBar @toggle-side-bar="toggleSideBar" v-show="isSideBarOpen" />
+		<SideBar
+			@toggle-side-bar="toggleSideBar"
+			v-show="isSideBarOpen"
+			:pages="pages"
+		/>
 	</SlideTransition>
 </template>
 

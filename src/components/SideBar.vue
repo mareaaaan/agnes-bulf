@@ -3,15 +3,19 @@
 		<button @click="$emit('toggleSideBar')" class="close-button">
 			<i-material-symbols-close-rounded class="close-icon" />
 		</button>
-		<a class="link" href="">Home</a>
-		<a class="link" href="">Servicii</a>
-		<a class="link" href="">Ateliere</a>
-		<a class="link" href="">Tender Melt</a>
-		<a class="link" href="">Blog</a>
+		<a
+			v-for="(page, index) in props.pages"
+			:key="index"
+			class="link"
+			:href="page.path"
+			>{{ page.name }}</a
+		>
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps(["pages"]);
+</script>
 
 <style scoped>
 .links-container {

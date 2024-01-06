@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+const props = defineProps(["pages"]);
+</script>
 
 <template>
 	<nav class="navbar-container">
@@ -11,11 +13,13 @@
 		</div>
 
 		<div class="links-container">
-			<a class="link" href="">Povestea mea</a>
-			<a class="link" href="">Servicii</a>
-			<a class="link" href="">Ateliere</a>
-			<a class="link" href="">Tender Melt</a>
-			<a class="link" href="">Blog</a>
+			<a
+				v-for="(page, index) in props.pages"
+				:key="index"
+				class="link"
+				:href="page.path"
+				>{{ page.name }}</a
+			>
 		</div>
 	</nav>
 </template>
