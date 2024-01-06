@@ -22,12 +22,6 @@
 	color: rgba(255, 255, 255, 0.87); */
 }
 
-body {
-	display: flex;
-	align-items: stretch;
-}
-
 #app {
-	flex: 1;
 	text-align: center;
 }

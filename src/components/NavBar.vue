@@ -105,6 +105,7 @@ a:visited {
 @media only screen and (max-width: 1024px) {
 	.navbar-container {
 		display: block;
+		overflow: hidden;
 	}
 
 	.logo__title {
