@@ -6,7 +6,9 @@
 
 <style scoped>
 .blur-layer {
-	position: absolute;
+	position: fixed;
+	left: 0;
+	top: 0;
 	background-color: #00000050;
 	width: 100%;
 	height: 100%;

@@ -7,11 +7,11 @@
 		</button>
 		<div class="logo">
 			<h1 class="logo__title">Agnes Maria Priseceanu</h1>
-			<h2 class="logo__subtitle">psiholog clinician & psihoterapeut</h2>
+			<h2 class="logo__subtitle">Psiholog clinician & psihoterapeut</h2>
 		</div>
 
 		<div class="links-container">
-			<a class="link" href="">Home</a>
+			<a class="link" href="">Povestea mea</a>
 			<a class="link" href="">Servicii</a>
 			<a class="link" href="">Ateliere</a>
 			<a class="link" href="">Tender Melt</a>
@@ -22,14 +22,13 @@
 
 <style scoped>
 .navbar-container {
-	position: fixed;
-	width: 100%;
+	position: sticky;
 	top: 0;
+	width: 100%;
 	background-color: var(--primary-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 10px;
 	-webkit-box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
 	box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
 }
@@ -39,13 +38,14 @@
 }
 
 .logo {
-	padding: 10px;
+	padding: 25px;
 	color: var(--secondary-color);
 }
 
 .logo__title {
 	font-family: "Playfair Display", serif;
-	font-size: 60px;
+	font-size: 40px;
+	text-transform: uppercase;
 }
 
 .logo__subtitle {
@@ -53,7 +53,7 @@
 	left: 25%;
 	padding-top: 10px;
 	font-family: "Halimun", "Whisper", sans-serif;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 .links-container {
@@ -70,10 +70,12 @@ a:visited {
 	font-family: "Lato", sans-serif;
 	font-weight: 500;
 	text-transform: uppercase;
-	font-size: 25px;
+	font-size: 0.8125rem;
 	color: var(--secondary-color);
 	position: relative;
 	padding: 10px;
+	margin-left: 1.25rem;
+	margin-right: 1.25rem;
 }
 
 .link::before {
