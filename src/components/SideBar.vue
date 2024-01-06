@@ -23,7 +23,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: baseline;
-	width: 70%;
+	width: 100%;
 }
 
 a:link,
