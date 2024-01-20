@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "unplugin-icons": "^0.18.1",
-    "vue": "^3.3.11"
+    "vue": "^3.3.11",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.158",

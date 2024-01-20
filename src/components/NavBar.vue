@@ -31,17 +31,18 @@ defineEmits(["toggleSideBar"]);
   </nav>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/_globals.scss";
 .navbar-container {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: $primary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
-  -webkit-box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
-  box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
+  // -webkit-box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
+  // box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
 }
 
 .menu-button {
@@ -50,7 +51,7 @@ defineEmits(["toggleSideBar"]);
 
 .logo {
   padding: 25px;
-  color: var(--secondary-color);
+  color: $secondary-color;
 }
 
 .logo__title {
@@ -82,7 +83,7 @@ a:visited {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 0.9375rem;
-  color: var(--secondary-color);
+  color: $secondary-color;
   position: relative;
   padding: 10px;
   margin-left: 1.25rem;
@@ -95,7 +96,7 @@ a:visited {
   width: 100%;
   height: 2px;
   border-radius: 5px;
-  background-color: var(--secondary-color);
+  background-color: $secondary-color;
   bottom: 0;
   left: 0;
   transform-origin: right;
@@ -109,7 +110,7 @@ a:visited {
 }
 
 /* Mobile Styles */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: $desktop-width) {
   .navbar-container {
     display: block;
     overflow: hidden;

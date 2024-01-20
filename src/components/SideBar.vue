@@ -23,13 +23,14 @@ const props = defineProps({
 defineEmits(["toggleSideBar"]);
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../styles/_globals.scss";
 .links-container {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  background-color: var(--secondary-color);
+  background-color: $secondary-color;
   display: flex;
   flex-direction: column;
   align-items: baseline;
@@ -50,7 +51,7 @@ a:visited {
   font-weight: 500;
   text-transform: uppercase;
   font-size: 20px;
-  color: var(--primary-color);
+  color: $primary-color;
   padding: 15px;
 }
 
@@ -70,7 +71,7 @@ a:visited {
 }
 
 .close-icon {
-  color: var(--primary-color);
+  color: $primary-color;
   width: 100%;
   height: 100%;
 }
