@@ -1,17 +1,5 @@
 {
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "explicit"
-	},
-	"eslint.validate": [
-		"javascript",
-		"javascriptreact",
-		{
-			"language": "vue",
-			"autoFix": true
-		}
-	],
-	"emmet.includeLanguages": {
-		"vue-html": "html",
-		"vue": "html"
-	}
+  "emmet.includeLanguages": {
+    "vue-html": "html"
+  }
 }
