@@ -1,33 +1,32 @@
 {
-	"name": "agnes-maria-priseceanu",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"homepage": "https://mareaaaan.github.io/agnes-maria-priseceanu/",
-	"scripts": {
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d dist",
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview"
-	},
-	"dependencies": {
-		"unplugin-icons": "^0.18.1",
-		"vue": "^3.3.11"
-	},
-	"devDependencies": {
-		"@iconify/json": "^2.2.158",
-		"@vitejs/plugin-vue": "^4.5.2",
-		"eslint": "^8.56.0",
-		"eslint-config-airbnb-base": "^15.0.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-prettier": "^5.0.1",
-		"eslint-plugin-vue": "^9.19.2",
-		"gh-pages": "^6.1.0",
-		"prettier": "^3.1.1",
-		"sass": "^1.70.0",
-		"unplugin-vue-components": "^0.26.0",
-		"vite": "^5.0.8"
-	}
+  "name": "agnes-maria-priseceanu",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://mareaaaan.github.io/agnes-maria-priseceanu/",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src",
+    "format": "prettier .  --write"
+  },
+  "dependencies": {
+    "unplugin-icons": "^0.18.1",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.2.158",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.20.1",
+    "gh-pages": "^6.1.0",
+    "prettier": "3.2.4",
+    "sass": "^1.70.0",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.0.8"
+  }
 }

@@ -8,17 +8,11 @@ import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/vite";
 
 export default defineConfig({
-	plugins: [
-		vue(),
-		Components({
-			resolvers: [IconsResolver()],
-		}),
-		Icons(),
-	],
-	base: "/agnes-maria-priseceanu/",
-	resolve: {
-		alias: {
-			"@": fileURLToPath(new URL("./src", import.meta.url)),
-		},
-	},
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [IconsResolver()],
+    }),
+    Icons(),
+  ],
 });
