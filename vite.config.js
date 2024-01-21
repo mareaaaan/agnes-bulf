@@ -5,6 +5,10 @@ import IconsResolver from "unplugin-icons/resolver";
 import Components from "unplugin-vue-components/vite";
 
 export default defineConfig({
+  server: {
+    open: true,
+  },
+  base: "/agnes-maria-priseceanu/",
   plugins: [
     vue(),
     Components({
