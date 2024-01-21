@@ -31,11 +31,13 @@
         </p>
       </div>
 
-      <img
-        src="../assets/portrait.jpg"
-        alt="Portret cu Agnes"
-        class="portrait"
-      />
+      <div class="image-container">
+        <img
+          src="../assets/portrait.jpg"
+          alt="Portret cu Agnes"
+          class="push-right"
+        />
+      </div>
     </section>
 
     <section class="card">
@@ -50,11 +52,13 @@
     </section>
 
     <section class="text-image-group">
-      <img
-        src="../assets/professional.jpg"
-        alt="Agnes scriind intr-o carte"
-        class="professional"
-      />
+      <div class="image-container">
+        <img
+          src="../assets/professional.jpg"
+          alt="Agnes scriind intr-o carte"
+          class="push-left"
+        />
+      </div>
       <div class="text">
         <p>
           Vreau să fiu acea voce care reamintește permanent oamenilor de forța
@@ -106,32 +110,9 @@ main {
   font-size: 1.5rem;
   line-height: 1.5;
   color: $secondary-color;
-}
 
-.text-image-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  @media screen and (max-width: $mobile-width) {
-    flex-direction: column-reverse;
-  }
-
-  .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-
-  img {
-    object-fit: cover;
-    max-width: 50%;
-    padding: 1rem;
-
-    @media screen and (max-width: $mobile-width) {
-      max-width: 100%;
-      aspect-ratio: 1 / 1;
-    }
+  @media screen and (max-width: $desktop-width) {
+    font-size: 1rem;
   }
 }
 
@@ -145,6 +126,56 @@ p {
   p {
     max-width: 80%;
     margin: 0 auto;
+  }
+}
+
+.text-image-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media screen and (max-width: $mobile-width) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .image-container {
+    // max-width: 50%;
+    flex-basis: 50%;
+    padding: 1rem;
+
+    display: flex;
+
+    .push-right {
+      margin-left: auto;
+    }
+
+    .push-left {
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: $mobile-width) {
+      max-width: 100%;
+      justify-content: center;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 80vh;
+
+    @media screen and (max-width: $mobile-width) {
+      object-position: center 15%;
+      aspect-ratio: 1/1;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-basis: 50%;
   }
 }
 </style>
