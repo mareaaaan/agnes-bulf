@@ -11,7 +11,7 @@
     />
   </SlideTransition>
   <main>
-    <section class="text-image-group welcome">
+    <section class="text-image-group">
       <div class="text">
         <p>Bine ai venit, dragă cititorule!</p>
         <p>
@@ -32,11 +32,7 @@
       </div>
 
       <div class="image-container">
-        <img
-          src="../assets/portrait.jpg"
-          alt="Portret cu Agnes"
-          class="push-right"
-        />
+        <img src="../assets/portrait.jpg" alt="Portret cu Agnes" />
       </div>
     </section>
 
@@ -52,13 +48,6 @@
     </section>
 
     <section class="text-image-group">
-      <div class="image-container">
-        <img
-          src="../assets/professional.jpg"
-          alt="Agnes scriind intr-o carte"
-          class="push-left"
-        />
-      </div>
       <div class="text">
         <p>
           Vreau să fiu acea voce care reamintește permanent oamenilor de forța
@@ -72,6 +61,12 @@
           copilul interior și să îți găsești puterea creatoare cu care ai venit
           pe lume.
         </p>
+      </div>
+      <div class="image-container">
+        <img
+          src="../assets/professional.jpg"
+          alt="Agnes scriind intr-o carte"
+        />
       </div>
     </section>
   </main>
@@ -132,42 +127,42 @@ p {
 .text-image-group {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+
+  &:last-of-type {
+    flex-direction: row-reverse;
+  }
 
   @media screen and (max-width: $mobile-width) {
     flex-direction: column-reverse;
     align-items: center;
+
+    &:last-of-type {
+      flex-direction: column-reverse;
+    }
   }
 
   .image-container {
-    // max-width: 50%;
-    flex-basis: 50%;
+    flex-basis: 40%;
     padding: 1rem;
 
     display: flex;
 
-    .push-right {
-      margin-left: auto;
-    }
-
-    .push-left {
-      margin-right: auto;
-    }
-
     @media screen and (max-width: $mobile-width) {
-      max-width: 100%;
+      flex-basis: 100%;
       justify-content: center;
     }
-  }
 
-  img {
-    object-fit: cover;
-    max-width: 100%;
-    max-height: 80vh;
-
-    @media screen and (max-width: $mobile-width) {
+    img {
+      object-fit: cover;
+      max-height: 700px;
+      width: 100%;
+      height: 100%;
       object-position: center 15%;
-      aspect-ratio: 1/1;
+
+      @media screen and (max-width: $mobile-width) {
+        aspect-ratio: 1/1;
+      }
     }
   }
 
