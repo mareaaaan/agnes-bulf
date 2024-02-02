@@ -28,7 +28,11 @@
         </p>
       </div>
 
-      <div class="image-container">
+      <div
+        v-intersection-observer="onIntersectionObserverTop"
+        class="image-container"
+        :class="{ visible: isTopVisible }"
+      >
         <img src="../assets/portrait.jpg" alt="Portret cu Agnes" />
       </div>
     </section>
@@ -59,7 +63,11 @@
           pe lume.
         </p>
       </div>
-      <div class="image-container">
+      <div
+        v-intersection-observer="onIntersectionObserverBottom"
+        class="image-container"
+        :class="{ visible: isBottomVisible }"
+      >
         <img
           src="../assets/professional.jpg"
           alt="Agnes scriind intr-o carte"
@@ -73,10 +81,26 @@
 import { ref } from "vue";
 import NavBar from "src/components/NavBar.vue";
 import SideBar from "src/components/SideBar.vue";
+import { vIntersectionObserver } from "@vueuse/components";
+
+const isTopVisible = ref(false);
+const isBottomVisible = ref(false);
 
 const isSideBarOpen = ref(false);
 function toggleSideBar() {
   isSideBarOpen.value = !isSideBarOpen.value;
+}
+
+function onIntersectionObserverTop([{ isIntersecting }]) {
+  if (!isTopVisible.value) {
+    isTopVisible.value = isIntersecting;
+  }
+}
+
+function onIntersectionObserverBottom([{ isIntersecting }]) {
+  if (!isBottomVisible.value) {
+    isBottomVisible.value = isIntersecting;
+  }
 }
 
 const pages = [
@@ -123,6 +147,9 @@ p {
   flex-direction: row;
   justify-content: center;
 
+  // Keeps the overflow hidden for the image translation
+  overflow-x: hidden;
+
   &:last-of-type {
     flex-direction: row-reverse;
   }
@@ -141,6 +168,16 @@ p {
     padding: 1rem;
 
     display: flex;
+
+    transition: 600ms;
+
+    transform: translateX(200px);
+    opacity: 0;
+
+    &.visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
 
     @media screen and (max-width: $mobile-width) {
       flex-basis: 100%;

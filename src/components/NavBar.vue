@@ -35,6 +35,7 @@ defineEmits(["toggleSideBar"]);
 @import "../styles/_globals.scss";
 .navbar-container {
   position: sticky;
+  z-index: 1;
   top: 0;
   width: 100%;
   background-color: $primary-color;

@@ -39,6 +39,7 @@ function onLeave() {
 @import "../styles/_globals.scss";
 .links-container {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   height: 100%;
@@ -55,10 +56,6 @@ a:link,
 a:visited {
   text-decoration: none;
 }
-
-// .link:first-of-type {
-//   margin-top: 3.125rem;
-// }
 
 .link {
   font-family: "Lato", sans-serif;
