@@ -98,7 +98,7 @@ const pages = [
 @import "../styles/_globals.scss";
 
 main {
-  padding-top: 40px;
+  padding-top: 2.5rem;
   margin: 0 auto;
   max-width: 1400px;
   font-family: Lato, system-ui, Avenir, Helvetica, Arial, sans-serif;

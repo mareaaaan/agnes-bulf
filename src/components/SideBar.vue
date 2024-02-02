@@ -43,16 +43,16 @@ a:visited {
 }
 
 .link:first-of-type {
-  margin-top: 50px;
+  margin-top: 3.125rem;
 }
 
 .link {
   font-family: "Lato", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: $primary-color;
-  padding: 15px;
+  padding: 0.9375rem;
 }
 
 .close-button {

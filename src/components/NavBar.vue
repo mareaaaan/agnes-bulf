@@ -41,8 +41,6 @@ defineEmits(["toggleSideBar"]);
   display: flex;
   flex-direction: column;
   align-items: center;
-  // -webkit-box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
-  // box-shadow: 0px 3px 5px 0px rgba(144, 144, 144, 0.49);
 }
 
 .menu-button {
@@ -50,22 +48,22 @@ defineEmits(["toggleSideBar"]);
 }
 
 .logo {
-  padding: 25px;
+  padding: 1.625rem;
   color: $secondary-color;
 }
 
 .logo__title {
   font-family: "Playfair Display", serif;
-  font-size: 40px;
+  font-size: 2.5rem;
   text-transform: uppercase;
 }
 
 .logo__subtitle {
   position: relative;
   left: 25%;
-  padding-top: 10px;
+  padding-top: 0.625rem;
   font-family: "Halimun", "Whisper", sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .links-container {
@@ -85,7 +83,7 @@ a:visited {
   font-size: 0.9375rem;
   color: $secondary-color;
   position: relative;
-  padding: 10px;
+  padding: 0.625rem;
   margin-left: 1.25rem;
   margin-right: 1.25rem;
 }
@@ -117,13 +115,12 @@ a:visited {
   }
 
   .logo__title {
-    font-size: 25px;
+    font-size: 1.5625rem;
   }
 
   .logo__subtitle {
-    padding-top: 5px;
-    font-size: 10px;
-    left: 10%;
+    padding-top: 0.3125rem;
+    font-size: 0.625rem;
   }
 
   .links-container {
