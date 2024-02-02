@@ -1,6 +1,6 @@
 <template>
   <SlideTransition @after-enter="onAfterEnter" @leave="onLeave">
-    <div class="links-container">
+    <ul class="links-container">
       <button class="close-button" @click="$emit('toggleSideBar')">
         <i-material-symbols-close-rounded class="close-icon" />
       </button>
@@ -9,9 +9,9 @@
         :key="index"
         class="link"
         :href="page.path"
-        >{{ page.name }}</a
-      >
-    </div>
+        >{{ page.name }}
+      </a>
+    </ul>
   </SlideTransition>
 </template>
 
@@ -45,7 +45,8 @@ function onLeave() {
   background-color: $secondary-color;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   overflow: hidden;
 }
@@ -55,17 +56,24 @@ a:visited {
   text-decoration: none;
 }
 
-.link:first-of-type {
-  margin-top: 3.125rem;
-}
+// .link:first-of-type {
+//   margin-top: 3.125rem;
+// }
 
 .link {
   font-family: "Lato", sans-serif;
   font-weight: 500;
+  width: min(50%, 300px);
+  text-align: center;
   text-transform: uppercase;
   font-size: 1.25rem;
   color: $primary-color;
-  padding: 0.9375rem;
+  padding: 2em;
+  border-bottom: 0.5px solid white;
+}
+
+.link:first-of-type {
+  border-top: 0.5px solid white;
 }
 
 .close-button {
