@@ -1,15 +1,12 @@
 <template>
   <NavBar :pages="pages" @toggle-side-bar="toggleSideBar" />
-  <BlurTransition>
-    <BlurLayer v-show="isSideBarOpen" />
-  </BlurTransition>
-  <SlideTransition>
+  <Teleport to="body">
     <SideBar
       v-show="isSideBarOpen"
       :pages="pages"
       @toggle-side-bar="toggleSideBar"
     />
-  </SlideTransition>
+  </Teleport>
   <main>
     <section class="text-image-group">
       <div class="text">
@@ -76,9 +73,6 @@
 import { ref } from "vue";
 import NavBar from "src/components/NavBar.vue";
 import SideBar from "src/components/SideBar.vue";
-import BlurLayer from "src/components/BlurLayer.vue";
-import SlideTransition from "src/components/transitions/SlideTransition.vue";
-import BlurTransition from "src/components/transitions/BlurTransition.vue";
 
 const isSideBarOpen = ref(false);
 function toggleSideBar() {

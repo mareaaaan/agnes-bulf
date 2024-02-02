@@ -1,26 +1,38 @@
 <template>
-  <div class="links-container">
-    <button class="close-button" @click="$emit('toggleSideBar')">
-      <i-material-symbols-close-rounded class="close-icon" />
-    </button>
-    <a
-      v-for="(page, index) in props.pages"
-      :key="index"
-      class="link"
-      :href="page.path"
-      >{{ page.name }}</a
-    >
-  </div>
+  <SlideTransition @after-enter="onAfterEnter" @leave="onLeave">
+    <div class="links-container">
+      <button class="close-button" @click="$emit('toggleSideBar')">
+        <i-material-symbols-close-rounded class="close-icon" />
+      </button>
+      <a
+        v-for="(page, index) in props.pages"
+        :key="index"
+        class="link"
+        :href="page.path"
+        >{{ page.name }}</a
+      >
+    </div>
+  </SlideTransition>
 </template>
 
 <script setup>
+import SlideTransition from "src/components/transitions/SlideTransition.vue";
 const props = defineProps({
   pages: {
     type: Array,
     required: true,
   },
 });
+
 defineEmits(["toggleSideBar"]);
+
+function onAfterEnter() {
+  document.body.style.overflow = "hidden";
+}
+
+function onLeave() {
+  document.body.style.overflow = "auto";
+}
 </script>
 
 <style lang="scss" scoped>
@@ -35,6 +47,7 @@ defineEmits(["toggleSideBar"]);
   flex-direction: column;
   align-items: baseline;
   width: 100%;
+  overflow: hidden;
 }
 
 a:link,
