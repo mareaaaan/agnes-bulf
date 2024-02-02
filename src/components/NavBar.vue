@@ -14,10 +14,10 @@ defineEmits(["toggleSideBar"]);
     <button class="menu-button" @click="$emit('toggleSideBar')">
       <i-material-symbols-menu-rounded class="menu-icon" />
     </button>
-    <div class="logo">
+    <header class="logo">
       <h1 class="logo__title">Agnes Maria Priseceanu</h1>
       <h2 class="logo__subtitle">Psiholog clinician & psihoterapeut</h2>
-    </div>
+    </header>
 
     <div class="links-container">
       <a
@@ -41,10 +41,29 @@ defineEmits(["toggleSideBar"]);
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
+  @media screen and (max-width: $desktop-width) {
+    display: block;
+    overflow: hidden;
+  }
+}
 .menu-button {
   display: none;
+
+  @media screen and (max-width: $desktop-width) {
+    position: absolute;
+    display: block;
+    top: 1.625rem;
+    height: 1.5625rem;
+    left: 0.3125rem;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
 }
 
 .logo {
@@ -56,19 +75,32 @@ defineEmits(["toggleSideBar"]);
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   text-transform: uppercase;
+
+  @media screen and (max-width: $desktop-width) {
+    font-size: 1.5625rem;
+  }
 }
 
 .logo__subtitle {
   position: relative;
-  left: 25%;
+  left: 4rem;
   padding-top: 0.625rem;
   font-family: "Halimun", "Whisper", sans-serif;
   font-size: 1.25rem;
+
+  @media screen and (max-width: $desktop-width) {
+    padding-top: 0.3125rem;
+    font-size: 0.625rem;
+  }
 }
 
 .links-container {
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: $desktop-width) {
+    display: none;
+  }
 }
 
 a:link,
@@ -105,40 +137,5 @@ a:visited {
 .link:hover::before {
   transform-origin: left;
   transform: scaleX(1);
-}
-
-/* Mobile Styles */
-@media only screen and (max-width: $desktop-width) {
-  .navbar-container {
-    display: block;
-    overflow: hidden;
-  }
-
-  .logo__title {
-    font-size: 1.5625rem;
-  }
-
-  .logo__subtitle {
-    padding-top: 0.3125rem;
-    font-size: 0.625rem;
-  }
-
-  .links-container {
-    display: none;
-  }
-
-  .menu-button {
-    position: absolute;
-    display: block;
-    height: 100%;
-    left: 5px;
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-  }
 }
 </style>
