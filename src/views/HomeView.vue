@@ -169,9 +169,9 @@ p {
 
     display: flex;
 
-    transition: 600ms;
+    transition: 1.2s;
 
-    transform: translateX(200px);
+    transform: translateX(100px);
     opacity: 0;
 
     &.visible {
