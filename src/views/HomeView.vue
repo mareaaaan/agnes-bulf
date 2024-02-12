@@ -13,18 +13,21 @@
         <p>Bine ai venit, dragă cititorule!</p>
         <p>
           Mă numesc Agnes Maria Priseceanu. Sunt, mai întâi de toate, om, femeie
-          care trăiește, crește și învață în relații, psihoterapeut care crede
-          în puterea conștientizării, a vindecării și a evoluției personale.
-          Sunt, de asemenea, fiică, nepoată, soră, parteneră, mamă și prietenă.
-          Sunt binecuvântată cu toate aceste roluri și recunoscătoare pentru
-          fiecare în parte.
+          și mamă care trăiește conștient și prezent. Relațiile sunt sursa
+          vieții noastre, sursa atașamentului nostru și reprezintă fundamentul
+          iubirii, fericirii și evoluției. M-am născut dintr-o relație și m-am
+          dezvoltat construind relații cu oamenii din jurul meu, cu sinele, cu
+          lumea și cu divinitatea. Am crescut și am învățat enorm în aceste
+          relații, iar astăzi dau mai departe din toate aceste daruri.
         </p>
         <p>
-          La nivel profesional sunt psiholog clinician, psihoterapeut de cuplu
-          și familie, profesor de psihologie generală, gazdă a unui club de
-          carte Conectare prin cărți și organizator al atelierelor de dezvoltare
-          personală. Pe lângă acestea, iubesc să creez, să lucrez manual și să
-          torn lumânări parfumate din ceară naturală de soia.
+          Sunt un psihoterapeut care crede în puterea conștientizării, a
+          vindecării și a evoluției personale dată prin naștere. Cred că venim
+          echipați cu tot ce avem nevoie pentru a obține o viață armonioasă, iar
+          contextele de viață sunt oportunități excelente de atingere a
+          potențialului personal. Sunt, fiică, nepoată, soră, parteneră, mamă și
+          prietenă; sunt binecuvântată cu toate aceste roluri și recunoscătoare
+          pentru fiecare în parte.
         </p>
       </div>
 
@@ -39,12 +42,53 @@
 
     <section class="card">
       <p>
-        Cred că toți avem dreptul la vindecare și evoluție prin cunoaștere,
-        relații, conectare autentică și prezență conștientă. Am ales această
-        meserie din nevoia de a-mi cunoaște sinele, de a mă înțelege și de a
-        trăi în adevăr și am reușit să devin, la nivel personal și profesional,
-        omul cald, blând, empatic, prezent și pregătit de care am avut mare
-        nevoie în perioadele dificile din viață.
+        Sunt psiholog și psihoterapeut. M-am format profesional ca psiholog
+        clinician absolvind Facultatea de Psihologie și Științele Educației,
+        Universitatea București și Masterul cu specializarea Psihologie Clinică,
+        evaluare și intervenție. Ca psihoterapeut de cuplu și familie, m-am
+        format absolvind programul de formare complementară în psihoterapia
+        familiei organizat de Asociația Multiculturală de Psihologie și
+        Psihoterapie.
+      </p>
+    </section>
+
+    <section class="text-image-group image-left">
+      <div class="text">
+        <p>
+          În paralel, sunt profesor de psihologie generală, gazdă a unui club de
+          carte, <span class="strong">Conectare prin cărți</span>, și
+          organizator al atelierelor de dezvoltare personală.
+        </p>
+        <p>
+          Pe lângă acestea, iubesc să fiu cu mine, să trăiesc conștient, ordonat
+          și aerisit, dar mai ales, iubesc să creez. De-a lungul timpului am
+          născocit diferite obiecte de decor, genți din hârtie și alte obiecte
+          decorate manual. Într-o zi de martie din anul 2021, am primit în dar o
+          lumânare parfumată care a fost ca un semn divin că mai pot oferi
+          oamenilor o sursă de lumină și căldură . Și astfel, a luat naștere
+          <span class="strong">Tender Melt</span>, un mic business local care
+          are misiunea de a transmite oamenilor prin parfumul lumânărilor că
+          bunătatea și generozitatea sunt valori prețioase la îndemâna oricui.
+        </p>
+      </div>
+      <div
+        v-intersection-observer="onIntersectionObserverMiddle"
+        class="image-container"
+        :class="{ visible: isMiddleVisible }"
+      >
+        <img src="../assets/handwork.jpg" alt="Agnes lucrand la ceva manual" />
+      </div>
+    </section>
+
+    <section class="card">
+      <p>
+        Cred că toți avem dreptul la vindecare și evoluție prin
+        <span class="strong">cunoaștere, relații, conectare autentică</span> și
+        <span class="strong">prezență conștientă</span>. Mi-am ales meseria din
+        nevoia de a-mi cunoaște sinele, de a mă înțelege și de a trăi în adevăr
+        și am reușit să devin, la nivel personal și profesional, omul cald,
+        blând, empatic, prezent și pregătit de care am avut mare nevoie în
+        perioadele dificile din viață.
       </p>
     </section>
 
@@ -57,10 +101,11 @@
         </p>
         <p>
           Sunt aici pentru a te ajuta să înveți să primești viața cu tot ce are
-          ea de oferit: să poți sta cu emoțiile tale, așa cum ele apar, să poți
-          accepta și integra schimbările și pierderile dificile, să mângâi
-          copilul interior și să îți găsești puterea creatoare cu care ai venit
-          pe lume.
+          ea de oferit într-o manieră conștientă și blândă: să poți sta cu
+          emoțiile tale, așa cum ele apar, să poți accepta și integra
+          schimbările și pierderile dificile din viața ta, să mângâi copilul
+          interior și să îți găsești puterea creatoare cu care ai venit deja pe
+          lume.
         </p>
       </div>
       <div
@@ -85,6 +130,7 @@ import { vIntersectionObserver } from "@vueuse/components";
 
 const isTopVisible = ref(false);
 const isBottomVisible = ref(false);
+const isMiddleVisible = ref(false);
 
 const isSideBarOpen = ref(false);
 function toggleSideBar() {
@@ -94,6 +140,12 @@ function toggleSideBar() {
 function onIntersectionObserverTop([{ isIntersecting }]) {
   if (!isTopVisible.value) {
     isTopVisible.value = isIntersecting;
+  }
+}
+
+function onIntersectionObserverMiddle([{ isIntersecting }]) {
+  if (!isMiddleVisible.value) {
+    isMiddleVisible.value = isIntersecting;
   }
 }
 
@@ -150,7 +202,7 @@ p {
   // Keeps the overflow hidden for the image translation
   overflow-x: hidden;
 
-  &:last-of-type {
+  &.image-left {
     flex-direction: row-reverse;
   }
 
@@ -158,7 +210,7 @@ p {
     flex-direction: column-reverse;
     align-items: center;
 
-    &:last-of-type {
+    &.image-left {
       flex-direction: column-reverse;
     }
   }
@@ -203,5 +255,9 @@ p {
     justify-content: space-evenly;
     flex-basis: 50%;
   }
+}
+
+.strong {
+  font-weight: bold;
 }
 </style>
