@@ -43,10 +43,10 @@ function onScroll() {
       <button class="menu-button" @click="$emit('toggleSideBar')">
         <i-material-symbols-menu-rounded class="menu-icon" />
       </button>
-      <header class="logo">
+      <div class="logo">
         <h1 class="logo__title">Agnes Maria Priseceanu</h1>
         <h2 class="logo__subtitle">Psiholog clinician & psihoterapeut</h2>
-      </header>
+      </div>
     </header>
     <SlideFromTop>
       <div v-show="isLinksVisible" class="links-container">
@@ -57,6 +57,12 @@ function onScroll() {
           :href="page.path"
           >{{ page.name }}</a
         >
+        <a
+          class="instagram-link link"
+          href="https://www.instagram.com/agnesmariapriseceanu/"
+        >
+          <i-mdi-instagram class="instagram-icon" />
+        </a>
       </div>
     </SlideFromTop>
   </nav>
@@ -74,8 +80,8 @@ nav {
   width: 100%;
   background-color: $primary-color;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
   position: relative;
   z-index: 2;
 
@@ -101,6 +107,12 @@ nav {
     cursor: pointer;
     outline: inherit;
   }
+}
+
+.instagram-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
