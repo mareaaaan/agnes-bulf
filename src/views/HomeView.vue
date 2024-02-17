@@ -119,6 +119,19 @@
         />
       </div>
     </section>
+
+    <section class="card small-text">
+      <p class="center">
+        Bine ai venit în casa mea virtuală!
+        <br />
+        Dă-ți voie să uiți cine ai învățat că ești și să te cunoști așa cum ai
+        fost dintotdeauna.
+        <br />
+        Primește viața cu tot ce are ea de oferit.
+        <br />
+        Ascultă-ți nevoile și folosește-te de autocompasiune.
+      </p>
+    </section>
   </main>
 </template>
 
@@ -191,6 +204,9 @@ p {
   p {
     max-width: 80%;
     margin: 0 auto;
+    &.center {
+      text-align: center;
+    }
   }
 }
 
