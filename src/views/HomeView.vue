@@ -181,13 +181,16 @@ const pages = [
 @import "../styles/_globals.scss";
 
 main {
-  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
-  max-width: 1400px;
+
   font-family: Lato, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-size: 1.375rem;
   line-height: 1.5;
   color: $secondary-color;
+  background-color: $primary-color;
 
   @media screen and (max-width: $desktop-width) {
     font-size: 1rem;
@@ -201,6 +204,7 @@ p {
 
 .card {
   padding: 3rem 0;
+  max-width: $max-width;
   p {
     max-width: 80%;
     margin: 0 auto;
@@ -214,7 +218,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
+  max-width: $max-width;
   // Keeps the overflow hidden for the image translation
   overflow-x: hidden;
 

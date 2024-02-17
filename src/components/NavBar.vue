@@ -13,6 +13,7 @@ const props = defineProps({
 defineEmits(["toggleSideBar"]);
 
 const isLinksVisible = ref(true);
+
 let lastScrollPosition = 0;
 
 useScroll(window, {
@@ -29,7 +30,7 @@ function onScroll() {
   }
   // Stop executing this function if the difference between
   // current scroll position and last scroll position is less than the offset
-  if (Math.abs(currentScrollPosition - lastScrollPosition) < 60) {
+  if (Math.abs(currentScrollPosition - lastScrollPosition) < 100) {
     return;
   }
   isLinksVisible.value = currentScrollPosition < lastScrollPosition;
@@ -39,6 +40,17 @@ function onScroll() {
 
 <template>
   <nav>
+    <aside class="contact-container">
+      <div class="contact">
+        <span>Urmărește-mă pe:</span>
+        <a
+          class="instagram-link"
+          href="https://www.instagram.com/agnesmariapriseceanu/"
+        >
+          <i-mdi-instagram class="instagram-icon" />
+        </a>
+      </div>
+    </aside>
     <header class="header-container">
       <button class="menu-button" @click="$emit('toggleSideBar')">
         <i-material-symbols-menu-rounded class="menu-icon" />
@@ -57,12 +69,6 @@ function onScroll() {
           :href="page.path"
           >{{ page.name }}</a
         >
-        <a
-          class="instagram-link link"
-          href="https://www.instagram.com/agnesmariapriseceanu/"
-        >
-          <i-mdi-instagram class="instagram-icon" />
-        </a>
       </div>
     </SlideFromTop>
   </nav>
@@ -74,6 +80,29 @@ nav {
   position: sticky;
   top: 0;
   z-index: 2;
+}
+
+.contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: $max-width;
+  color: $secondary-color;
+  font-size: 0.9375rem;
+  padding: 0 1rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+
+  @media screen and (max-width: $desktop-width) {
+    display: none;
+  }
 }
 
 .header-container {
@@ -113,11 +142,22 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: $secondary-color;
+  padding: 0.625rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1) rotate(-10deg);
+  }
 }
 
 .logo {
-  padding: 1.625rem;
+  padding: 1.25rem;
   color: $secondary-color;
+
+  @media screen and (min-width: $desktop-width) {
+    padding-top: 0;
+  }
 }
 
 .logo__title {
