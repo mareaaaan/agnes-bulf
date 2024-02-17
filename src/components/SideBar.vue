@@ -39,7 +39,7 @@ function onLeave() {
 @import "../styles/_globals.scss";
 .links-container {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   height: 100%;

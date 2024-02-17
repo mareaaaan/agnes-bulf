@@ -1,4 +1,8 @@
 <script setup>
+import { useScroll } from "@vueuse/core";
+import SlideFromTop from "src/components/transitions/SlideFromTop.vue";
+import { defineProps, defineEmits, ref } from "vue";
+
 const props = defineProps({
   pages: {
     type: Array,
@@ -7,41 +11,73 @@ const props = defineProps({
 });
 
 defineEmits(["toggleSideBar"]);
+
+const isLinksVisible = ref(true);
+let lastScrollPosition = 0;
+
+useScroll(window, {
+  onScroll: (e) => {
+    onScroll(e);
+  },
+});
+
+function onScroll() {
+  const currentScrollPosition = window.scrollY;
+
+  if (currentScrollPosition < 0) {
+    return;
+  }
+  // Stop executing this function if the difference between
+  // current scroll position and last scroll position is less than the offset
+  if (Math.abs(currentScrollPosition - lastScrollPosition) < 60) {
+    return;
+  }
+  isLinksVisible.value = currentScrollPosition < lastScrollPosition;
+  lastScrollPosition = currentScrollPosition;
+}
 </script>
 
 <template>
-  <nav class="navbar-container">
-    <button class="menu-button" @click="$emit('toggleSideBar')">
-      <i-material-symbols-menu-rounded class="menu-icon" />
-    </button>
-    <header class="logo">
-      <h1 class="logo__title">Agnes Maria Priseceanu</h1>
-      <h2 class="logo__subtitle">Psiholog clinician & psihoterapeut</h2>
+  <nav>
+    <header class="header-container">
+      <button class="menu-button" @click="$emit('toggleSideBar')">
+        <i-material-symbols-menu-rounded class="menu-icon" />
+      </button>
+      <header class="logo">
+        <h1 class="logo__title">Agnes Maria Priseceanu</h1>
+        <h2 class="logo__subtitle">Psiholog clinician & psihoterapeut</h2>
+      </header>
     </header>
-
-    <div class="links-container">
-      <a
-        v-for="(page, index) in props.pages"
-        :key="index"
-        class="link"
-        :href="page.path"
-        >{{ page.name }}</a
-      >
-    </div>
+    <SlideFromTop>
+      <div v-show="isLinksVisible" class="links-container">
+        <a
+          v-for="(page, index) in props.pages"
+          :key="index"
+          class="link"
+          :href="page.path"
+          >{{ page.name }}</a
+        >
+      </div>
+    </SlideFromTop>
   </nav>
 </template>
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-.navbar-container {
+nav {
   position: sticky;
-  z-index: 1;
   top: 0;
+  z-index: 2;
+}
+
+.header-container {
   width: 100%;
   background-color: $primary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 2;
 
   @media screen and (max-width: $desktop-width) {
     display: block;
@@ -96,9 +132,11 @@ defineEmits(["toggleSideBar"]);
 }
 
 .links-container {
+  background-color: $primary-color;
   display: flex;
   justify-content: center;
-
+  position: relative;
+  z-index: 1;
   @media screen and (max-width: $desktop-width) {
     display: none;
   }
