@@ -58,7 +58,6 @@ a:visited {
 }
 
 .link {
-  font-family: "Lato", sans-serif;
   font-weight: 500;
   width: min(50%, 300px);
   text-align: center;
