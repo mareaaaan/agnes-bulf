@@ -185,7 +185,7 @@ main {
   margin: 0 auto;
   max-width: 1400px;
   font-family: Lato, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   line-height: 1.5;
   color: $secondary-color;
 
