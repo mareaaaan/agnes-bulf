@@ -53,7 +53,8 @@ function onScroll() {
     </aside>
     <header class="header-container">
       <button class="menu-button" @click="$emit('toggleSideBar')">
-        <i-material-symbols-menu-rounded class="menu-icon" />
+        <i-material-symbols-arrow-forward-ios-rounded class="menu-icon" />
+        <!-- <i-material-symbols-menu-rounded class="menu-icon" /> -->
       </button>
       <div class="logo">
         <h1 class="logo__title">Agnes Maria Priseceanu</h1>
@@ -124,10 +125,11 @@ nav {
 
   @media screen and (max-width: $desktop-width) {
     position: absolute;
-    display: block;
-    top: 1.625rem;
-    height: 1.5625rem;
-    left: 0.3125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1.25rem;
+    left: -1.25rem;
     background: none;
     color: inherit;
     border: none;
@@ -135,7 +137,19 @@ nav {
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    background-color: $secondary-color;
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.5rem;
   }
+}
+
+.menu-icon {
+  position: relative;
+  left: 7px;
+  width: 50%;
+  height: 50%;
+  color: $primary-color;
 }
 
 .instagram-link {
