@@ -1,7 +1,7 @@
 <script setup>
 import { useScroll } from "@vueuse/core";
 import SlideFromTop from "src/components/transitions/SlideFromTop.vue";
-import { defineProps, defineEmits, ref } from "vue";
+import { defineProps, ref } from "vue";
 
 const props = defineProps({
   pages: {
@@ -10,7 +10,14 @@ const props = defineProps({
   },
 });
 
-defineEmits(["toggleSideBar"]);
+const emit = defineEmits(["toggleSideBar"]);
+
+const isSideBarOpen = ref(false);
+
+function toggleSideBar() {
+  isSideBarOpen.value = !isSideBarOpen.value;
+  emit("toggleSideBar");
+}
 
 const isLinksVisible = ref(true);
 
@@ -52,9 +59,8 @@ function onScroll() {
       </div>
     </aside>
     <header class="header-container">
-      <button class="menu-button" @click="$emit('toggleSideBar')">
+      <button class="menu-button" @click="toggleSideBar">
         <i-material-symbols-arrow-forward-ios-rounded class="menu-icon" />
-        <!-- <i-material-symbols-menu-rounded class="menu-icon" /> -->
       </button>
       <div class="logo">
         <h1 class="logo__title">Agnes Maria Priseceanu</h1>
@@ -73,6 +79,13 @@ function onScroll() {
       </div>
     </SlideFromTop>
   </nav>
+  <Teleport to="body">
+    <SideBar
+      v-show="isSideBarOpen"
+      :pages="props.pages"
+      @toggle-side-bar="toggleSideBar"
+    />
+  </Teleport>
 </template>
 
 <style lang="scss" scoped>

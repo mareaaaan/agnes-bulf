@@ -1,12 +1,5 @@
 <template>
-  <NavBar :pages="pages" @toggle-side-bar="toggleSideBar" />
-  <Teleport to="body">
-    <SideBar
-      v-show="isSideBarOpen"
-      :pages="pages"
-      @toggle-side-bar="toggleSideBar"
-    />
-  </Teleport>
+  <NavBar :pages="pages" />
   <main>
     <section class="text-image-group">
       <div class="text">
@@ -138,18 +131,11 @@
 <script setup>
 import { ref } from "vue";
 import NavBar from "src/components/NavBar.vue";
-import SideBar from "src/components/SideBar.vue";
 import { vIntersectionObserver } from "@vueuse/components";
 
 const isTopVisible = ref(false);
 const isBottomVisible = ref(false);
 const isMiddleVisible = ref(false);
-
-const isSideBarOpen = ref(false);
-function toggleSideBar() {
-  isSideBarOpen.value = !isSideBarOpen.value;
-}
-
 function onIntersectionObserverTop([{ isIntersecting }]) {
   if (!isTopVisible.value) {
     isTopVisible.value = isIntersecting;

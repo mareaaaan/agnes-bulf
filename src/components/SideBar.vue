@@ -1,6 +1,6 @@
 <template>
   <SlideTransition @after-enter="onAfterEnter" @leave="onLeave">
-    <ul class="links-container">
+    <ul class="sidebar-container">
       <button class="close-button" @click="$emit('toggleSideBar')">
         <i-material-symbols-close-rounded class="close-icon" />
       </button>
@@ -30,32 +30,30 @@ const props = defineProps({
   },
 });
 
-defineEmits(["toggleSideBar"]);
-
 function onAfterEnter() {
-  document.body.style.overflow = "hidden";
+  document.querySelector("main").style.display = "none";
 }
 
 function onLeave() {
-  document.body.style.overflow = "auto";
+  document.querySelector("main").style.display = "flex";
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-.links-container {
+.sidebar-container {
   position: fixed;
   z-index: 2;
   top: 0;
   left: 0;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
   background-color: $secondary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow-y: scroll;
 }
 
 a:link,
