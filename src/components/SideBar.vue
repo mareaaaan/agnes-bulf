@@ -11,6 +11,12 @@
         :href="page.path"
         >{{ page.name }}
       </a>
+      <a
+        class="instagram-link"
+        href="https://www.instagram.com/agnesmariapriseceanu/"
+      >
+        <i-mdi-instagram class="instagram-icon" />
+      </a>
     </ul>
   </SlideTransition>
 </template>
@@ -49,7 +55,7 @@ function onLeave() {
   align-items: center;
   justify-content: center;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 a:link,
@@ -88,6 +94,21 @@ a:visited {
 }
 
 .close-icon {
+  color: $primary-color;
+  width: 100%;
+  height: 100%;
+}
+
+.instagram-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  width: 40px;
+  height: 40px;
+}
+
+.instagram-icon {
   color: $primary-color;
   width: 100%;
   height: 100%;
