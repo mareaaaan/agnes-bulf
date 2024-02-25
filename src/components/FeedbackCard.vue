@@ -1,8 +1,8 @@
 <template>
   <div class="card-carousel--card">
-    <img :src="item.image" />
+    <p class="card-carousel--card--text">{{ ellipsify(item.text) }}</p>
     <div class="card-carousel--card--footer">
-      <p>{{ item.name }}</p>
+      <p>{{ item.title }}</p>
     </div>
   </div>
 </template>
@@ -14,10 +14,20 @@ defineProps({
     required: true,
   },
 });
+
+function ellipsify(string) {
+  if (string.length > 100) {
+    return string.substring(0, 100) + "...";
+  } else {
+    return string;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 .card-carousel--card {
+  max-width: 300px;
+  min-height: 200px;
   margin: 0 10px;
   cursor: pointer;
   box-shadow:
@@ -29,14 +39,6 @@ defineProps({
   margin-bottom: 2px;
   transition: 0.2s;
 
-  img {
-    vertical-align: bottom;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    transition: opacity 150ms linear;
-    user-select: none;
-  }
-
   &:hover {
     transform: scale(1.1);
   }
@@ -47,13 +49,17 @@ defineProps({
   padding: 7px 15px;
 }
 
+.card-carousel--card--text {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1rem;
+  user-select: none;
+}
+
 .card-carousel--card--footer p {
   padding: 3px 0;
-  margin: 0;
   margin-bottom: 2px;
-  font-size: 19px;
-  font-weight: 500;
-  color: #2c3e50;
+  font-size: 1.125rem;
   user-select: none;
 }
 </style>
