@@ -19,60 +19,43 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, onMounted } from "vue";
 import FeedbackCard from "src/components/FeedbackCard.vue";
 
 const cards_pos = ref(0);
 
 const filteredItems = computed(() => {
-  return [...items, ...items].slice(cards_pos.value, cards_pos.value + 3);
+  return [...items.value, ...items.value].slice(
+    cards_pos.value,
+    cards_pos.value + 3,
+  );
 });
 
 function goNext() {
-  cards_pos.value = (cards_pos.value + 1) % items.length;
+  cards_pos.value = (cards_pos.value + 1) % items.value.length;
 }
 
 function goPrevious() {
-  cards_pos.value = (cards_pos.value + items.length - 1) % items.length;
+  cards_pos.value =
+    (cards_pos.value + items.value.length - 1) % items.value.length;
 }
 
-const items = [
-  {
-    name: "Kin Khao",
-    image: "https://source.unsplash.com/200x200?girl",
-    id: 0,
-  },
-  {
-    name: "Jū-Ni",
-    image: "https://source.unsplash.com/200x200?natural",
-    id: 1,
-  },
-  {
-    name: "Delfina",
-    image: "https://source.unsplash.com/200x200?beautiful",
-    id: 2,
-  },
-  {
-    name: "San Tung",
-    image: "https://source.unsplash.com/200x200?attraction",
-    id: 3,
-  },
-  {
-    name: "Anchor Oyster Bar",
-    image: "https://source.unsplash.com/200x200?rose",
-    id: 4,
-  },
-  {
-    name: "Locanda",
-    image: "https://source.unsplash.com/200x200?beach",
-    id: 5,
-  },
-  {
-    name: "Garden Creamery",
-    image: "https://source.unsplash.com/200x200?forest",
-    id: 6,
-  },
-];
+const items = ref([]);
+
+function fetchItems() {
+  const filePath = "src/assets/feedbackData.json";
+  fetch(filePath)
+    .then((response) => response.json())
+    .then((jsonArray) => {
+      console.log(jsonArray);
+      items.value = jsonArray;
+    })
+    .catch((error) => console.error("Error fetching feedbackData", error));
+}
+
+onMounted(() => {
+  fetchItems();
+});
 </script>
 
 <style lang="scss" scoped>
