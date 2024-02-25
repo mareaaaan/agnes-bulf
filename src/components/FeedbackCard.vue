@@ -27,6 +27,7 @@ defineProps({
   border-radius: 4px;
   z-index: 3;
   margin-bottom: 2px;
+  transition: 0.2s;
 
   img {
     vertical-align: bottom;
@@ -34,10 +35,10 @@ defineProps({
     border-top-right-radius: 4px;
     transition: opacity 150ms linear;
     user-select: none;
+  }
 
-    & :hover {
-      opacity: 0.5;
-    }
+  &:hover {
+    transform: scale(1.1);
   }
 }
 

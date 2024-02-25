@@ -1,6 +1,8 @@
 <template>
   <div class="card-carousel-wrapper">
-    <div class="card-carousel--nav__left" @click="goPrevious()"></div>
+    <button class="card-carousel--nav" @click="goPrevious()">
+      <i-material-symbols-arrow-back-ios-new class="arrow-icon" />
+    </button>
     <div class="card-carousel">
       <div class="card-carousel-cards">
         <FeedbackCard
@@ -10,7 +12,9 @@
         ></FeedbackCard>
       </div>
     </div>
-    <div class="card-carousel--nav__right" @click="goNext()"></div>
+    <button class="card-carousel--nav" @click="goNext()">
+      <i-material-symbols-arrow-forward-ios class="arrow-icon" />
+    </button>
   </div>
 </template>
 
@@ -72,47 +76,43 @@ const items = [
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/_globals.scss";
 .card-carousel-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0 40px;
-  color: #666a73;
 }
 
 .card-carousel {
   display: flex;
   justify-content: center;
 }
-.card-carousel--nav__left,
-.card-carousel--nav__right {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  padding: 10px;
-  box-sizing: border-box;
-  border-top: 2px solid #42b883;
-  border-right: 2px solid #42b883;
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.card-carousel--nav {
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   margin: 0 20px;
-  transition: transform 150ms linear;
+  transition: 200ms linear;
 }
-.card-carousel--nav__left[disabled],
-.card-carousel--nav__right[disabled] {
-  opacity: 0.2;
-  border-color: black;
+
+.card-carousel--nav:hover {
+  transform: scale(1.1);
+  color: darken($secondary-color, 10%);
 }
-.card-carousel--nav__left {
-  transform: rotate(-135deg);
-}
-.card-carousel--nav__left:active {
-  transform: rotate(-135deg) scale(0.9);
-}
-.card-carousel--nav__right {
-  transform: rotate(45deg);
-}
-.card-carousel--nav__right:active {
-  transform: rotate(45deg) scale(0.9);
+
+.arrow-icon {
+  height: 100%;
+  width: 100%;
 }
 
 .card-carousel-cards {
