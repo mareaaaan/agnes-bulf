@@ -113,6 +113,8 @@
       </div>
     </section>
 
+    <CardCarousel />
+
     <section class="card small-text">
       <p class="center">
         Bine ai venit în casa mea virtuală!
@@ -132,6 +134,7 @@
 import { ref } from "vue";
 import NavBar from "src/components/NavBar.vue";
 import { vIntersectionObserver } from "@vueuse/components";
+import CardCarousel from "src/components/CardCarousel.vue";
 
 const isTopVisible = ref(false);
 const isBottomVisible = ref(false);
