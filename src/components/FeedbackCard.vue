@@ -2,7 +2,9 @@
   <div class="card-carousel--card">
     <p class="card-carousel--card--text">{{ ellipsify(item.text) }}</p>
     <div class="card-carousel--card--footer">
-      <p>{{ item.title }}</p>
+      <p class="strong">
+        {{ item.title }}
+      </p>
     </div>
   </div>
 </template>
@@ -16,8 +18,8 @@ defineProps({
 });
 
 function ellipsify(string) {
-  if (string.length > 100) {
-    return string.substring(0, 100) + "...";
+  if (string.length > 200) {
+    return string.substring(0, 200) + "...";
   } else {
     return string;
   }
@@ -26,8 +28,6 @@ function ellipsify(string) {
 
 <style lang="scss" scoped>
 .card-carousel--card {
-  max-width: 300px;
-  min-height: 200px;
   margin: 0 10px;
   cursor: pointer;
   box-shadow:
@@ -35,12 +35,11 @@ function ellipsify(string) {
     0 2px 2px 0 rgba(40, 44, 53, 0.08);
   background-color: #fff;
   border-radius: 4px;
-  z-index: 3;
   margin-bottom: 2px;
   transition: 0.2s;
 
   &:hover {
-    transform: scale(1.1);
+    transform: rotate(-1deg);
   }
 }
 
@@ -61,5 +60,9 @@ function ellipsify(string) {
   margin-bottom: 2px;
   font-size: 1.125rem;
   user-select: none;
+}
+
+.strong {
+  font-weight: bold;
 }
 </style>

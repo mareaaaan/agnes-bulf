@@ -113,7 +113,7 @@
       </div>
     </section>
 
-    <CardCarousel />
+    <CardCarousel :items="feedbackItems" />
 
     <section class="card small-text">
       <p class="center">
@@ -135,6 +135,7 @@ import { ref } from "vue";
 import NavBar from "src/components/NavBar.vue";
 import { vIntersectionObserver } from "@vueuse/components";
 import CardCarousel from "src/components/CardCarousel.vue";
+import feedbackItems from "src/assets/feedbackData.json";
 
 const isTopVisible = ref(false);
 const isBottomVisible = ref(false);
