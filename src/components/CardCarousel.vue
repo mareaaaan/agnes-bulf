@@ -1,14 +1,14 @@
 <template>
   <div class="carousel-container">
-    <div class="media-scroller snaps-inline">
+    <div ref="mediaScroller" class="media-scroller snaps-inline">
       <FeedbackCard v-for="item in items" :key="item.id" :item="item" />
     </div>
 
     <div class="button-group">
-      <button class="card-carousel--nav">
+      <button class="card-carousel--nav" @click="scrollLeft">
         <i-material-symbols-arrow-back-ios-new class="arrow-icon" />
       </button>
-      <button class="card-carousel--nav">
+      <button class="card-carousel--nav" @click="scrollRight">
         <i-material-symbols-arrow-forward-ios class="arrow-icon" />
       </button>
     </div>
@@ -17,12 +17,36 @@
 
 <script setup>
 import FeedbackCard from "src/components/FeedbackCard.vue";
+import { defineProps, ref, computed } from "vue";
 defineProps({
   items: {
     type: Array,
     required: true,
   },
 });
+
+const mediaScroller = ref(null);
+const cardWidth = computed(() => {
+  return mediaScroller.value.firstElementChild.offsetWidth;
+});
+
+function scrollLeft() {
+  console.log(mediaScroller.value.scrollLeft);
+  console.log(mediaScroller.value.scrollWidth);
+  mediaScroller.value.scrollBy({
+    left: -1 * cardWidth.value,
+    behavior: "smooth",
+  });
+}
+
+function scrollRight() {
+  console.log(mediaScroller.value.scrollLeft + mediaScroller.value.offsetWidth);
+  console.log(mediaScroller.value.scrollWidth);
+  mediaScroller.value.scrollBy({
+    left: cardWidth.value,
+    behavior: "smooth",
+  });
+}
 </script>
 
 <style lang="scss" scoped>
