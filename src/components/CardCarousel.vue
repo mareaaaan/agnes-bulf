@@ -31,21 +31,36 @@ const cardWidth = computed(() => {
 });
 
 function scrollLeft() {
-  console.log(mediaScroller.value.scrollLeft);
-  console.log(mediaScroller.value.scrollWidth);
-  mediaScroller.value.scrollBy({
-    left: -1 * cardWidth.value,
-    behavior: "smooth",
-  });
+  if (mediaScroller.value.scrollLeft === 0) {
+    mediaScroller.value.scrollBy({
+      left: mediaScroller.value.scrollWidth,
+      behavior: "smooth",
+    });
+  } else {
+    mediaScroller.value.scrollBy({
+      left: -1 * cardWidth.value,
+      behavior: "smooth",
+    });
+  }
 }
 
 function scrollRight() {
-  console.log(mediaScroller.value.scrollLeft + mediaScroller.value.offsetWidth);
-  console.log(mediaScroller.value.scrollWidth);
-  mediaScroller.value.scrollBy({
-    left: cardWidth.value,
-    behavior: "smooth",
-  });
+  if (
+    // the condition checks if the scroller is at the end of the list
+    // accounting for scroll-padding-inline, hence it is not perfect eqaulity
+    mediaScroller.value.scrollLeft + mediaScroller.value.offsetWidth >=
+    mediaScroller.value.scrollWidth - cardWidth.value
+  ) {
+    mediaScroller.value.scrollBy({
+      left: -1 * mediaScroller.value.scrollWidth,
+      behavior: "smooth",
+    });
+  } else {
+    mediaScroller.value.scrollBy({
+      left: cardWidth.value,
+      behavior: "smooth",
+    });
+  }
 }
 </script>
 
