@@ -118,7 +118,7 @@
       <CardCarousel :items="feedbackItems" />
     </section>
 
-    <section class="card small-text max-width">
+    <section class="small-text max-width">
       <p class="center">
         Bine ai venit în casa mea virtuală!
         <br />
@@ -192,13 +192,19 @@ section {
   margin-bottom: 4rem;
 
   &:first-of-type {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 }
+
+p {
+  margin: 1rem;
+}
 .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   p {
     max-width: 80%;
-    margin: 0 auto;
   }
 }
 
@@ -264,7 +270,6 @@ section {
 
     p {
       text-align: left;
-      margin: 1rem;
     }
   }
 }
