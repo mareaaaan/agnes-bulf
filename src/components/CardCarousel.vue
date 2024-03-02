@@ -27,13 +27,13 @@ defineProps({
 
 const mediaScroller = ref(null);
 const cardWidth = computed(() => {
-  return mediaScroller.value.firstElementChild.offsetWidth;
+  return mediaScroller.value.firstElementChild.offsetWidth + 20;
 });
 
 function scrollLeft() {
   if (mediaScroller.value.scrollLeft === 0) {
     mediaScroller.value.scrollBy({
-      left: mediaScroller.value.scrollWidth,
+      left: mediaScroller.value.scrollWidth - mediaScroller.value.offsetWidth,
       behavior: "smooth",
     });
   } else {
@@ -46,10 +46,8 @@ function scrollLeft() {
 
 function scrollRight() {
   if (
-    // the condition checks if the scroller is at the end of the list
-    // accounting for scroll-padding-inline, hence it is not perfect eqaulity
-    mediaScroller.value.scrollLeft + mediaScroller.value.offsetWidth >=
-    mediaScroller.value.scrollWidth - cardWidth.value
+    mediaScroller.value.scrollLeft + mediaScroller.value.offsetWidth ===
+    mediaScroller.value.scrollWidth
   ) {
     mediaScroller.value.scrollBy({
       left: -1 * mediaScroller.value.scrollWidth,
