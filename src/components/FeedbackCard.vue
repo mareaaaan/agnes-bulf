@@ -27,6 +27,7 @@ function ellipsify(string) {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/_globals.scss";
 .card-carousel--card {
   margin: 0 10px;
   cursor: pointer;
@@ -52,12 +53,18 @@ function ellipsify(string) {
   padding: 1rem;
   margin: 0;
   user-select: none;
+  font-size: $small-font-size;
 }
 
 .card-carousel--card--footer p {
   padding: 3px 0;
   margin-bottom: 2px;
   user-select: none;
+  font-size: $font-size;
+
+  @media screen and (max-width: $mobile-width) {
+    font-size: $small-font-size;
+  }
 }
 
 .strong {

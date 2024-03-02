@@ -103,7 +103,7 @@ button {
   grid-auto-columns: calc(100% / var(--items-per-screen));
 
   padding: var(--spacer) 0;
-
+  margin-bottom: var(--spacer);
   overflow-x: auto;
   overscroll-behavior-inline: contain;
 

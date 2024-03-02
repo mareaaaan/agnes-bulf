@@ -178,13 +178,13 @@ main {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  font-size: 1.375rem;
+  font-size: $font-size;
   line-height: 1.5;
   color: $secondary-color;
   background-color: $primary-color;
 
   @media screen and (max-width: $desktop-width) {
-    font-size: 1rem;
+    font-size: $small-font-size;
   }
 }
 
@@ -276,6 +276,7 @@ p {
 
 .feedback-title {
   margin-bottom: 1rem;
+  font-size: $large-font-size;
 }
 
 .strong {
