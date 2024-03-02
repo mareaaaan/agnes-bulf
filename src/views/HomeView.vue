@@ -1,7 +1,7 @@
 <template>
   <NavBar :pages="pages" />
   <main>
-    <section class="text-image-group">
+    <section class="text-image-group max-width">
       <div class="text">
         <p>Bine ai venit, dragă cititorule!</p>
         <p>
@@ -33,7 +33,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card max-width">
       <p>
         Sunt psiholog și psihoterapeut. M-am format profesional ca psiholog
         clinician absolvind Facultatea de Psihologie și Științele Educației,
@@ -45,7 +45,7 @@
       </p>
     </section>
 
-    <section class="text-image-group image-left">
+    <section class="text-image-group image-left max-width">
       <div class="text">
         <p>
           În paralel, sunt profesor de psihologie generală, gazdă a unui club de
@@ -73,7 +73,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card max-width">
       <p>
         Cred că toți avem dreptul la vindecare și evoluție prin
         <span class="strong">cunoaștere, relații, conectare autentică</span> și
@@ -85,7 +85,7 @@
       </p>
     </section>
 
-    <section class="text-image-group">
+    <section class="text-image-group max-width">
       <div class="text">
         <p>
           Vreau să fiu acea voce care reamintește permanent oamenilor de forța
@@ -113,9 +113,10 @@
       </div>
     </section>
 
+    <!-- <section></section> -->
     <CardCarousel :items="feedbackItems" />
 
-    <section class="card small-text">
+    <section class="card small-text max-width">
       <p class="center">
         Bine ai venit în casa mea virtuală!
         <br />
@@ -192,7 +193,6 @@ p {
 
 .card {
   padding: 3rem 0;
-  max-width: $max-width;
   p {
     max-width: 80%;
     margin: 0 auto;
@@ -206,7 +206,6 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  max-width: $max-width;
   // Keeps the overflow hidden for the image translation
   overflow-x: hidden;
 

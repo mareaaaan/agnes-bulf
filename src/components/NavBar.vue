@@ -48,7 +48,7 @@ function onScroll() {
 <template>
   <nav>
     <aside class="contact-container">
-      <div class="contact">
+      <div class="contact max-width">
         <span>Urmărește-mă pe:</span>
         <a
           class="instagram-link"
@@ -101,7 +101,6 @@ nav {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  max-width: $max-width;
   color: $secondary-color;
   font-size: 0.9375rem;
   padding: 0 1rem;

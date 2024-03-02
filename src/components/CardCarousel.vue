@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel-container">
+  <div class="carousel-container max-width">
     <div ref="mediaScroller" class="media-scroller snaps-inline">
       <FeedbackCard v-for="item in items" :key="item.id" :item="item" />
     </div>
@@ -92,7 +92,6 @@ button {
 }
 
 .carousel-container {
-  max-width: min(100%, $max-width);
   display: flex;
   flex-direction: column;
 }

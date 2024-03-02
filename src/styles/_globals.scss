@@ -6,3 +6,8 @@ $primary-color: #f9f8f4;
 $secondary-color: #333331;
 
 $max-width: 1400px;
+
+
+.max-width {
+    max-width: min(100%, $max-width);
+}
