@@ -113,8 +113,10 @@
       </div>
     </section>
 
-    <!-- <section></section> -->
-    <CardCarousel :items="feedbackItems" />
+    <section class="max-width">
+      <h2 class="strong feedback-title">Ce spun cei cu care am lucrat?</h2>
+      <CardCarousel :items="feedbackItems" />
+    </section>
 
     <section class="card small-text max-width">
       <p class="center">
@@ -186,19 +188,17 @@ main {
   }
 }
 
-p {
-  text-align: left;
-  padding: 1rem;
-}
+section {
+  margin-bottom: 4rem;
 
+  &:first-of-type {
+    margin-top: 4rem;
+  }
+}
 .card {
-  padding: 3rem 0;
   p {
     max-width: 80%;
     margin: 0 auto;
-    &.center {
-      text-align: center;
-    }
   }
 }
 
@@ -261,10 +261,23 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
     flex-basis: 50%;
+
+    p {
+      text-align: left;
+      margin: 1rem;
+    }
   }
+}
+
+.feedback-title {
+  margin-bottom: 1rem;
 }
 
 .strong {
   font-weight: bold;
+}
+
+.center {
+  text-align: center;
 }
 </style>

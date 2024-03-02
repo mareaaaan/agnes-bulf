@@ -51,14 +51,12 @@ function ellipsify(string) {
 .card-carousel--card--text {
   padding: 1rem;
   margin: 0;
-  font-size: 1rem;
   user-select: none;
 }
 
 .card-carousel--card--footer p {
   padding: 3px 0;
   margin-bottom: 2px;
-  font-size: 1.125rem;
   user-select: none;
 }
 

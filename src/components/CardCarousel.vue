@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel-container max-width">
+  <div class="carousel-container">
     <div ref="mediaScroller" class="media-scroller snaps-inline">
       <FeedbackCard v-for="item in items" :key="item.id" :item="item" />
     </div>
