@@ -16,3 +16,11 @@ $extra-large-font-size: 2rem;
 .max-width {
     max-width: min(100%, $max-width);
 }
+
+.strong {
+  font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}

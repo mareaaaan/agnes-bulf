@@ -278,12 +278,4 @@ p {
   margin-bottom: 1rem;
   font-size: $large-font-size;
 }
-
-.strong {
-  font-weight: bold;
-}
-
-.center {
-  text-align: center;
-}
 </style>

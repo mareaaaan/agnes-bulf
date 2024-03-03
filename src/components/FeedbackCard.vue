@@ -66,8 +66,4 @@ function ellipsify(string) {
     font-size: $small-font-size;
   }
 }
-
-.strong {
-  font-weight: bold;
-}
 </style>
