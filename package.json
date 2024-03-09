@@ -16,6 +16,7 @@
   "dependencies": {
     "@vueuse/components": "^10.7.2",
     "@vueuse/core": "^10.7.2",
+    "illusory": "^2.0.3",
     "unplugin-icons": "^0.18.1",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"

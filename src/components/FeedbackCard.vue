@@ -1,5 +1,5 @@
 <template>
-  <div class="card-carousel--card">
+  <div ref="card" class="card-carousel--card" @click="expandCard">
     <p class="card-carousel--card--text">{{ ellipsify(item.text) }}</p>
     <div class="card-carousel--card--footer">
       <p class="strong">
@@ -7,14 +7,39 @@
       </p>
     </div>
   </div>
+  <Teleport to="#app">
+    <FeedbackCardModal
+      v-if="isCardExpanded"
+      ref="expandedCard"
+      :item="item"
+      @close="isCardExpanded = false"
+    />
+  </Teleport>
 </template>
 
 <script setup>
+import { ref, watch } from "vue";
+import { illusory } from "illusory";
 defineProps({
   item: {
     type: Object,
     required: true,
   },
+});
+
+const card = ref(null);
+const expandedCard = ref(null);
+
+const isCardExpanded = ref(false);
+function expandCard() {
+  isCardExpanded.value = true;
+}
+
+watch(expandedCard, (newExpandedCard) => {
+  if (newExpandedCard) {
+    // debugger;
+    illusory(card.value, newExpandedCard.expandedCard);
+  }
 });
 
 function ellipsify(string) {
