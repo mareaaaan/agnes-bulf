@@ -41,6 +41,7 @@ watch(expandedCard, (newExpandedCard) => {
       async beforeAnimate(from) {
         from.showNatural();
       },
+      zIndex: 2,
     });
   }
 });
