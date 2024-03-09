@@ -43,8 +43,7 @@ defineExpose({
 }
 
 .modal {
-  width: 600px;
-  background-color: white;
+  max-width: min(100%, 600px);
   display: flex;
   flex-direction: column;
   align-items: center;

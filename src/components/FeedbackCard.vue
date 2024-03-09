@@ -37,8 +37,11 @@ function expandCard() {
 
 watch(expandedCard, (newExpandedCard) => {
   if (newExpandedCard) {
-    // debugger;
-    illusory(card.value, newExpandedCard.expandedCard);
+    illusory(card.value, newExpandedCard.expandedCard, {
+      async beforeAnimate(from) {
+        from.showNatural();
+      },
+    });
   }
 });
 
