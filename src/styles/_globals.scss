@@ -24,3 +24,11 @@ $extra-large-font-size: 2rem;
 .center {
     text-align: center;
 }
+
+.remove-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

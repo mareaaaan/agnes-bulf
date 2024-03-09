@@ -1,6 +1,9 @@
 <template>
   <div class="carousel-container">
-    <div ref="mediaScroller" class="media-scroller snaps-inline">
+    <div
+      ref="mediaScroller"
+      class="media-scroller snaps-inline remove-scrollbar"
+    >
       <FeedbackCard v-for="item in items" :key="item.id" :item="item" />
     </div>
 
@@ -110,13 +113,6 @@ button {
   @media screen and (max-width: $mobile-width) {
     --items-per-screen: 1;
   }
-
-  // remove scrollbar
-  &::-webkit-scrollbars {
-    display: none;
-  }
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .snaps-inline > * {

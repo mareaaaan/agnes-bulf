@@ -1,6 +1,6 @@
 <template>
   <div class="modal-container">
-    <div ref="expandedCard" class="modal">
+    <div ref="expandedCard" class="modal remove-scrollbar">
       <p class="modal-container--text">{{ item.text }}</p>
       <div class="modal-container--footer">
         <p class="strong">
@@ -31,24 +31,26 @@ defineExpose({
 @import "../styles/_globals.scss";
 
 .modal-container {
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  background-color: #00000050;
-}
+  z-index: 2;
 
-.modal {
-  max-width: min(100%, 600px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  background-color: #00000050;
+}
+
+.modal {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   cursor: pointer;
   box-shadow:
@@ -57,6 +59,11 @@ defineExpose({
   background-color: #fff;
   border-radius: 4px;
   margin-bottom: 2px;
+  overflow-y: scroll;
+
+  @media screen and (max-width: $mobile-width) {
+    max-width: 100%;
+  }
 }
 
 .modal-container--footer {

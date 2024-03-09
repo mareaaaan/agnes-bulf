@@ -139,14 +139,6 @@ import NavBar from "src/components/NavBar.vue";
 import { vIntersectionObserver } from "@vueuse/components";
 import CardCarousel from "src/components/CardCarousel.vue";
 import feedbackItems from "src/assets/feedbackData.json";
-// import { illusory } from "illusory";
-
-// const red = ref(null);
-// const blue = ref(null);
-
-// function action() {
-//   illusory(red.value, blue.value);
-// }
 
 const isTopVisible = ref(false);
 const isBottomVisible = ref(false);
