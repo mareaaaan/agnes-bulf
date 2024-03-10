@@ -1,7 +1,7 @@
 <template>
   <div class="modal-container">
     <div ref="expandedCard" class="modal remove-scrollbar">
-      <button class="close-button">
+      <button class="close-button" @click="$emit('closeCard')">
         <i-material-symbols-close-rounded class="close-icon" />
       </button>
       <p class="modal-container--text">{{ item.text }}</p>
@@ -22,6 +22,8 @@ defineProps({
     required: true,
   },
 });
+
+defineEmits(["closeCard"]);
 
 const expandedCard = ref(null);
 

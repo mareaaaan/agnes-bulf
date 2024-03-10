@@ -12,7 +12,7 @@
       v-if="isCardExpanded"
       ref="expandedCard"
       :item="item"
-      @close="isCardExpanded = false"
+      @close-card="closeCard"
     />
   </Teleport>
 </template>
@@ -33,6 +33,16 @@ const expandedCard = ref(null);
 const isCardExpanded = ref(false);
 function expandCard() {
   isCardExpanded.value = true;
+}
+
+function closeCard() {
+  illusory(expandedCard.value.expandedCard, card.value, {
+    async beforeDetach() {
+      document.body.style.overflow = "auto";
+      isCardExpanded.value = false;
+    },
+    zIndex: 2,
+  });
 }
 
 watch(expandedCard, (newExpandedCard) => {

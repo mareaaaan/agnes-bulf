@@ -30,6 +30,8 @@ const props = defineProps({
   },
 });
 
+defineEmits(["toggleSideBar"]);
+
 function onAfterEnter() {
   document.querySelector("main").style.display = "none";
 }
