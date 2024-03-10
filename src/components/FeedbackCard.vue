@@ -37,6 +37,9 @@ function expandCard() {
 
 function closeCard() {
   illusory(expandedCard.value.expandedCard, card.value, {
+    async beforeAnimate(from, to) {
+      to.showNatural();
+    },
     async beforeDetach() {
       document.body.style.overflow = "auto";
       isCardExpanded.value = false;
@@ -49,12 +52,11 @@ watch(expandedCard, (newExpandedCard) => {
   if (newExpandedCard) {
     illusory(card.value, newExpandedCard.expandedCard, {
       async beforeAnimate(from) {
+        document.body.style.overflow = "hidden";
         from.showNatural();
       },
       zIndex: 2,
     });
-
-    document.body.style.overflow = "hidden";
   }
 });
 
