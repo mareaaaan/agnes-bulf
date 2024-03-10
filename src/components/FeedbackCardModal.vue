@@ -86,7 +86,6 @@ defineExpose({
   flex-direction: column;
   align-items: center;
 
-  cursor: pointer;
   box-shadow:
     0 4px 15px 0 rgba(40, 44, 53, 0.06),
     0 2px 2px 0 rgba(40, 44, 53, 0.08);
