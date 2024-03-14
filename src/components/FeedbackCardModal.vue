@@ -1,9 +1,7 @@
 <template>
   <div class="modal-container">
     <div ref="expandedCard" class="modal remove-scrollbar">
-      <button class="close-button" @click="$emit('closeCard')">
-        <i-material-symbols-close-rounded class="close-icon" />
-      </button>
+      <CloseButton class="push-right" @click="$emit('closeCard')" />
       <p class="modal-container--text">{{ item.text }}</p>
       <div class="modal-container--footer">
         <p class="strong">
@@ -34,35 +32,6 @@ defineExpose({
 
 <style lang="scss">
 @import "../styles/_globals.scss";
-
-.close-button {
-  display: block;
-  background: none;
-  color: inherit;
-  border: none;
-  width: 40px;
-  height: 40px;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  align-self: flex-end;
-  transition: transform 0.3s;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-
-  .close-icon {
-    color: $secondary-color;
-    width: 100%;
-    height: 100%;
-    transform: color 0.3s;
-
-    &:hover {
-      color: darken($secondary-color, 10%);
-    }
-  }
-}
 
 .modal-container {
   position: fixed;
@@ -97,6 +66,10 @@ defineExpose({
   @media screen and (max-width: $mobile-width) {
     max-width: 100%;
   }
+}
+
+.push-right {
+  align-self: flex-end;
 }
 
 .modal-container--footer {
