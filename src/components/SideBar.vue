@@ -1,9 +1,10 @@
 <template>
   <SlideTransition @after-enter="onAfterEnter" @leave="onLeave">
     <ul class="sidebar-container">
-      <button class="close-button" @click="$emit('toggleSideBar')">
-        <i-material-symbols-close-rounded class="close-icon" />
-      </button>
+      <CloseButton
+        class="position-top-right light"
+        @click="$emit('toggleSideBar')"
+      />
       <a
         v-for="(page, index) in props.pages"
         :key="index"
@@ -23,6 +24,7 @@
 
 <script setup>
 import SlideTransition from "src/components/transitions/SlideTransition.vue";
+import CloseButton from "./CloseButton.vue";
 const props = defineProps({
   pages: {
     type: Array,
@@ -78,25 +80,10 @@ a:visited {
   border-top: 0.5px solid white;
 }
 
-.close-button {
+.position-top-right {
   position: absolute;
-  display: block;
-  right: 10px;
   top: 10px;
-  background: none;
-  color: inherit;
-  border: none;
-  width: 40px;
-  height: 40px;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-
-.close-icon {
-  color: $primary-color;
-  width: 100%;
-  height: 100%;
+  right: 10px;
 }
 
 .instagram-link {

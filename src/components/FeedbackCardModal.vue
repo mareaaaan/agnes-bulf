@@ -1,7 +1,7 @@
 <template>
   <div class="modal-container">
     <div ref="expandedCard" class="modal remove-scrollbar">
-      <CloseButton class="push-right" @click="$emit('closeCard')" />
+      <CloseButton class="push-right dark" @click="$emit('closeCard')" />
       <p class="modal-container--text">{{ item.text }}</p>
       <div class="modal-container--footer">
         <p class="strong">

@@ -28,13 +28,28 @@ defineEmits(["click"]);
   }
 
   .close-icon {
-    color: $secondary-color;
     width: 100%;
     height: 100%;
-    transform: color 0.3s;
+    transition: color 0.3s;
+  }
 
-    &:hover {
-      color: darken($secondary-color, 10%);
+  &.light {
+    .close-icon {
+      color: $primary-color;
+
+      &:hover {
+        color: darken($secondary-color, 10%);
+      }
+    }
+  }
+
+  &.dark {
+    .close-icon {
+      color: $secondary-color;
+
+      &:hover {
+        color: darken($secondary-color, 10%);
+      }
     }
   }
 }
