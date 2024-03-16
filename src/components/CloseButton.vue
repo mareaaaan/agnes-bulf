@@ -38,7 +38,7 @@ defineEmits(["click"]);
       color: $primary-color;
 
       &:hover {
-        color: darken($secondary-color, 10%);
+        color: lighten($primary-color, 10%);
       }
     }
   }
