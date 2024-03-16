@@ -2,6 +2,8 @@
 import SlideFromTop from "src/components/transitions/SlideFromTop.vue";
 import { defineProps, ref } from "vue";
 import PageHeader from "./PageHeader.vue";
+import SideBar from "./SideBar.vue";
+import ContanctHeader from "./ContactHeader.vue";
 import NavBarLinks from "./NavBarLinks.vue";
 import useScrollUp from "src/composables/scrollUp";
 
@@ -15,23 +17,17 @@ const props = defineProps({
 const emit = defineEmits(["toggleSideBar"]);
 
 const isSideBarOpen = ref(false);
+const { isScrollUp } = useScrollUp();
 
 function toggleSideBar() {
   isSideBarOpen.value = !isSideBarOpen.value;
   emit("toggleSideBar");
 }
-
-const { isScrollUp } = useScrollUp();
 </script>
 
 <template>
-  <nav>
-    <aside class="contact-container">
-      <div class="contact max-width">
-        <span>Urmărește-mă pe:</span>
-        <InstagramLink class="instagram-link dark" />
-      </div>
-    </aside>
+  <nav class="nav-bar">
+    <ContanctHeader />
     <PageHeader @toggle-side-bar="toggleSideBar" />
     <SlideFromTop>
       <NavBarLinks v-show="isScrollUp" :pages="props.pages" />
@@ -48,45 +44,9 @@ const { isScrollUp } = useScrollUp();
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-nav {
+.nav-bar {
   position: sticky;
   top: 0;
   z-index: 2;
-}
-
-.contact {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  color: $secondary-color;
-  font-size: 0.9375rem;
-  padding: 0 1rem;
-}
-
-.contact-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: $primary-color;
-
-  @media screen and (max-width: $desktop-width) {
-    display: none;
-  }
-}
-
-.instagram-link {
-  padding: 0.625rem;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1) rotate(-10deg);
-  }
-}
-
-a:link,
-a:visited {
-  text-decoration: none;
 }
 </style>

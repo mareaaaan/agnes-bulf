@@ -19,7 +19,7 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/_globals.scss";
 
 .links-container {

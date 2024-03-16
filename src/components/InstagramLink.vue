@@ -9,8 +9,13 @@
 
 <script setup></script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../styles/_globals.scss";
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
 .instagram-link {
   display: flex;
   align-items: center;
