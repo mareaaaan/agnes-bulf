@@ -2,6 +2,7 @@
 import { useScroll } from "@vueuse/core";
 import SlideFromTop from "src/components/transitions/SlideFromTop.vue";
 import { defineProps, ref } from "vue";
+import PageHeader from "./PageHeader.vue";
 
 const props = defineProps({
   pages: {
@@ -53,15 +54,7 @@ function onScroll() {
         <InstagramLink class="instagram-link dark" />
       </div>
     </aside>
-    <header class="header-container">
-      <button class="menu-button" @click="toggleSideBar">
-        <i-material-symbols-arrow-forward-ios-rounded class="menu-icon" />
-      </button>
-      <div class="logo">
-        <h1 class="logo__title">Agnes Maria Priseceanu</h1>
-        <h2 class="logo__subtitle">Psiholog clinician & psihoterapeut</h2>
-      </div>
-    </header>
+    <PageHeader @toggle-side-bar="toggleSideBar" />
     <SlideFromTop>
       <div v-show="isLinksVisible" class="links-container">
         <a
@@ -111,52 +104,6 @@ nav {
   @media screen and (max-width: $desktop-width) {
     display: none;
   }
-}
-
-.header-container {
-  width: 100%;
-  background-color: $primary-color;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-
-  @media screen and (max-width: $desktop-width) {
-    display: block;
-    overflow: hidden;
-  }
-}
-.menu-button {
-  display: none;
-
-  @media screen and (max-width: $desktop-width) {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 1.25rem;
-    left: -1.25rem;
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    background-color: $secondary-color;
-    border-radius: 50%;
-    width: 2.25rem;
-    height: 2.5rem;
-  }
-}
-
-.menu-icon {
-  position: relative;
-  left: 7px;
-  width: 50%;
-  height: 50%;
-  color: $primary-color;
 }
 
 .instagram-link {
