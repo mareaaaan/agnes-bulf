@@ -56,7 +56,7 @@ function onScroll() {
     </aside>
     <PageHeader @toggle-side-bar="toggleSideBar" />
     <SlideFromTop>
-      <div v-show="isLinksVisible" class="links-container">
+      <!-- <div v-show="isLinksVisible" class="links-container">
         <a
           v-for="(page, index) in props.pages"
           :key="index"
@@ -64,7 +64,8 @@ function onScroll() {
           :href="page.path"
           >{{ page.name }}</a
         >
-      </div>
+      </div> -->
+      <NavBarLinks v-show="isLinksVisible" :pages="props.pages" />
     </SlideFromTop>
   </nav>
   <Teleport to="body">
