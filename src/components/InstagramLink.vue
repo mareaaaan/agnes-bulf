@@ -15,11 +15,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.instagram-icon {
-  color: $primary-color;
-  width: 100%;
-  height: 100%;
+  .instagram-icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.dark {
+    .instagram-icon {
+      color: $secondary-color;
+    }
+  }
+
+  &.light {
+    .instagram-icon {
+      color: $primary-color;
+    }
+  }
 }
 </style>

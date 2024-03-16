@@ -12,7 +12,7 @@
         :href="page.path"
         >{{ page.name }}
       </a>
-      <InstagramLink class="instagram-link" />
+      <InstagramLink class="instagram-link light" />
     </ul>
   </SlideTransition>
 </template>

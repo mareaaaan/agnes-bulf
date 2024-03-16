@@ -50,12 +50,7 @@ function onScroll() {
     <aside class="contact-container">
       <div class="contact max-width">
         <span>Urmărește-mă pe:</span>
-        <a
-          class="instagram-link"
-          href="https://www.instagram.com/agnesmariapriseceanu/"
-        >
-          <i-mdi-instagram class="instagram-icon" />
-        </a>
+        <InstagramLink class="instagram-link dark" />
       </div>
     </aside>
     <header class="header-container">
@@ -165,10 +160,6 @@ nav {
 }
 
 .instagram-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $secondary-color;
   padding: 0.625rem;
   transition: all 0.2s ease-in-out;
 
