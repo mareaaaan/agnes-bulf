@@ -6,15 +6,15 @@
         {{ item.title }}
       </p>
     </div>
+    <Teleport to="#app">
+      <FeedbackCardModal
+        v-if="isCardExpanded"
+        ref="expandedCard"
+        :item="item"
+        @close-card="closeCard"
+      />
+    </Teleport>
   </div>
-  <Teleport to="#app">
-    <FeedbackCardModal
-      v-if="isCardExpanded"
-      ref="expandedCard"
-      :item="item"
-      @close-card="closeCard"
-    />
-  </Teleport>
 </template>
 
 <script setup>
