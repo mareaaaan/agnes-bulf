@@ -24,11 +24,7 @@
         </p>
       </div>
 
-      <div
-        v-intersection-observer="onIntersectionObserverTop"
-        class="image-container"
-        :class="{ visible: isTopVisible }"
-      >
+      <div v-motion-slide-visible-once-right class="image-container">
         <img src="../assets/portrait.jpg" alt="Portret cu Agnes" />
       </div>
     </section>
@@ -64,11 +60,7 @@
           bunătatea și generozitatea sunt valori prețioase la îndemâna oricui.
         </p>
       </div>
-      <div
-        v-intersection-observer="onIntersectionObserverMiddle"
-        class="image-container"
-        :class="{ visible: isMiddleVisible }"
-      >
+      <div v-motion-slide-visible-once-left class="image-container">
         <img src="../assets/handwork.jpg" alt="Agnes lucrand la ceva manual" />
       </div>
     </section>
@@ -101,11 +93,7 @@
           lume.
         </p>
       </div>
-      <div
-        v-intersection-observer="onIntersectionObserverBottom"
-        class="image-container"
-        :class="{ visible: isBottomVisible }"
-      >
+      <div v-motion-slide-visible-once-right class="image-container">
         <img
           src="../assets/professional.jpg"
           alt="Agnes scriind intr-o carte"
@@ -134,32 +122,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 import NavBar from "src/components/NavBar.vue";
-import { vIntersectionObserver } from "@vueuse/components";
 import CardCarousel from "src/components/CardCarousel.vue";
 import feedbackItems from "src/assets/feedbackData.json";
-
-const isTopVisible = ref(false);
-const isBottomVisible = ref(false);
-const isMiddleVisible = ref(false);
-function onIntersectionObserverTop([{ isIntersecting }]) {
-  if (!isTopVisible.value) {
-    isTopVisible.value = isIntersecting;
-  }
-}
-
-function onIntersectionObserverMiddle([{ isIntersecting }]) {
-  if (!isMiddleVisible.value) {
-    isMiddleVisible.value = isIntersecting;
-  }
-}
-
-function onIntersectionObserverBottom([{ isIntersecting }]) {
-  if (!isBottomVisible.value) {
-    isBottomVisible.value = isIntersecting;
-  }
-}
 
 const pages = [
   { name: "Povestea mea", path: "" },
@@ -235,14 +200,6 @@ p {
     display: flex;
 
     transition: 1.2s;
-
-    transform: translateX(100px);
-    opacity: 0;
-
-    &.visible {
-      transform: translateX(0);
-      opacity: 1;
-    }
 
     @media screen and (max-width: $mobile-width) {
       flex-basis: 100%;
