@@ -47,12 +47,6 @@ const props = defineProps({
       flex-direction: column-reverse;
     }
   }
-
-  margin-bottom: 4rem;
-
-  &:first-of-type {
-    margin-top: 2rem;
-  }
 }
 
 .image-container {

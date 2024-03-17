@@ -28,17 +28,19 @@
       </template>
     </TextImageSection>
 
-    <section class="card max-width">
-      <p>
-        Sunt psiholog și psihoterapeut. M-am format profesional ca psiholog
-        clinician absolvind Facultatea de Psihologie și Științele Educației,
-        Universitatea București și Masterul cu specializarea Psihologie Clinică,
-        evaluare și intervenție. Ca psihoterapeut de cuplu și familie, m-am
-        format absolvind programul de formare complementară în psihoterapia
-        familiei organizat de Asociația Multiculturală de Psihologie și
-        Psihoterapie.
-      </p>
-    </section>
+    <CardSection class="max-width">
+      <template #text>
+        <p>
+          Sunt psiholog și psihoterapeut. M-am format profesional ca psiholog
+          clinician absolvind Facultatea de Psihologie și Științele Educației,
+          Universitatea București și Masterul cu specializarea Psihologie
+          Clinică, evaluare și intervenție. Ca psihoterapeut de cuplu și
+          familie, m-am format absolvind programul de formare complementară în
+          psihoterapia familiei organizat de Asociația Multiculturală de
+          Psihologie și Psihoterapie.
+        </p>
+      </template>
+    </CardSection>
 
     <TextImageSection class="max-width" :is-image-first="true">
       <template #text>
@@ -64,17 +66,19 @@
       </template>
     </TextImageSection>
 
-    <section class="card max-width">
-      <p>
-        Cred că toți avem dreptul la vindecare și evoluție prin
-        <span class="strong">cunoaștere, relații, conectare autentică</span> și
-        <span class="strong">prezență conștientă</span>. Mi-am ales meseria din
-        nevoia de a-mi cunoaște sinele, de a mă înțelege și de a trăi în adevăr
-        și am reușit să devin, la nivel personal și profesional, omul cald,
-        blând, empatic, prezent și pregătit de care am avut mare nevoie în
-        perioadele dificile din viață.
-      </p>
-    </section>
+    <CardSection class="max-width">
+      <template #text>
+        <p>
+          Cred că toți avem dreptul la vindecare și evoluție prin
+          <span class="strong">cunoaștere, relații, conectare autentică</span>
+          și <span class="strong">prezență conștientă</span>. Mi-am ales meseria
+          din nevoia de a-mi cunoaște sinele, de a mă înțelege și de a trăi în
+          adevăr și am reușit să devin, la nivel personal și profesional, omul
+          cald, blând, empatic, prezent și pregătit de care am avut mare nevoie
+          în perioadele dificile din viață.
+        </p>
+      </template>
+    </CardSection>
 
     <TextImageSection class="max-width" :is-image-first="false">
       <template #text>
@@ -105,18 +109,20 @@
       <CardCarousel :items="feedbackItems" />
     </section>
 
-    <section class="small-text max-width">
-      <p class="center">
-        Bine ai venit în casa mea virtuală!
-        <br />
-        Dă-ți voie să uiți cine ai învățat că ești și să te cunoști așa cum ai
-        fost dintotdeauna.
-        <br />
-        Primește viața cu tot ce are ea de oferit.
-        <br />
-        Ascultă-ți nevoile și folosește-te de autocompasiune.
-      </p>
-    </section>
+    <TextSection>
+      <template #text>
+        <p class="center">
+          Bine ai venit în casa mea virtuală!
+          <br />
+          Dă-ți voie să uiți cine ai învățat că ești și să te cunoști așa cum ai
+          fost dintotdeauna.
+          <br />
+          Primește viața cu tot ce are ea de oferit.
+          <br />
+          Ascultă-ți nevoile și folosește-te de autocompasiune.
+        </p>
+      </template>
+    </TextSection>
   </main>
 </template>
 
@@ -125,6 +131,8 @@ import NavBar from "src/components/NavBar.vue";
 import CardCarousel from "src/components/CardCarousel.vue";
 import feedbackItems from "src/assets/feedbackData.json";
 import TextImageSection from "src/components/TextImageSection.vue";
+import CardSection from "src/components/CardSection.vue";
+import TextSection from "src/components/TextSection.vue";
 
 const pages = [
   { name: "Povestea mea", path: "" },
@@ -142,6 +150,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
   font-size: $font-size;
   line-height: 1.5;
@@ -151,25 +160,13 @@ main {
   @media screen and (max-width: $desktop-width) {
     font-size: $small-font-size;
   }
-}
 
-section {
-  margin-bottom: 4rem;
-
-  &:first-of-type {
-    margin-top: 2rem;
+  & > * {
+    margin-bottom: 2rem;
   }
-}
 
-p {
-  margin: 1rem;
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  p {
-    max-width: 80%;
+  & > :first-child {
+    margin-top: 2rem;
   }
 }
 
