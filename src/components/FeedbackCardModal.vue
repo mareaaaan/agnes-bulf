@@ -4,8 +4,8 @@
       <CloseButton class="push-right dark" @click="$emit('closeCard')" />
       <p class="modal-container--text">{{ item.text }}</p>
       <div class="modal-container--footer">
-        <p class="strong">
-          {{ item.title }}
+        <p>
+          <strong>{{ item.title }}</strong>
         </p>
       </div>
     </div>

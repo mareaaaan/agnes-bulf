@@ -46,8 +46,8 @@
       <template #text>
         <p>
           În paralel, sunt profesor de psihologie generală, gazdă a unui club de
-          carte, <span class="strong">Conectare prin cărți</span>, și
-          organizator al atelierelor de dezvoltare personală.
+          carte, <strong>Conectare prin cărți</strong>, și organizator al
+          atelierelor de dezvoltare personală.
         </p>
         <p>
           Pe lângă acestea, iubesc să fiu cu mine, să trăiesc conștient, ordonat
@@ -56,9 +56,9 @@
           decorate manual. Într-o zi de martie din anul 2021, am primit în dar o
           lumânare parfumată care a fost ca un semn divin că mai pot oferi
           oamenilor o sursă de lumină și căldură . Și astfel, a luat naștere
-          <span class="strong">Tender Melt</span>, un mic business local care
-          are misiunea de a transmite oamenilor prin parfumul lumânărilor că
-          bunătatea și generozitatea sunt valori prețioase la îndemâna oricui.
+          <strong>Tender Melt</strong>, un mic business local care are misiunea
+          de a transmite oamenilor prin parfumul lumânărilor că bunătatea și
+          generozitatea sunt valori prețioase la îndemâna oricui.
         </p>
       </template>
       <template #image>
@@ -70,12 +70,12 @@
       <template #text>
         <p>
           Cred că toți avem dreptul la vindecare și evoluție prin
-          <span class="strong">cunoaștere, relații, conectare autentică</span>
-          și <span class="strong">prezență conștientă</span>. Mi-am ales meseria
-          din nevoia de a-mi cunoaște sinele, de a mă înțelege și de a trăi în
-          adevăr și am reușit să devin, la nivel personal și profesional, omul
-          cald, blând, empatic, prezent și pregătit de care am avut mare nevoie
-          în perioadele dificile din viață.
+          <strong>cunoaștere, relații, conectare autentică</strong>
+          și <strong>prezență conștientă</strong>. Mi-am ales meseria din nevoia
+          de a-mi cunoaște sinele, de a mă înțelege și de a trăi în adevăr și am
+          reușit să devin, la nivel personal și profesional, omul cald, blând,
+          empatic, prezent și pregătit de care am avut mare nevoie în perioadele
+          dificile din viață.
         </p>
       </template>
     </CardSection>

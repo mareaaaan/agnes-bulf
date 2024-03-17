@@ -1,9 +1,12 @@
 <template>
   <div ref="card" class="card-carousel--card" @click="expandCard">
-    <p class="card-carousel--card--text">{{ ellipsify(item.text) }}</p>
+    <p class="card-carousel--card--text">
+      {{ truncatedText }}
+      <strong v-if="isTextTruncated"><em>...citește mai mult</em></strong>
+    </p>
     <div class="card-carousel--card--footer">
-      <p class="strong">
-        {{ item.title }}
+      <p>
+        <strong>{{ item.title }}</strong>
       </p>
     </div>
     <Teleport to="#app">
@@ -18,9 +21,9 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, computed } from "vue";
 import { illusory } from "illusory";
-defineProps({
+const props = defineProps({
   item: {
     type: Object,
     required: true,
@@ -62,11 +65,14 @@ watch(expandedCard, (newExpandedCard) => {
 
 function ellipsify(string) {
   if (string.length > 200) {
-    return string.substring(0, 200) + "...";
+    return string.substring(0, 200);
   } else {
     return string;
   }
 }
+
+const truncatedText = computed(() => ellipsify(props.item.text));
+const isTextTruncated = computed(() => props.item.text.length > 200);
 </script>
 
 <style lang="scss" scoped>
