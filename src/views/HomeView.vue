@@ -169,6 +169,7 @@ main {
 }
 
 .feedback-title {
+  margin: 0 1rem;
   margin-bottom: 1rem;
   font-size: $large-font-size;
 }

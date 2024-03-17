@@ -3,6 +3,7 @@
 @import url("https://fonts.cdnfonts.com/css/halimun?styles=37139");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
+@import "./_globals.scss";
 #app {
   text-align: center;
   font-family:
@@ -13,7 +14,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  background-color: #f9f8f4;
+  background-color: $primary-color;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

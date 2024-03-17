@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import { MotionPlugin } from "@vueuse/motion";
-import "./styles/style.css";
+import "./styles/style.scss";
 import "./styles/reset.css";
 import App from "./App.vue";
 import router from "./router/router";
