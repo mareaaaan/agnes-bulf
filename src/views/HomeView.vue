@@ -151,9 +151,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   font-size: $font-size;
-  line-height: 1.5;
   color: $secondary-color;
   background-color: $primary-color;
 
