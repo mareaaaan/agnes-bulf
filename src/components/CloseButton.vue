@@ -1,6 +1,6 @@
 <template>
   <button class="close-button" @click="$emit('click')">
-    <i-material-symbols-close-rounded class="close-icon" />
+    <i-ion-close class="close-icon" />
   </button>
 </template>
 
@@ -16,20 +16,20 @@ defineEmits(["click"]);
   background: none;
   color: inherit;
   border: none;
-  width: 40px;
-  height: 40px;
   font: inherit;
   cursor: pointer;
   outline: inherit;
   transition: transform 0.3s;
-
+  padding: 0;
+  margin-top: 0.625rem;
+  margin-right: 0.625rem;
   &:hover {
     transform: scale(1.2);
   }
 
   .close-icon {
-    width: 100%;
-    height: 100%;
+    width: 30px;
+    height: 30px;
     transition: color 0.3s;
   }
 
