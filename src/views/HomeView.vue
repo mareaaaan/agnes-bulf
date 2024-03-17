@@ -1,8 +1,8 @@
 <template>
   <NavBar :pages="pages" />
   <main>
-    <section class="text-image-group max-width">
-      <div class="text">
+    <TextImageSection class="max-width" :is-image-first="false">
+      <template #text>
         <p>Bine ai venit, dragă cititorule!</p>
         <p>
           Mă numesc Agnes Maria Priseceanu. Sunt, mai întâi de toate, om, femeie
@@ -22,12 +22,11 @@
           prietenă; sunt binecuvântată cu toate aceste roluri și recunoscătoare
           pentru fiecare în parte.
         </p>
-      </div>
-
-      <div v-motion-slide-visible-once-right class="image-container">
+      </template>
+      <template #image>
         <img src="../assets/portrait.jpg" alt="Portret cu Agnes" />
-      </div>
-    </section>
+      </template>
+    </TextImageSection>
 
     <section class="card max-width">
       <p>
@@ -41,8 +40,8 @@
       </p>
     </section>
 
-    <section class="text-image-group image-left max-width">
-      <div class="text">
+    <TextImageSection class="max-width" :is-image-first="true">
+      <template #text>
         <p>
           În paralel, sunt profesor de psihologie generală, gazdă a unui club de
           carte, <span class="strong">Conectare prin cărți</span>, și
@@ -59,11 +58,11 @@
           are misiunea de a transmite oamenilor prin parfumul lumânărilor că
           bunătatea și generozitatea sunt valori prețioase la îndemâna oricui.
         </p>
-      </div>
-      <div v-motion-slide-visible-once-left class="image-container">
+      </template>
+      <template #image>
         <img src="../assets/handwork.jpg" alt="Agnes lucrand la ceva manual" />
-      </div>
-    </section>
+      </template>
+    </TextImageSection>
 
     <section class="card max-width">
       <p>
@@ -77,8 +76,8 @@
       </p>
     </section>
 
-    <section class="text-image-group max-width">
-      <div class="text">
+    <TextImageSection class="max-width" :is-image-first="false">
+      <template #text>
         <p>
           Vreau să fiu acea voce care reamintește permanent oamenilor de forța
           magică a iubirii, a curajului, a vulnerabilității și a puterii
@@ -92,14 +91,14 @@
           interior și să îți găsești puterea creatoare cu care ai venit deja pe
           lume.
         </p>
-      </div>
-      <div v-motion-slide-visible-once-right class="image-container">
+      </template>
+      <template #image>
         <img
           src="../assets/professional.jpg"
           alt="Agnes scriind intr-o carte"
         />
-      </div>
-    </section>
+      </template>
+    </TextImageSection>
 
     <section class="max-width">
       <h2 class="strong feedback-title">Ce spun cei cu care am lucrat?</h2>
@@ -125,6 +124,7 @@
 import NavBar from "src/components/NavBar.vue";
 import CardCarousel from "src/components/CardCarousel.vue";
 import feedbackItems from "src/assets/feedbackData.json";
+import TextImageSection from "src/components/TextImageSection.vue";
 
 const pages = [
   { name: "Povestea mea", path: "" },
@@ -170,64 +170,6 @@ p {
   align-items: center;
   p {
     max-width: 80%;
-  }
-}
-
-.text-image-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  // Keeps the overflow hidden for the image translation
-  overflow-x: hidden;
-
-  &.image-left {
-    flex-direction: row-reverse;
-  }
-
-  @media screen and (max-width: $mobile-width) {
-    flex-direction: column-reverse;
-    align-items: center;
-
-    &.image-left {
-      flex-direction: column-reverse;
-    }
-  }
-
-  .image-container {
-    flex-basis: 40%;
-    padding: 1rem;
-
-    display: flex;
-
-    transition: 1.2s;
-
-    @media screen and (max-width: $mobile-width) {
-      flex-basis: 100%;
-      justify-content: center;
-    }
-
-    img {
-      object-fit: cover;
-      max-height: 700px;
-      width: 100%;
-      height: 100%;
-      object-position: center 15%;
-
-      @media screen and (max-width: $mobile-width) {
-        aspect-ratio: 1/1;
-      }
-    }
-  }
-
-  .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-basis: 50%;
-
-    p {
-      text-align: left;
-    }
   }
 }
 
