@@ -1,7 +1,7 @@
 <template>
   <aside class="contact-container">
     <div class="contact max-width">
-      <span>Urmărește-mă pe:</span>
+      <span class="contact--text">Urmărește-mă pe:</span>
       <InstagramLink class="instagram-link dark" />
     </div>
   </aside>
@@ -31,6 +31,10 @@
   color: $secondary-color;
   font-size: 0.9375rem;
   padding: 0 1rem;
+}
+
+.contact--text {
+  text-transform: uppercase;
 }
 
 .instagram-link {

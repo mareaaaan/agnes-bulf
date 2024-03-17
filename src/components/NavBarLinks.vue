@@ -40,7 +40,7 @@ a:visited {
 
 .link {
   font-weight: 500;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 0.9375rem;
   color: $secondary-color;
   position: relative;
