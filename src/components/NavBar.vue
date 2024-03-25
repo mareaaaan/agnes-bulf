@@ -1,6 +1,6 @@
 <script setup>
 import SlideFromTop from "src/components/transitions/SlideFromTop.vue";
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import PageHeader from "./PageHeader.vue";
 import SideBar from "./SideBar.vue";
 import ContanctHeader from "./ContactHeader.vue";

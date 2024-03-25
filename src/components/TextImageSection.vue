@@ -73,6 +73,16 @@ const props = defineProps({
       aspect-ratio: 1/1;
     }
   }
+
+  :slotted(.curved-top) {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+
+  :slotted(.curved-bottom) {
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
 }
 
 .text-container {

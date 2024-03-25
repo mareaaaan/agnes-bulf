@@ -24,7 +24,11 @@
         </p>
       </template>
       <template #image>
-        <img src="../assets/portrait.jpg" alt="Portret cu Agnes" />
+        <img
+          src="../assets/portrait.jpg"
+          class="curved-top"
+          alt="Portret cu Agnes"
+        />
       </template>
     </TextImageSection>
 
@@ -62,7 +66,11 @@
         </p>
       </template>
       <template #image>
-        <img src="../assets/handwork.jpg" alt="Agnes lucrand la ceva manual" />
+        <img
+          src="../assets/handwork.jpg"
+          class="curved-top curved-bottom"
+          alt="Agnes lucrand la ceva manual"
+        />
       </template>
     </TextImageSection>
 
@@ -100,6 +108,7 @@
         <img
           src="../assets/professional.jpg"
           alt="Agnes scriind intr-o carte"
+          class="curved-bottom"
         />
       </template>
     </TextImageSection>

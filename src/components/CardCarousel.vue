@@ -20,7 +20,7 @@
 
 <script setup>
 import FeedbackCard from "src/components/FeedbackCard.vue";
-import { defineProps, ref, computed } from "vue";
+import { ref, computed } from "vue";
 defineProps({
   items: {
     type: Array,
