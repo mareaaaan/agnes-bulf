@@ -1,7 +1,11 @@
 <template>
   <section class="text-image-group">
-    <div class="wrapper" :class="{ 'max-width': props.maxWidth }">
-      <div class="text-container" :class="{ 'image-left': props.isImageFirst }">
+    <TopCurve v-if="props.hasCurve" />
+    <div
+      class="wrapper"
+      :class="{ 'max-width': props.maxWidth, 'image-left': props.isImageFirst }"
+    >
+      <div class="text-container">
         <slot name="text"></slot>
       </div>
       <div
@@ -19,15 +23,19 @@
 </template>
 
 <script setup>
+import TopCurve from "./TopCurve.vue";
+
 const props = defineProps({
   isImageFirst: Boolean,
   maxWidth: Boolean,
+  hasCurve: Boolean,
 });
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
 .text-image-group {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +47,7 @@ const props = defineProps({
   justify-content: center;
   // Keeps the overflow hidden for the image translation
   overflow-x: hidden;
+  z-index: 1;
 
   &.image-left {
     flex-direction: row-reverse;
@@ -100,5 +109,25 @@ const props = defineProps({
     margin: 1rem;
     text-align: left;
   }
+}
+
+.custom-shape-divider-top-1711373774 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1711373774 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-top-1711373774 .shape-fill {
+  fill: #f9f8f4;
 }
 </style>

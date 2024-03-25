@@ -32,7 +32,7 @@
       </template>
     </TextImageSection>
 
-    <CardSection class="max-width">
+    <CardSection :max-width="true">
       <template #text>
         <p>
           Sunt psiholog și psihoterapeut. M-am format profesional ca psiholog
@@ -46,7 +46,12 @@
       </template>
     </CardSection>
 
-    <TextImageSection :is-image-first="true" :max-width="true">
+    <TextImageSection
+      :is-image-first="true"
+      :max-width="true"
+      :has-curve="true"
+      class="light-background"
+    >
       <template #text>
         <p>
           În paralel, sunt profesor de psihologie generală, gazdă a unui club de
@@ -74,7 +79,7 @@
       </template>
     </TextImageSection>
 
-    <CardSection class="max-width">
+    <CardSection class="light-background" :max-width="true">
       <template #text>
         <p>
           Cred că toți avem dreptul la vindecare și evoluție prin
@@ -169,11 +174,11 @@ main {
   }
 
   & > * {
-    margin-bottom: 2rem;
+    padding-block-end: 2rem;
   }
 
   & > :first-child {
-    margin-top: 2rem;
+    padding-block-start: 2rem;
   }
 }
 

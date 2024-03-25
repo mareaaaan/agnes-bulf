@@ -68,7 +68,7 @@ defineEmits(["toggleSideBar"]);
   color: $secondary-color;
 
   @media screen and (min-width: $desktop-width) {
-    padding-top: 0;
+    padding-block-start: 0;
   }
 }
 
@@ -85,12 +85,12 @@ defineEmits(["toggleSideBar"]);
 .logo__subtitle {
   position: relative;
   left: 4rem;
-  padding-top: 0.625rem;
+  padding-block-start: 0.625rem;
   font-family: "Halimun", "Whisper", sans-serif;
   font-size: 1.25rem;
 
   @media screen and (max-width: $desktop-width) {
-    padding-top: 0.3125rem;
+    padding-block-start: 0.3125rem;
     font-size: 0.625rem;
   }
 }

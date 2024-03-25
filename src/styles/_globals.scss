@@ -4,6 +4,7 @@ $desktop-width: 1024px !default;
 
 $primary-color: #f9f8f4;
 $secondary-color: #333331;
+$light-color: white;
 
 $max-width: 1400px;
 
@@ -39,4 +40,8 @@ em {
   
 strong {
     font-weight: bold;
+}
+
+.light-background {
+    background-color: $light-color;
 }
