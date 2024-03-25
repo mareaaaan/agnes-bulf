@@ -1,7 +1,7 @@
 <template>
   <NavBar :pages="pages" />
   <main>
-    <TextImageSection class="max-width" :is-image-first="false">
+    <TextImageSection :is-image-first="false" :max-width="true">
       <template #text>
         <p>Bine ai venit, dragă cititorule!</p>
         <p>
@@ -46,7 +46,7 @@
       </template>
     </CardSection>
 
-    <TextImageSection class="max-width" :is-image-first="true">
+    <TextImageSection :is-image-first="true" :max-width="true">
       <template #text>
         <p>
           În paralel, sunt profesor de psihologie generală, gazdă a unui club de
@@ -88,7 +88,7 @@
       </template>
     </CardSection>
 
-    <TextImageSection class="max-width" :is-image-first="false">
+    <TextImageSection :is-image-first="false" :max-width="true">
       <template #text>
         <p>
           Vreau să fiu acea voce care reamintește permanent oamenilor de forța

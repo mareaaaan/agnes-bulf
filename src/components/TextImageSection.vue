@@ -1,20 +1,19 @@
 <template>
-  <section
-    class="text-image-group"
-    :class="{ 'image-left': props.isImageFirst }"
-  >
-    <div class="text-container">
-      <slot name="text"></slot>
-    </div>
-    <div
-      v-if="props.isImageFirst"
-      v-motion-slide-visible-once-left
-      class="image-container"
-    >
-      <slot name="image"></slot>
-    </div>
-    <div v-else v-motion-slide-visible-once-right class="image-container">
-      <slot name="image"></slot>
+  <section class="text-image-group">
+    <div class="wrapper" :class="{ 'max-width': props.maxWidth }">
+      <div class="text-container" :class="{ 'image-left': props.isImageFirst }">
+        <slot name="text"></slot>
+      </div>
+      <div
+        v-if="props.isImageFirst"
+        v-motion-slide-visible-once-left
+        class="image-container"
+      >
+        <slot name="image"></slot>
+      </div>
+      <div v-else v-motion-slide-visible-once-right class="image-container">
+        <slot name="image"></slot>
+      </div>
     </div>
   </section>
 </template>
@@ -22,13 +21,19 @@
 <script setup>
 const props = defineProps({
   isImageFirst: Boolean,
+  maxWidth: Boolean,
 });
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-
 .text-image-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
