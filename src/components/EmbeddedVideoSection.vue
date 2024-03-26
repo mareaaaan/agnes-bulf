@@ -1,11 +1,14 @@
 <template>
   <section class="embedded-video-section">
+    <h2 class="strong video-section-title">Podcasturi cu mine</h2>
     <div class="wrapper" :class="{ 'max-width': props.maxWidth }">
-      <EmbeddedVideo
-        v-for="(videoUrl, index) in props.videos"
-        :key="index"
-        :url="videoUrl"
-      />
+      <div class="videos-container">
+        <EmbeddedVideo
+          v-for="(videoUrl, index) in props.videos"
+          :key="index"
+          :url="videoUrl"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -29,12 +32,21 @@ const props = defineProps({
 }
 .wrapper {
   width: 100%;
-  transition: 1.2s;
+}
+
+.videos-container {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 
   @media screen and (max-width: $tablet-width) {
     grid-template-columns: 1fr;
   }
+}
+
+.video-section-title {
+  margin: 0 1rem;
+  margin-bottom: 1rem;
+  font-size: $large-font-size;
 }
 </style>
