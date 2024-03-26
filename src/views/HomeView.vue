@@ -79,15 +79,6 @@
       </template>
     </TextImageSection>
 
-    <EmbeddedVideoSection
-      :max-width="true"
-      class="light-background"
-      :videos="[
-        'https://www.youtube.com/embed/Nli1-gAFiCc?si=UgC4SGGaiIqe3hPc',
-        'https://www.youtube.com/embed/VuAejEjAyxM?si=fJur3MUGc7tmTO6F',
-      ]"
-    />
-
     <CardSection class="light-background" :max-width="true">
       <template #text>
         <p>
@@ -126,6 +117,15 @@
         />
       </template>
     </TextImageSection>
+
+    <EmbeddedVideoSection
+      :max-width="true"
+      class="light-background"
+      :videos="[
+        'https://www.youtube.com/embed/Nli1-gAFiCc?si=UgC4SGGaiIqe3hPc',
+        'https://www.youtube.com/embed/VuAejEjAyxM?si=fJur3MUGc7tmTO6F',
+      ]"
+    />
 
     <section class="max-width">
       <h2 class="strong feedback-title">Ce spun cei cu care am lucrat?</h2>

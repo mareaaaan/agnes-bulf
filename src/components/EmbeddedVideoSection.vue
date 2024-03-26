@@ -1,6 +1,8 @@
 <template>
   <section class="embedded-video-section">
-    <h2 class="strong video-section-title">Podcasturi cu mine</h2>
+    <h2 class="strong video-section-title">
+      Urmărește podcasturile la care am participat
+    </h2>
     <div class="wrapper" :class="{ 'max-width': props.maxWidth }">
       <div class="videos-container">
         <EmbeddedVideo
