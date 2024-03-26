@@ -1,5 +1,5 @@
 <template>
-  <section class="text-container">
+  <section v-motion-fade-visible-once class="text-container">
     <slot name="text"></slot>
   </section>
 </template>
@@ -12,5 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  transition: 1.2s;
 }
 </style>

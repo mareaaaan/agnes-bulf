@@ -1,6 +1,10 @@
 <template>
   <section class="text-container">
-    <div class="wrapper" :class="{ 'max-width': props.maxWidth }">
+    <div
+      v-motion-fade-visible-once
+      class="wrapper"
+      :class="{ 'max-width': props.maxWidth }"
+    >
       <slot name="text"></slot>
     </div>
   </section>
@@ -18,6 +22,8 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  transition: 1.2s;
 }
 .text-container {
   display: flex;

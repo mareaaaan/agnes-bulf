@@ -5,7 +5,7 @@
       class="wrapper"
       :class="{ 'max-width': props.maxWidth, 'image-left': props.isImageFirst }"
     >
-      <div class="text-container">
+      <div v-motion-fade-visible-once class="text-container">
         <slot name="text"></slot>
       </div>
       <div
@@ -104,6 +104,8 @@ const props = defineProps({
   flex-direction: column;
   justify-content: space-evenly;
   flex-basis: 50%;
+
+  transition: 1.2s;
 
   :slotted(p) {
     margin: 1rem;
