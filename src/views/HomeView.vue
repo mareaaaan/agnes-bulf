@@ -120,7 +120,6 @@
 
     <EmbeddedVideoSection
       :max-width="true"
-      class="light-background"
       :videos="[
         'https://www.youtube.com/embed/Nli1-gAFiCc?si=UgC4SGGaiIqe3hPc',
         'https://www.youtube.com/embed/VuAejEjAyxM?si=fJur3MUGc7tmTO6F',
@@ -163,6 +162,7 @@ const pages = [
   { name: "Ateliere", path: "" },
   { name: "Tender Melt", path: "" },
   { name: "Blog", path: "" },
+  { name: "Resurse", path: "" },
 ];
 </script>
 
