@@ -1,12 +1,23 @@
 <template>
   <aside class="contact-container">
     <div class="contact max-width">
-      <span class="contact--text">Urmărește-mă pe:</span>
       <LinkIcon
-        class="dark instagram-link"
+        class="dark link-icon"
         :url="'https://www.instagram.com/agnesmariapriseceanu/'"
       >
         <i-mdi-instagram class="icon" />
+      </LinkIcon>
+      <LinkIcon
+        class="dark link-icon"
+        :url="'https://www.facebook.com/agnes.priseceanu'"
+      >
+        <i-ion-social-facebook class="icon" />
+      </LinkIcon>
+      <LinkIcon
+        class="dark link-icon"
+        :url="'https://www.youtube.com/@agnespriseceanu8418'"
+      >
+        <i-ion-logo-youtube class="icon" />
       </LinkIcon>
     </div>
   </aside>
@@ -38,11 +49,7 @@
   padding: 0 1rem;
 }
 
-.contact--text {
-  text-transform: uppercase;
-}
-
-.instagram-link {
+.link-icon {
   padding: 0.625rem;
   transition: all 0.2s ease-in-out;
 
