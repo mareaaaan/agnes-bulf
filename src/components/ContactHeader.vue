@@ -19,7 +19,7 @@ import InstagramLink from "./InstagramLink.vue";
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: $primary-color;
+  background-color: $light-color;
 
   @media screen and (max-width: $desktop-width) {
     display: none;

@@ -18,7 +18,7 @@ defineEmits(["toggleSideBar"]);
 @import "../styles/_globals.scss";
 .header-container {
   width: 100%;
-  background-color: $primary-color;
+  background-color: $light-color;
   display: flex;
   flex-direction: row;
   justify-content: center;

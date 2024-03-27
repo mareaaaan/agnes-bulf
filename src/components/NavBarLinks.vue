@@ -23,7 +23,7 @@ const props = defineProps({
 @import "../styles/_globals.scss";
 
 .links-container {
-  background-color: $primary-color;
+  background-color: $light-color;
   display: flex;
   justify-content: center;
   position: relative;
