@@ -12,7 +12,12 @@
         :href="page.path"
         >{{ page.name }}
       </a>
-      <InstagramLink class="instagram-link light" />
+      <LinkIcon
+        class="instagram-link light"
+        :url="'https://www.instagram.com/agnesmariapriseceanu/'"
+      >
+        <i-mdi-instagram class="icon" />
+      </LinkIcon>
     </ul>
   </SlideTransition>
 </template>

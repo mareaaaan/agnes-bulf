@@ -1,13 +1,17 @@
 <template>
-  <a
-    class="instagram-link"
-    href="https://www.instagram.com/agnesmariapriseceanu/"
-  >
-    <i-mdi-instagram class="instagram-icon" />
+  <a class="link" :href="props.url">
+    <slot></slot>
   </a>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps({
+  url: {
+    type: String,
+    required: true,
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
@@ -16,24 +20,24 @@ a:visited {
   text-decoration: none;
 }
 
-.instagram-link {
+.link {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .instagram-icon {
+  :slotted(.icon) {
     width: 100%;
     height: 100%;
   }
 
   &.dark {
-    .instagram-icon {
+    :slotted(.icon) {
       color: $secondary-color;
     }
   }
 
   &.light {
-    .instagram-icon {
+    :slotted(.icon) {
       color: $primary-color;
     }
   }

@@ -2,7 +2,12 @@
   <aside class="contact-container">
     <div class="contact max-width">
       <span class="contact--text">Urmărește-mă pe:</span>
-      <InstagramLink class="instagram-link dark" />
+      <LinkIcon
+        class="dark instagram-link"
+        :url="'https://www.instagram.com/agnesmariapriseceanu/'"
+      >
+        <i-mdi-instagram class="icon" />
+      </LinkIcon>
     </div>
   </aside>
 </template>
