@@ -12,7 +12,11 @@
         :href="page.path"
         >{{ page.name }}
       </a>
-      <InstagramLink class="instagram-link light" />
+      <div class="social-links">
+        <InstagramLink class="light link-icon" />
+        <FacebookLink class="light link-icon" />
+        <YoutubeLink class="light link-icon" />
+      </div>
     </ul>
   </SlideTransition>
 </template>
@@ -77,9 +81,16 @@ function onLeave() {
   right: 0;
 }
 
-.instagram-link {
+.link-icon {
+  width: 30px;
+  height: 30px;
+  padding: 1em;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin-top: 2em;
-  width: 40px;
-  height: 40px;
 }
 </style>
