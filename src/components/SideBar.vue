@@ -12,12 +12,7 @@
         :href="page.path"
         >{{ page.name }}
       </a>
-      <LinkIcon
-        class="instagram-link light"
-        :url="'https://www.instagram.com/agnesmariapriseceanu/'"
-      >
-        <i-mdi-instagram class="icon" />
-      </LinkIcon>
+      <InstagramLink class="instagram-link light" />
     </ul>
   </SlideTransition>
 </template>
@@ -25,6 +20,7 @@
 <script setup>
 import SlideTransition from "src/components/transitions/SlideTransition.vue";
 import CloseButton from "./CloseButton.vue";
+import InstagramLink from "./InstagramLink.vue";
 const props = defineProps({
   pages: {
     type: Array,
@@ -58,11 +54,6 @@ function onLeave() {
   align-items: center;
   justify-content: center;
   overflow-y: scroll;
-}
-
-a:link,
-a:visited {
-  text-decoration: none;
 }
 
 .link {

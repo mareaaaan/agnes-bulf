@@ -33,11 +33,6 @@ const props = defineProps({
   }
 }
 
-a:link,
-a:visited {
-  text-decoration: none;
-}
-
 .link {
   font-weight: 500;
   text-transform: capitalize;

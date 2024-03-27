@@ -1,29 +1,16 @@
 <template>
   <aside class="contact-container">
     <div class="contact max-width">
-      <LinkIcon
-        class="dark link-icon"
-        :url="'https://www.instagram.com/agnesmariapriseceanu/'"
-      >
-        <i-mdi-instagram class="icon" />
-      </LinkIcon>
-      <LinkIcon
-        class="dark link-icon"
-        :url="'https://www.facebook.com/agnes.priseceanu'"
-      >
-        <i-ion-social-facebook class="icon" />
-      </LinkIcon>
-      <LinkIcon
-        class="dark link-icon"
-        :url="'https://www.youtube.com/@agnespriseceanu8418'"
-      >
-        <i-ion-logo-youtube class="icon" />
-      </LinkIcon>
+      <InstagramLink class="dark link-icon" />
+      <FacebookLink class="dark link-icon" />
+      <YoutubeLink class="dark link-icon" />
     </div>
   </aside>
 </template>
 
-<script setup></script>
+<script setup>
+import InstagramLink from "./InstagramLink.vue";
+</script>
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";

@@ -1,5 +1,5 @@
 <template>
-  <a class="link" :href="props.url">
+  <a class="link-icon" :href="props.url">
     <slot></slot>
   </a>
 </template>
@@ -15,12 +15,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-a:link,
-a:visited {
-  text-decoration: none;
-}
-
-.link {
+.link-icon {
   display: flex;
   align-items: center;
   justify-content: center;
