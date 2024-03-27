@@ -39,9 +39,8 @@ const props = defineProps({
   font-size: 0.9375rem;
   color: $secondary-color;
   position: relative;
-  padding: 0.625rem;
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
+  padding: 0.5rem;
+  margin-inline: 1rem;
 }
 
 .link::before {
