@@ -74,11 +74,11 @@ defineEmits(["toggleSideBar"]);
 
 .logo__title {
   font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
+  font-size: $xxl-font-size;
   text-transform: uppercase;
 
   @media screen and (max-width: $desktop-width) {
-    font-size: 1.5625rem;
+    font-size: $xl-font-size;
   }
 }
 
@@ -86,10 +86,10 @@ defineEmits(["toggleSideBar"]);
   position: relative;
   left: 4rem;
   font-family: "Halimun", "Whisper", sans-serif;
-  font-size: 1.25rem;
+  font-size: $l-font-size;
 
   @media screen and (max-width: $desktop-width) {
-    font-size: 0.625rem;
+    font-size: $xs-font-size;
   }
 }
 </style>

@@ -49,6 +49,6 @@ const props = defineProps({
 .video-section-title {
   margin: 0 1rem;
   margin-bottom: 1rem;
-  font-size: $large-font-size;
+  font-size: $l-font-size;
 }
 </style>

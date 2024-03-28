@@ -65,7 +65,7 @@ function onLeave() {
   width: min(50%, 300px);
   text-align: center;
   text-transform: uppercase;
-  font-size: 1.25rem;
+  font-size: $l-font-size;
   color: $primary-color;
   padding: 2em;
   border-bottom: 0.5px solid white;

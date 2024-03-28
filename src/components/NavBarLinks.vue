@@ -36,7 +36,7 @@ const props = defineProps({
 .link {
   font-weight: 500;
   text-transform: capitalize;
-  font-size: 0.9375rem;
+  font-size: $xs-font-size;
   color: $secondary-color;
   position: relative;
   padding: 0.5rem;

@@ -8,11 +8,13 @@ $light-color: white;
 
 $max-width: 1400px;
 
-$extra-small-font-size: 0.09375rem;
-$small-font-size: 1rem;
-$font-size: 1.375rem;
-$large-font-size: 1.5rem;
-$extra-large-font-size: 2rem;
+$xxs-font-size: 0.625rem;
+$xs-font-size: 0.9375rem;
+$s-font-size: 1rem;
+$font-size: 1.125rem;
+$l-font-size: 1.25rem;
+$xl-font-size: 1.5rem;
+$xxl-font-size: 2.5rem;
 
 .max-width {
     max-width: min(100%, $max-width);

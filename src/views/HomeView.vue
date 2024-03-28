@@ -174,12 +174,11 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: $font-size;
   color: $secondary-color;
   background-color: $primary-color;
 
   @media screen and (max-width: $desktop-width) {
-    font-size: $small-font-size;
+    font-size: $s-font-size;
   }
 
   & > * {
@@ -194,6 +193,6 @@ main {
 .feedback-title {
   margin: 0 1rem;
   margin-bottom: 1rem;
-  font-size: $large-font-size;
+  font-size: $l-font-size;
 }
 </style>

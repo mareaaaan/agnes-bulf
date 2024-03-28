@@ -102,17 +102,16 @@ const isTextTruncated = computed(() => props.item.text.length > 200);
   padding: 1rem;
   margin: 0;
   user-select: none;
-  font-size: $small-font-size;
+  font-size: $s-font-size;
 }
 
 .card-carousel--card--footer p {
   padding: 3px 0;
   margin-bottom: 2px;
   user-select: none;
-  font-size: $font-size;
 
   @media screen and (max-width: $mobile-width) {
-    font-size: $small-font-size;
+    font-size: $s-font-size;
   }
 }
 </style>

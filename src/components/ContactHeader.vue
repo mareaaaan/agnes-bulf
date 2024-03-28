@@ -32,7 +32,7 @@ import InstagramLink from "./InstagramLink.vue";
   align-items: center;
   width: 100%;
   color: $secondary-color;
-  font-size: 0.9375rem;
+  font-size: $xs-font-size;
   padding: 0 1rem;
 }
 
