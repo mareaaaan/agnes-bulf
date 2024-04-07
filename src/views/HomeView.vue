@@ -1,5 +1,5 @@
 <template>
-  <NavBar :pages="pages" />
+  <NavBar />
   <main>
     <TextImageSection :is-image-first="false" :max-width="true">
       <template #text>
@@ -155,15 +155,6 @@ import feedbackItems from "src/assets/feedbackData.json";
 import TextImageSection from "src/components/TextImageSection.vue";
 import CardSection from "src/components/CardSection.vue";
 import TextSection from "src/components/TextSection.vue";
-
-const pages = [
-  { name: "Povestea mea", path: "" },
-  { name: "Servicii", path: "" },
-  { name: "Ateliere", path: "" },
-  { name: "Tender Melt", path: "" },
-  { name: "Blog", path: "" },
-  { name: "Resurse", path: "" },
-];
 </script>
 
 <style lang="scss" scoped>

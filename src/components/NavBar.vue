@@ -6,13 +6,7 @@ import SideBar from "./SideBar.vue";
 import ContanctHeader from "./ContactHeader.vue";
 import NavBarLinks from "./NavBarLinks.vue";
 import useScrollUp from "src/composables/scrollUp";
-
-const props = defineProps({
-  pages: {
-    type: Array,
-    required: true,
-  },
-});
+import routes from "src/router/routes";
 
 const emit = defineEmits(["toggleSideBar"]);
 
@@ -30,13 +24,13 @@ function toggleSideBar() {
     <ContanctHeader />
     <PageHeader @toggle-side-bar="toggleSideBar" />
     <SlideFromTop>
-      <NavBarLinks v-show="isScrollUp" :pages="props.pages" />
+      <NavBarLinks v-show="isScrollUp" :pages="routes" />
     </SlideFromTop>
   </nav>
   <Teleport to="body">
     <SideBar
       v-show="isSideBarOpen"
-      :pages="props.pages"
+      :pages="routes"
       @toggle-side-bar="toggleSideBar"
     />
   </Teleport>
