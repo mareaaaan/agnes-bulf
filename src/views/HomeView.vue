@@ -1,5 +1,4 @@
 <template>
-  <NavBar />
   <main>
     <TextImageSection :is-image-first="false" :max-width="true">
       <template #text>
@@ -149,7 +148,6 @@
 </template>
 
 <script setup>
-import NavBar from "src/components/NavBar.vue";
 import CardCarousel from "src/components/CardCarousel.vue";
 import feedbackItems from "src/assets/feedbackData.json";
 import TextImageSection from "src/components/TextImageSection.vue";

@@ -1,12 +1,8 @@
 <template>
   <div class="links-container">
-    <a
-      v-for="(page, index) in props.pages"
-      :key="index"
-      class="link"
-      :href="page.path"
-      >{{ page.name }}</a
-    >
+    <li v-for="(page, index) in props.pages" :key="index" class="link">
+      <RouterLink :to="{ path: page.path }">{{ page.name }} </RouterLink>
+    </li>
   </div>
 </template>
 
@@ -34,13 +30,18 @@ const props = defineProps({
 }
 
 .link {
-  font-weight: 500;
-  text-transform: capitalize;
-  font-size: $xs-font-size;
-  color: $secondary-color;
+  list-style: none;
   position: relative;
   padding: 0.5rem;
   margin-inline: 1rem;
+}
+
+.link > * {
+  text-decoration: none;
+  font-size: $xs-font-size;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: $secondary-color;
 }
 
 .link::before {

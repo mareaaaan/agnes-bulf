@@ -5,13 +5,9 @@
         class="position-top-right light"
         @click="$emit('toggleSideBar')"
       />
-      <a
-        v-for="(page, index) in props.pages"
-        :key="index"
-        class="link"
-        :href="page.path"
-        >{{ page.name }}
-      </a>
+      <li v-for="(page, index) in props.pages" :key="index" class="link">
+        <RouterLink :to="{ path: page.path }">{{ page.name }} </RouterLink>
+      </li>
       <div class="social-links">
         <InstagramLink class="light link-icon" />
         <FacebookLink class="light link-icon" />
@@ -61,14 +57,19 @@ function onLeave() {
 }
 
 .link {
-  font-weight: 500;
+  list-style: none;
   width: min(50%, 300px);
   text-align: center;
-  text-transform: uppercase;
-  font-size: $l-font-size;
-  color: $primary-color;
   padding: 2em;
   border-bottom: 0.5px solid white;
+}
+
+.link > * {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: $l-font-size;
+  font-weight: 500;
+  color: $primary-color;
 }
 
 .link:first-of-type {

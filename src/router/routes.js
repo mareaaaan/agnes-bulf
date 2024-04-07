@@ -8,14 +8,30 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/servicii",
+    path: "/servicii/",
     name: "Servicii",
     component: ServiciiView,
   },
-  { name: "Ateliere", path: "/" },
-  { name: "Tender Melt", path: "/" },
-  { name: "Blog", path: "/" },
-  { name: "Resurse", path: "/" },
+  {
+    name: "Ateliere",
+    path: "/",
+    component: HomeView,
+  },
+  {
+    name: "Tender Melt",
+    path: "/",
+    component: HomeView,
+  },
+  {
+    name: "Blog",
+    path: "/",
+    component: HomeView,
+  },
+  {
+    name: "Resurse",
+    path: "/",
+    component: HomeView,
+  },
 ];
 
 export default routes;
