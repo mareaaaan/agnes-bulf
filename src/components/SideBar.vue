@@ -28,14 +28,17 @@ const props = defineProps({
   },
 });
 
+var mainDisplayValue = "";
+
 defineEmits(["toggleSideBar"]);
 
 function onAfterEnter() {
+  mainDisplayValue = document.querySelector("main").style.display;
   document.querySelector("main").style.display = "none";
 }
 
 function onLeave() {
-  document.querySelector("main").style.display = "flex";
+  document.querySelector("main").style.display = mainDisplayValue;
 }
 </script>
 
