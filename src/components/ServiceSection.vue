@@ -2,6 +2,7 @@
   <section class="section max-width-container">
     <div class="section-grid max-width">
       <slot></slot>
+      <div class="section__button">Programează o ședință</div>
     </div>
   </section>
 </template>
@@ -35,6 +36,12 @@
 
 .section-grid > * {
   grid-column: 1 / -1;
+}
+
+@media (width >= $mobile-width) {
+  .section__button {
+    grid-column: 1 / 5;
+  }
 }
 
 :slotted(.section__title) {
