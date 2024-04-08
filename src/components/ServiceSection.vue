@@ -34,13 +34,28 @@
   gap: 1rem;
 }
 
+.section-grid > :slotted(*),
 .section-grid > * {
   grid-column: 1 / -1;
 }
 
-@media (width >= $mobile-width) {
-  .section__button {
+.section__button {
+  @media (width >= $mobile-width) {
     grid-column: 1 / 5;
+  }
+}
+
+:slotted(.section__title) {
+  @media (width >= $mobile-width) {
+    grid-row: 1 / 2;
+    grid-column: 7 / 13;
+  }
+}
+
+:slotted(.section__image) {
+  @media (width >= $mobile-width) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 7;
   }
 }
 

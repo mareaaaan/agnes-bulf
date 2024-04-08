@@ -33,8 +33,22 @@
   gap: 1rem;
 }
 
-.section-grid > * {
+.section-grid > :slotted(*) {
   grid-column: 1 / -1;
+}
+
+:slotted(.section__title) {
+  @media (width >= $mobile-width) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 7;
+  }
+}
+
+:slotted(.section__image) {
+  @media (width >= $mobile-width) {
+    grid-row: 1 / 2;
+    grid-column: 7 / 13;
+  }
 }
 
 :slotted(.section__title) {

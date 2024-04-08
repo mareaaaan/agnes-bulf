@@ -73,32 +73,7 @@ import ServiceIntroSection from "src/components/ServiceIntroSection.vue";
 </script>
 
 <style lang="scss" scoped>
-* {
-  box-sizing: border-box;
-}
-
 .section * {
   border: 1px solid black;
-}
-
-.max-width {
-  width: 100%;
-  max-width: 1024px;
-  padding: 1em;
-}
-
-.max-width-container {
-  display: flex;
-  justify-content: center;
-}
-
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
-}
-
-.section-grid > * {
-  grid-column: 1 / -1;
 }
 </style>
