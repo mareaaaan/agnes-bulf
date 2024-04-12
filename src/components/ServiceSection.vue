@@ -1,9 +1,7 @@
 <template>
-  <section class="section max-width-container">
-    <div class="section-grid max-width">
-      <slot></slot>
-      <div class="section__button">Programează o ședință</div>
-    </div>
+  <section class="section section-grid">
+    <slot></slot>
+    <div class="section__button">Programează o ședință</div>
   </section>
 </template>
 
@@ -14,18 +12,14 @@
 * {
   box-sizing: border-box;
 }
+
+// LAYOUT
 .section * {
   border: 1px solid black;
 }
-.max-width {
-  width: 100%;
-  max-width: 1024px;
-  padding: 1em;
-}
 
-.max-width-container {
-  display: flex;
-  justify-content: center;
+.section {
+  padding: 1rem;
 }
 
 .section-grid {
@@ -58,6 +52,8 @@
     grid-column: 1 / 7;
   }
 }
+
+// STYLES
 
 :slotted(.section__title) {
   font-size: $l-font-size;

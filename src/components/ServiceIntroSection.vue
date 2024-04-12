@@ -1,8 +1,6 @@
 <template>
-  <section class="section section--intro max-width-container">
-    <div class="section-grid max-width">
-      <slot></slot>
-    </div>
+  <section class="section section--intro section-grid">
+    <slot></slot>
   </section>
 </template>
 
@@ -16,15 +14,9 @@
 .section * {
   border: 1px solid black;
 }
-.max-width {
-  width: 100%;
-  max-width: 1024px;
-  padding: 1em;
-}
 
-.max-width-container {
-  display: flex;
-  justify-content: center;
+.section {
+  padding: 1rem;
 }
 
 .section-grid {
@@ -50,6 +42,8 @@
     grid-column: 7 / 13;
   }
 }
+
+// STYLES
 
 :slotted(.section__title) {
   font-size: $xl-font-size;

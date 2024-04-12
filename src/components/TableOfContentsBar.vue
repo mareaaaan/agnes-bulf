@@ -39,7 +39,6 @@ const topInPixels = computed(() => {
 .max-width {
   width: 100%;
   max-width: 1024px;
-  padding-inline: 1em;
 }
 
 .max-width-container {
@@ -70,6 +69,7 @@ const topInPixels = computed(() => {
 // STYLES
 
 .section {
+  padding-inline: 1rem;
   background-color: $light-color;
 }
 </style>
