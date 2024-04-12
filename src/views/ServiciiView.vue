@@ -1,4 +1,5 @@
 <template>
+  <TableOfContentsBar v-if="!isLargeScreen" />
   <main class="main">
     <ServiceIntroSection>
       <div class="section__image">Imagine</div>
@@ -70,6 +71,10 @@
 <script setup>
 import ServiceSection from "src/components/ServiceSection.vue";
 import ServiceIntroSection from "src/components/ServiceIntroSection.vue";
+import TableOfContentsBar from "src/components/TableOfContentsBar.vue";
+import { useMediaQuery } from "@vueuse/core";
+
+const isLargeScreen = useMediaQuery("(width >= 600px)");
 </script>
 
 <style lang="scss" scoped>
