@@ -28,7 +28,7 @@
         </ServiceSection>
 
         <ServiceSection>
-          <h2 class="section__title">Psihoterapie de cuplu</h2>
+          <h3 class="section__title">Psihoterapie de cuplu</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
             Fiecare demers terapeutic se bazează pe principiul
@@ -39,7 +39,7 @@
         </ServiceSection>
 
         <ServiceSection>
-          <h2 class="section__title">Psihoterapie Familie</h2>
+          <h3 class="section__title">Psihoterapie Familie</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
             Fiecare demers terapeutic se bazează pe principiul
@@ -48,7 +48,7 @@
         </ServiceSection>
 
         <ServiceSection>
-          <h2 class="section__title">Evaluare psihologică</h2>
+          <h3 class="section__title">Evaluare psihologică</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
             Pellentesque nec faucibus neque, vel vulputate massa. Nam dui odio,
@@ -58,7 +58,7 @@
         </ServiceSection>
 
         <ServiceSection>
-          <h2 class="section__title">Club de carte</h2>
+          <h3 class="section__title">Club de carte</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
             Maecenas pulvinar, elit at dapibus condimentum, quam felis varius
@@ -69,6 +69,7 @@
           </p>
         </ServiceSection>
       </main>
+      <TableOfContents v-if="isLargeScreen" class="table-of-contents" />
     </div>
   </div>
 </template>
@@ -77,17 +78,20 @@
 import ServiceSection from "src/components/ServiceSection.vue";
 import ServiceIntroSection from "src/components/ServiceIntroSection.vue";
 import TableOfContentsBar from "src/components/TableOfContentsBar.vue";
+import TableOfContents from "src/components/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/_globals.scss";
+
 * {
   box-sizing: border-box;
 }
 
-// STYLES
+// LAYOUT
 
 .section * {
   border: 1px solid black;
@@ -111,5 +115,15 @@ const isLargeScreen = useMediaQuery("(width >= 600px)");
 
 .main {
   grid-column: 1 / -1;
+
+  @media (width >= $mobile-width) {
+    grid-column: 1 / 10;
+  }
+}
+
+.table-of-contents {
+  @media (width >= $mobile-width) {
+    grid-column: 10 / 13;
+  }
 }
 </style>
