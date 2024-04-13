@@ -15,10 +15,6 @@
   border: 1px solid black;
 }
 
-.section {
-  padding: 1rem;
-}
-
 .section-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -48,5 +44,15 @@
 :slotted(.section__title) {
   font-size: $xl-font-size;
   font-weight: bold;
+  scroll-margin-top: 7rem;
+
+  @media (width >= $mobile-width) {
+    scroll-margin-top: 12rem;
+  }
+}
+
+.section {
+  padding-inline: 1rem;
+  padding-block: 2rem;
 }
 </style>

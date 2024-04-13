@@ -2,12 +2,21 @@
   <aside ref="tableOfContents" class="table-of-contents">
     <div class="table-of-contents--hierarchy">
       <h3>Pe această pagină</h3>
+      <ul>
+        <li v-for="(header, index) in props.headers" :key="header">
+          <a :href="`#${index}`">{{ header }}</a>
+        </li>
+      </ul>
     </div>
   </aside>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
+
+const props = defineProps({
+  headers: Array,
+});
 
 const tableOfContents = ref(null);
 

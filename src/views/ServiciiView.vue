@@ -5,7 +5,7 @@
       <main class="main">
         <ServiceIntroSection>
           <div class="section__image">Imagine</div>
-          <h2 class="section__title">Serviciile mele</h2>
+          <h2 id="0" class="section__title">Serviciile mele</h2>
           <p class="section__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
             ullamcorper metus vel auctor ullamcorper. Fusce quis purus
@@ -17,7 +17,7 @@
         </ServiceIntroSection>
 
         <ServiceSection>
-          <h3 class="section__title">Psihoterapie individuala</h3>
+          <h3 id="1" class="section__title">Psihoterapie individuala</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
             Fiecare demers terapeutic se bazează pe principiul
@@ -28,7 +28,7 @@
         </ServiceSection>
 
         <ServiceSection>
-          <h3 class="section__title">Psihoterapie de cuplu</h3>
+          <h3 id="2" class="section__title">Psihoterapie de cuplu</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
             Fiecare demers terapeutic se bazează pe principiul
@@ -39,7 +39,7 @@
         </ServiceSection>
 
         <ServiceSection>
-          <h3 class="section__title">Psihoterapie Familie</h3>
+          <h3 id="3" class="section__title">Psihoterapie Familie</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
             Fiecare demers terapeutic se bazează pe principiul
@@ -48,7 +48,7 @@
         </ServiceSection>
 
         <ServiceSection>
-          <h3 class="section__title">Evaluare psihologică</h3>
+          <h3 id="4" class="section__title">Evaluare psihologică</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
             Pellentesque nec faucibus neque, vel vulputate massa. Nam dui odio,
@@ -58,10 +58,10 @@
         </ServiceSection>
 
         <ServiceSection>
-          <h3 class="section__title">Club de carte</h3>
+          <h3 id="5" class="section__title">Club de carte</h3>
           <div class="section__image">Imagine</div>
           <p class="section__text">
-            Maecenas pulvinar, elit at dapibus condimentum, quam felis varius
+            Maecens pulvinar, elit at dapibus condimentum, quam felis varius
             mauris, non cursus purus diam in magna. Curabitur sollicitudin, erat
             ac eleifend scelerisque, massa felis volutpat risus, ut pretium leo
             dui maximus sem. Suspendisse euismod lectus quis leo tristique, et
@@ -69,7 +69,11 @@
           </p>
         </ServiceSection>
       </main>
-      <TableOfContents v-if="isLargeScreen" class="table-of-contents" />
+      <TableOfContents
+        v-if="isLargeScreen"
+        class="table-of-contents"
+        :headers="headers"
+      />
     </div>
   </div>
 </template>
@@ -82,6 +86,15 @@ import TableOfContents from "src/components/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
+
+const headers = [
+  "Serviciile mele",
+  "Psihoterapie individuala",
+  "Psihoterapie de cuplu",
+  "Psihoterapie Familie",
+  "Evaluare psihologică",
+  "Club de carte",
+];
 </script>
 
 <style lang="scss" scoped>
