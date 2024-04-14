@@ -45,6 +45,11 @@ onMounted(() => {
 
 // STYLES
 
+.table-of-contents {
+  padding-inline-end: 1rem;
+  padding-block-start: 2rem;
+}
+
 .hieararchy-title {
   font-size: $font-size;
   margin-bottom: 0.625rem;

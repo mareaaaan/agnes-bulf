@@ -76,7 +76,7 @@ onMounted(() => {
 .header-link-container {
   font-size: $s-font-size;
   border-left: 1px solid $secondary-color;
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .header-link {

@@ -4,7 +4,12 @@
     <div class="grid max-width">
       <main class="main">
         <ServiceIntroSection>
-          <div class="section__image">Imagine</div>
+          <div class="section__image">
+            <img
+              src="../assets/office.jpg"
+              alt="Poza cu Agnes zambind pe un fotoliu"
+            />
+          </div>
           <h2 id="0" class="section__title">Serviciile mele</h2>
           <p class="section__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
@@ -18,7 +23,12 @@
 
         <ServiceSection>
           <h3 id="1" class="section__title">Psihoterapie individuala</h3>
-          <div class="section__image">Imagine</div>
+          <div class="section__image">
+            <img
+              src="../assets/individual-therapy.jpg"
+              alt="Poza cu doua fotolii, o masuta si un dulap cu carti"
+            />
+          </div>
           <p class="section__text">
             Fiecare demers terapeutic se bazează pe principiul
             confidențialității și al sincerității. Psihoterapia individuală este
@@ -29,7 +39,12 @@
 
         <ServiceSection>
           <h3 id="2" class="section__title">Psihoterapie de cuplu</h3>
-          <div class="section__image">Imagine</div>
+          <div class="section__image">
+            <img
+              src="../assets/couple-therapy.jpg"
+              alt="Poza cu doua maini stranse pe un fundal cu un copac"
+            />
+          </div>
           <p class="section__text">
             Fiecare demers terapeutic se bazează pe principiul
             confidențialității și al sincerității. Psihoterapia de cuplu se
@@ -40,7 +55,12 @@
 
         <ServiceSection>
           <h3 id="3" class="section__title">Psihoterapie Familie</h3>
-          <div class="section__image">Imagine</div>
+          <div class="section__image">
+            <img
+              src="../assets/family-therapy.jpg"
+              alt="Poza cu doua maini stranse pe un fundal cu un copac"
+            />
+          </div>
           <p class="section__text">
             Fiecare demers terapeutic se bazează pe principiul
             confidențialității și al sincerității.
@@ -49,7 +69,12 @@
 
         <ServiceSection>
           <h3 id="4" class="section__title">Evaluare psihologică</h3>
-          <div class="section__image">Imagine</div>
+          <div class="section__image">
+            <img
+              src="../assets/evaluare-psihologica.jpg"
+              alt="Poza cu o presoana dand mai departe o carte portocalie"
+            />
+          </div>
           <p class="section__text">
             Pellentesque nec faucibus neque, vel vulputate massa. Nam dui odio,
             tincidunt in purus vel, cursus interdum quam. Ut purus odio, ornare
@@ -59,7 +84,12 @@
 
         <ServiceSection>
           <h3 id="5" class="section__title">Club de carte</h3>
-          <div class="section__image">Imagine</div>
+          <div class="section__image">
+            <img
+              src="../assets/book-club.jpg"
+              alt="Poza cu o presoana dand mai departe o carte portocalie"
+            />
+          </div>
           <p class="section__text">
             Maecens pulvinar, elit at dapibus condimentum, quam felis varius
             mauris, non cursus purus diam in magna. Curabitur sollicitudin, erat

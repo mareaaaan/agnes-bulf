@@ -65,6 +65,11 @@
   text-align: justify;
 }
 
+:slotted(.section__image) img {
+  max-width: 100%;
+  display: block;
+}
+
 .section {
   padding-inline: 1rem;
   padding-block: 2rem;

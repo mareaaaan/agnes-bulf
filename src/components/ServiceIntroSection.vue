@@ -39,6 +39,11 @@
   }
 }
 
+:slotted(.section__image) img {
+  max-width: 100%;
+  display: block;
+}
+
 // STYLES
 
 :slotted(.section__title) {
