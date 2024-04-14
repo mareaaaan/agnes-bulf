@@ -61,6 +61,10 @@
   }
 }
 
+:slotted(.section__text) {
+  text-align: justify;
+}
+
 .section {
   padding-inline: 1rem;
   padding-block: 2rem;
