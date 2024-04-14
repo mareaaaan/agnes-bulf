@@ -18,7 +18,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { useMediaQuery } from "@vueuse/core";
 
 const props = defineProps({
   // eslint-disable-next-line vue/require-default-prop
@@ -27,18 +28,27 @@ const props = defineProps({
 
 const currentSection = ref(0);
 
+const isLargeScreen = useMediaQuery("(width >= 600px)");
+
+const rootMargin = computed(() => {
+  if (isLargeScreen.value) {
+    return "0px 0px -70% 0px";
+  } else {
+    return "0px 0px -70% 0px";
+  }
+});
+
 onMounted(() => {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           currentSection.value = entry.target.getAttribute("id");
-          console.log(currentSection.value);
         }
       });
     },
     {
-      rootMargin: "0px 0px -90% 0px",
+      rootMargin: rootMargin.value,
     },
   );
 

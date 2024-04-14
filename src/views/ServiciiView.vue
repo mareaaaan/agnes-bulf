@@ -1,5 +1,5 @@
 <template>
-  <TableOfContentsBar v-if="!isLargeScreen" />
+  <TableOfContentsBar v-if="!isLargeScreen" :headers="headers" />
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">

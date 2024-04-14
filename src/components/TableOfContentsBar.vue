@@ -1,13 +1,17 @@
 <template>
   <section ref="section" class="section section--intro max-width-container">
     <div class="section-grid max-width">
-      <p class="expand-button">Pe această pagină ></p>
+      <button class="expand-button" @click="toggleExpandHierarchy()">
+        Pe această pagină >
+      </button>
+      <PageHierarchy v-if="isExpanded" :headers="props.headers" />
     </div>
   </section>
 </template>
 
 <script setup>
 import { useElementBounding } from "@vueuse/core";
+import PageHierarchy from "./PageHierarchy.vue";
 import { ref, computed } from "vue";
 
 const section = ref(null);
@@ -17,6 +21,17 @@ const { top } = useElementBounding(section);
 const topInPixels = computed(() => {
   return top.value + "px";
 });
+
+const props = defineProps({
+  // eslint-disable-next-line vue/require-default-prop
+  headers: Array,
+});
+
+const isExpanded = ref(false);
+
+function toggleExpandHierarchy() {
+  isExpanded.value = !isExpanded.value;
+}
 </script>
 
 <style lang="scss" scoped>
@@ -56,20 +71,25 @@ const topInPixels = computed(() => {
   grid-column: 1 / -1;
 }
 
-.expand-button {
-  grid-column: 7 / 13;
-  cursor: pointer;
-}
-
-.expand-button {
-  text-align: right;
-  font-size: $s-font-size;
-}
-
 // STYLES
 
 .section {
   padding-inline: 1rem;
   background-color: $light-color;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.expand-button {
+  text-align: right;
+  font-size: $s-font-size;
 }
 </style>
