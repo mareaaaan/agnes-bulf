@@ -74,7 +74,7 @@ defineEmits(["toggleSideBar"]);
 
 .logo__title {
   font-family: "Playfair Display", serif;
-  font-size: $xxl-font-size;
+  font-size: $xxxl-font-size;
   text-transform: uppercase;
 
   @media screen and (max-width: $desktop-width) {

@@ -29,6 +29,7 @@
   @media (width >= $mobile-width) {
     grid-row: 1 / 2;
     grid-column: 1 / 7;
+    align-self: end;
   }
 }
 
@@ -53,6 +54,8 @@
 
   @media (width >= $mobile-width) {
     scroll-margin-top: 12rem;
+    text-align: start;
+    font-size: $xxl-font-size;
   }
 }
 
