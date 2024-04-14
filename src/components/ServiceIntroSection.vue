@@ -67,4 +67,11 @@
   padding-inline: 1rem;
   padding-block: 2rem;
 }
+
+:slotted(.section__image) img {
+  border: 4px solid white;
+  border-radius: 0.5rem;
+
+  outline: 1px solid #bdb9ac;
+}
 </style>

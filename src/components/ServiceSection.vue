@@ -50,6 +50,11 @@
   }
 }
 
+:slotted(.section__image) img {
+  max-width: 100%;
+  display: block;
+}
+
 // STYLES
 
 :slotted(.section__title) {
@@ -68,13 +73,15 @@
   text-align: justify;
 }
 
-:slotted(.section__image) img {
-  max-width: 100%;
-  display: block;
-}
-
 .section {
   padding-inline: 1rem;
   padding-block: 2rem;
+}
+
+:slotted(.section__image) img {
+  border: 4px solid white;
+  border-radius: 0.5rem;
+
+  outline: 1px solid #bdb9ac;
 }
 </style>
