@@ -15,7 +15,7 @@
 
 // LAYOUT
 .section * {
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
 .section-grid {

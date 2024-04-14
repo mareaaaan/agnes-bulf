@@ -49,7 +49,7 @@ function toggleExpandHierarchy() {
 }
 
 .section * {
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 .max-width {
   width: 100%;

@@ -4,14 +4,10 @@
       <li
         v-for="(header, index) in props.headers"
         :key="header"
+        :class="{ active: index == currentSection }"
         class="header-link-container"
       >
-        <a
-          class="header-link"
-          :class="{ active: index == currentSection }"
-          :href="`#${index}`"
-          >{{ header }}</a
-        >
+        <a class="header-link" :href="`#${index}`">{{ header }}</a>
       </li>
     </ul>
   </div>
@@ -79,13 +75,16 @@ onMounted(() => {
   padding-left: 1em;
 }
 
+.header-link-container.active {
+  border-color: black;
+  border-left-width: 2px;
+  & .header-link {
+    font-weight: bold;
+  }
+}
+
 .header-link {
   text-decoration: none;
   color: $secondary-color;
-}
-
-.header-link.active {
-  font-weight: bold;
-  border-color: black;
 }
 </style>
