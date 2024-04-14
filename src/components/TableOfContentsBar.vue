@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="section section--intro max-width-container">
+  <section ref="section" class="section max-width-container">
     <div class="section-grid max-width">
       <button class="expand-button" @click="toggleExpandHierarchy()">
         Pe această pagină >

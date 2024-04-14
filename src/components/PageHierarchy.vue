@@ -67,6 +67,7 @@ onMounted(() => {
 
 .page-hierarchy {
   text-align: start;
+  padding-block-end: 1rem;
 }
 
 .header-link-container {

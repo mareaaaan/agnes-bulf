@@ -30,6 +30,7 @@
 }
 
 .section__button {
+  border: 1px solid black;
   @media (width >= $mobile-width) {
     grid-column: 1 / 5;
   }
