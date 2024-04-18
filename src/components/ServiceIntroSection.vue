@@ -1,5 +1,5 @@
 <template>
-  <section class="section section--intro section-grid">
+  <section class="service-section section--intro section-grid">
     <slot></slot>
   </section>
 </template>
@@ -11,7 +11,7 @@
 * {
   box-sizing: border-box;
 }
-.section * {
+.service-section * {
   // border: 1px solid black;
 }
 
@@ -50,10 +50,8 @@
 :slotted(.section__title) {
   font-size: $xl-font-size;
   font-weight: bold;
-  scroll-margin-top: 7rem;
 
   @media (width >= $mobile-width) {
-    scroll-margin-top: 12rem;
     text-align: start;
     font-size: $xxl-font-size;
   }
@@ -63,9 +61,15 @@
   text-align: justify;
 }
 
-.section {
+.service-section {
   padding-inline: 1rem;
-  padding-block: 2rem;
+  padding-block: 3rem;
+
+  scroll-margin-top: 7rem;
+
+  @media (width >= $mobile-width) {
+    scroll-margin-top: 10rem;
+  }
 }
 
 :slotted(.section__image) img {

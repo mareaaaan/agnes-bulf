@@ -3,14 +3,14 @@
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">
-        <ServiceIntroSection>
+        <ServiceIntroSection id="0">
           <div class="section__image">
             <img
               src="../assets/office.jpg"
               alt="Poza cu Agnes zambind pe un fotoliu"
             />
           </div>
-          <h2 id="0" class="section__title">Serviciile mele</h2>
+          <h2 class="section__title">Serviciile mele</h2>
           <p class="section__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
             ullamcorper metus vel auctor ullamcorper. Fusce quis purus
@@ -21,8 +21,8 @@
           </p>
         </ServiceIntroSection>
 
-        <ServiceSection>
-          <h3 id="1" class="section__title">Psihoterapie individuala</h3>
+        <ServiceSection id="1">
+          <h3 class="section__title">Psihoterapie individuala</h3>
           <div class="section__image">
             <img
               src="../assets/individual-therapy.jpg"
@@ -37,8 +37,8 @@
           </p>
         </ServiceSection>
 
-        <ServiceSection>
-          <h3 id="2" class="section__title">Psihoterapie de cuplu</h3>
+        <ServiceSection id="2">
+          <h3 class="section__title">Psihoterapie de cuplu</h3>
           <div class="section__image">
             <img
               src="../assets/couple-therapy.jpg"
@@ -53,8 +53,8 @@
           </p>
         </ServiceSection>
 
-        <ServiceSection>
-          <h3 id="3" class="section__title">Psihoterapie Familie</h3>
+        <ServiceSection id="3">
+          <h3 class="section__title">Psihoterapie Familie</h3>
           <div class="section__image">
             <img
               src="../assets/family-therapy.jpg"
@@ -67,8 +67,8 @@
           </p>
         </ServiceSection>
 
-        <ServiceSection>
-          <h3 id="4" class="section__title">Evaluare psihologică</h3>
+        <ServiceSection id="4">
+          <h3 class="section__title">Evaluare psihologică</h3>
           <div class="section__image">
             <img
               src="../assets/evaluare-psihologica.jpg"
@@ -82,8 +82,8 @@
           </p>
         </ServiceSection>
 
-        <ServiceSection>
-          <h3 id="5" class="section__title">Club de carte</h3>
+        <ServiceSection id="5">
+          <h3 class="section__title">Club de carte</h3>
           <div class="section__image">
             <img
               src="../assets/book-club.jpg"

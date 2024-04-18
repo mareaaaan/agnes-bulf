@@ -1,5 +1,5 @@
 <template>
-  <section class="section section-grid">
+  <section class="service-section section-grid">
     <slot></slot>
     <div class="section__button">Programează o ședință</div>
   </section>
@@ -14,7 +14,7 @@
 }
 
 // LAYOUT
-.section * {
+.service-section * {
   // border: 1px solid black;
 }
 
@@ -61,10 +61,8 @@
 :slotted(.section__title) {
   font-size: $l-font-size;
   font-weight: bold;
-  scroll-margin-top: 7rem;
 
   @media (width >= $mobile-width) {
-    scroll-margin-top: 12rem;
     text-align: start;
     font-size: $xxl-font-size;
   }
@@ -74,9 +72,15 @@
   text-align: justify;
 }
 
-.section {
+.service-section {
   padding-inline: 1rem;
   padding-block: 2rem;
+
+  scroll-margin-top: 7rem;
+
+  @media (width >= $mobile-width) {
+    scroll-margin-top: 10rem;
+  }
 }
 
 :slotted(.section__image) img {

@@ -28,9 +28,9 @@ const isLargeScreen = useMediaQuery("(width >= 600px)");
 
 const rootMargin = computed(() => {
   if (isLargeScreen.value) {
-    return "0px 0px -70% 0px";
+    return "-20% 0px -70% 0px";
   } else {
-    return "0px 0px -70% 0px";
+    return "-20% 0px -50% 0px";
   }
 });
 
@@ -48,7 +48,7 @@ onMounted(() => {
     },
   );
 
-  document.querySelectorAll(".section__title").forEach((section) => {
+  document.querySelectorAll(".service-section").forEach((section) => {
     observer.observe(section);
   });
 });
