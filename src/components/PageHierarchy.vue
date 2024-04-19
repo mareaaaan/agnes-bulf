@@ -28,7 +28,7 @@ const isLargeScreen = useMediaQuery("(width >= 600px)");
 
 const rootMargin = computed(() => {
   if (isLargeScreen.value) {
-    return "-20% 0px -70% 0px";
+    return "-30% 0px -60% 0px";
   } else {
     return "-20% 0px -50% 0px";
   }
