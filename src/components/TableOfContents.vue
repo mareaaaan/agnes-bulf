@@ -25,7 +25,8 @@ const topInPixels = computed(() => {
 });
 
 onMounted(() => {
-  top.value = tableOfContents.value.getBoundingClientRect().top;
+  top.value =
+    tableOfContents.value.getBoundingClientRect().top + window.scrollY;
 });
 </script>
 

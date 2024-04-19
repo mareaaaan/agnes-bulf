@@ -19,7 +19,7 @@ const section = ref(null);
 const { top } = useElementBounding(section);
 
 const topInPixels = computed(() => {
-  return top.value + "px";
+  return top.value + window.scrollY + "px";
 });
 
 const props = defineProps({
