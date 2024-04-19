@@ -30,17 +30,14 @@ const props = defineProps({
   },
 });
 
-var mainDisplayValue = "";
-
 defineEmits(["toggleSideBar"]);
 
 function onAfterEnter() {
-  mainDisplayValue = document.querySelector("main").style.display;
-  document.querySelector("main").style.display = "none";
+  document.querySelector("body").style.overflow = "hidden";
 }
 
 function onLeave() {
-  document.querySelector("main").style.display = mainDisplayValue;
+  document.querySelector("body").style.overflow = "auto";
 }
 </script>
 
