@@ -1,7 +1,12 @@
 <template>
   <section class="service-section section-grid">
     <slot></slot>
-    <div class="section__button">Programează o ședință</div>
+    <BaseButton
+      class="section__button"
+      href="https://ig.me/m/agnesmariapriseceanu"
+      >Programează o ședință</BaseButton
+    >
+    <!-- <div class="section__button">Programează o ședință</div> -->
   </section>
 </template>
 
@@ -30,7 +35,6 @@
 }
 
 .section__button {
-  border: 1px solid black;
   @media (width >= $mobile-width) {
     grid-column: 1 / 5;
   }
