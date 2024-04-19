@@ -6,7 +6,9 @@
         @click="$emit('toggleSideBar')"
       />
       <li v-for="(page, index) in props.pages" :key="index" class="link">
-        <RouterLink :to="{ path: page.path }">{{ page.name }} </RouterLink>
+        <RouterLink :to="{ path: page.path }" @click="$emit('toggleSideBar')"
+          >{{ page.name }}
+        </RouterLink>
       </li>
       <div class="social-links">
         <InstagramLink class="light link-icon" />
