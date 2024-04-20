@@ -1,16 +1,12 @@
 <template>
-  <section class="embedded-video-section">
-    <h2 class="strong video-section-title">
-      Urmărește podcasturile la care am participat
-    </h2>
-    <div class="wrapper" :class="{ 'max-width': props.maxWidth }">
-      <div class="videos-container">
-        <EmbeddedVideo
-          v-for="(videoUrl, index) in props.videos"
-          :key="index"
-          :url="videoUrl"
-        />
-      </div>
+  <section class="service-section section-grid">
+    <h2 class="section__title">Urmărește podcasturile la care am participat</h2>
+    <div class="videos-container">
+      <EmbeddedVideo
+        v-for="(videoUrl, index) in props.videos"
+        :key="index"
+        :url="videoUrl"
+      />
     </div>
   </section>
 </template>
@@ -25,30 +21,44 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-
-.embedded-video-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.wrapper {
-  width: 100%;
+* {
+  box-sizing: border-box;
 }
 
-.videos-container {
-  width: 100%;
+// LAYOUT
+.section-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
 
-  @media screen and (max-width: $tablet-width) {
-    grid-template-columns: 1fr;
+.section-grid > :slotted(*),
+.section-grid > * {
+  grid-column: 1 / -1;
+}
+
+// STYLES
+
+.section__title {
+  font-size: $l-font-size;
+  font-weight: bold;
+
+  @media (width >= $mobile-width) {
+    font-size: $xl-font-size;
   }
 }
 
-.video-section-title {
-  margin: 0 1rem;
-  margin-bottom: 1rem;
-  font-size: $l-font-size;
+.service-section {
+  padding-inline: 1rem;
+  padding-block: 2rem;
+}
+
+.videos-container {
+  display: grid;
+  gap: 1rem;
+
+  @media (width >= $mobile-width) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>

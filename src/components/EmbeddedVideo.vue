@@ -1,8 +1,6 @@
 <template>
   <div class="video-container">
     <iframe
-      width="100%"
-      height="100%"
       :src="props.url"
       title="YouTube video player"
       frameborder="0"
@@ -25,7 +23,12 @@ const props = defineProps({
 <style lang="scss" scoped>
 .video-container {
   aspect-ratio: 16/9;
-  min-width: 0;
-  margin: 1rem;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    display: block;
+  }
 }
 </style>

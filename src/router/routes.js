@@ -1,5 +1,6 @@
 import HomeView from "../views/HomeView.vue";
 import ServiciiView from "../views/ServiciiView.vue";
+import PovesteaMeaView from "../views/PovesteaMeaView.vue";
 
 const routes = [
   {
@@ -14,8 +15,8 @@ const routes = [
   },
   {
     name: "Ateliere",
-    path: "/",
-    component: HomeView,
+    path: "/povestea_mea/",
+    component: PovesteaMeaView,
   },
   {
     name: "Tender Melt",

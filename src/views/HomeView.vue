@@ -31,8 +31,8 @@
       </template>
     </TextImageSection>
 
-    <CardSection :max-width="true">
-      <template #text>
+    <CardSection>
+      <div class="section__text">
         <p>
           Sunt psiholog și psihoterapeut. M-am format profesional ca psiholog
           clinician absolvind Facultatea de Psihologie și Științele Educației,
@@ -42,7 +42,7 @@
           psihoterapia familiei organizat de Asociația Multiculturală de
           Psihologie și Psihoterapie.
         </p>
-      </template>
+      </div>
     </CardSection>
 
     <TextImageSection

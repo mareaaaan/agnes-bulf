@@ -1,37 +1,46 @@
 <template>
-  <section class="text-container">
-    <div
-      v-motion-fade-visible-once
-      class="wrapper"
-      :class="{ 'max-width': props.maxWidth }"
-    >
-      <slot name="text"></slot>
-    </div>
+  <section class="service-section section-grid">
+    <slot></slot>
   </section>
 </template>
 
-<script setup>
-const props = defineProps({
-  maxWidth: Boolean,
-});
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  transition: 1.2s;
-}
-.text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+* {
+  box-sizing: border-box;
 }
 
-:slotted(p) {
-  max-width: 80%;
+// LAYOUT
+.service-section * {
+  // border: 1px solid black;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.section-grid > :slotted(*),
+.section-grid > * {
+  grid-column: 1 / -1;
+}
+
+// STYLES
+:slotted(.section__text) {
+  text-align: center;
+  font-size: $xs-font-size;
+
+  @media (width >= $tablet-width) {
+    text-align: start;
+    font-size: $font-size;
+  }
+}
+
+.service-section {
+  padding-inline: 1rem;
+  padding-block: 2rem;
 }
 </style>

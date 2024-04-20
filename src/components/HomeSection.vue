@@ -1,11 +1,6 @@
 <template>
   <section class="service-section section-grid">
     <slot></slot>
-    <BaseButton
-      class="section__button"
-      href="https://ig.me/m/agnesmariapriseceanu"
-      >Programează o ședință</BaseButton
-    >
   </section>
 </template>
 
@@ -19,7 +14,7 @@
 
 // LAYOUT
 .service-section * {
-  // border: 1px solid black;
+  border: 1px solid black;
 }
 
 .section-grid {
@@ -33,30 +28,31 @@
   grid-column: 1 / -1;
 }
 
-.section__button {
+:slotted(.section__text) {
   @media (width >= $mobile-width) {
-    grid-column: 1 / 5;
-  }
-}
-
-:slotted(.section__title) {
-  @media (width >= $mobile-width) {
+    grid-column: 1 / 7;
     grid-row: 1 / 2;
-    grid-column: 7 / 13;
-    align-self: end;
+  }
+
+  @media (width >= $tablet-width) {
+    grid-column: 1 / 8;
   }
 }
 
 :slotted(.section__image) {
-  @media (width >= $mobile-width) {
-    grid-row: 1 / 2;
-    grid-column: 1 / 7;
+  img {
+    max-width: 100%;
+    display: block;
   }
-}
 
-:slotted(.section__image) img {
-  max-width: 100%;
-  display: block;
+  @media (width >= $mobile-width) {
+    grid-column: 7 / -1;
+    grid-row: 1 / 2;
+  }
+
+  @media (width >= $tablet-width) {
+    grid-column: 8 / -1;
+  }
 }
 
 // STYLES
@@ -73,17 +69,21 @@
 
 :slotted(.section__text) {
   text-align: justify;
+
+  font-size: $xs-font-size;
+  p {
+    margin-block-end: 2rem;
+  }
+
+  @media (width >= $tablet-width) {
+    text-align: start;
+    font-size: $font-size;
+  }
 }
 
 .service-section {
   padding-inline: 1rem;
   padding-block: 2rem;
-
-  scroll-margin-top: 7rem;
-
-  @media (width >= $mobile-width) {
-    scroll-margin-top: 10rem;
-  }
 }
 
 :slotted(.section__image) img {
