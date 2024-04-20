@@ -1,6 +1,6 @@
 <template>
   <aside class="toc-bar">
-    <section ref="section" class="section max-width-container toc-bar--header">
+    <section class="section max-width-container toc-bar--header">
       <div class="section-grid max-width">
         <button class="expand-button" @click="toggleExpandHierarchy()">
           Pe această pagină
@@ -18,18 +18,9 @@
 </template>
 
 <script setup>
-import { useElementBounding } from "@vueuse/core";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import PageHierarchyBar from "./PageHierarchyBar.vue";
 import ExpandIcon from "./ExpandIcon.vue";
-
-const section = ref(null);
-
-const { top } = useElementBounding(section);
-
-const topInPixels = computed(() => {
-  return top.value + window.scrollY + "px";
-});
 
 const props = defineProps({
   // eslint-disable-next-line vue/require-default-prop
@@ -41,6 +32,18 @@ const isExpanded = ref(false);
 function toggleExpandHierarchy() {
   isExpanded.value = !isExpanded.value;
 }
+
+const postition = ref(0);
+
+const positionValue = computed(() => {
+  return postition.value + "px";
+});
+
+onMounted(() => {
+  const element = document.querySelector(".header-container");
+  const rect = element.getBoundingClientRect();
+  postition.value = rect.bottom;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -54,7 +57,7 @@ function toggleExpandHierarchy() {
 
 .toc-bar {
   position: sticky;
-  top: v-bind(topInPixels);
+  top: v-bind(positionValue);
 }
 
 .toc-bar--header {
