@@ -12,7 +12,7 @@
       </div>
     </section>
     <ExpandTransition>
-      <PageHierarchyBar v-if="isExpanded" :headers="props.headers" />
+      <PageHierarchyBar v-show="isExpanded" :headers="props.headers" />
     </ExpandTransition>
   </aside>
 </template>

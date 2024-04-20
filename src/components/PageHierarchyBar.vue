@@ -1,8 +1,5 @@
 <template>
-  <section
-    ref="section"
-    class="section max-width-container page-hierarchy-container"
-  >
+  <section ref="section" class="section max-width-container page-hierarchy-bar">
     <div class="section-grid max-width">
       <PageHierarchy :headers="props.headers" />
     </div>
@@ -47,8 +44,9 @@ const props = defineProps({
   grid-column: 1 / -1;
 }
 
-.page-hierarchy-container {
-  position: relative;
+.page-hierarchy-bar {
+  width: 100%;
+  position: absolute;
 }
 
 // STYLES
