@@ -1,31 +1,35 @@
 <template>
-  <section ref="section" class="section max-width-container">
-    <div class="section-grid max-width">
-      <button class="expand-button" @click="toggleExpandHierarchy()">
-        Pe această pagină
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          focusable="false"
-          viewBox="0 0 24 24"
-          class="icon"
-          :class="{ expanded: isExpanded }"
-          data-v-e5e7bc23=""
-        >
-          <path
-            d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"
-          ></path>
-        </svg>
-      </button>
-      <PageHierarchy v-if="isExpanded" :headers="props.headers" />
-    </div>
-  </section>
+  <aside class="toc-bar">
+    <section ref="section" class="section max-width-container toc-bar--header">
+      <div class="section-grid max-width">
+        <button class="expand-button" @click="toggleExpandHierarchy()">
+          Pe această pagină
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 24"
+            class="icon"
+            :class="{ expanded: isExpanded }"
+            data-v-e5e7bc23=""
+          >
+            <path
+              d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+    <ExpandTransition>
+      <PageHierarchyBar v-if="isExpanded" :headers="props.headers" />
+    </ExpandTransition>
+  </aside>
 </template>
 
 <script setup>
 import { useElementBounding } from "@vueuse/core";
-import PageHierarchy from "./PageHierarchy.vue";
 import { ref, computed } from "vue";
+import PageHierarchyBar from "./PageHierarchyBar.vue";
 
 const section = ref(null);
 
@@ -56,14 +60,16 @@ function toggleExpandHierarchy() {
   box-sizing: border-box;
 }
 
-.section {
+.toc-bar {
   position: sticky;
   top: v-bind(topInPixels);
 }
 
-.section * {
-  // border: 1px solid black;
+.toc-bar--header {
+  position: relative;
+  z-index: 3;
 }
+
 .max-width {
   width: 100%;
   max-width: 1024px;
