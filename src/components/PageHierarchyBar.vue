@@ -20,30 +20,6 @@ const props = defineProps({
 
 // LAYOUT
 
-* {
-  box-sizing: border-box;
-}
-
-.max-width {
-  width: 100%;
-  max-width: 1024px;
-}
-
-.max-width-container {
-  display: flex;
-  justify-content: center;
-}
-
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
-}
-
-.section-grid > * {
-  grid-column: 1 / -1;
-}
-
 .page-hierarchy-bar {
   width: 100%;
   position: absolute;

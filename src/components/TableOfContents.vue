@@ -35,10 +35,6 @@ onMounted(() => {
 
 // LAYOUT
 
-* {
-  box-sizing: border-box;
-}
-
 .hierarchy-container {
   position: sticky;
   top: v-bind(topInPixels);

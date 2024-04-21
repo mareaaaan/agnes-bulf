@@ -51,10 +51,6 @@ onMounted(() => {
 
 // LAYOUT
 
-* {
-  box-sizing: border-box;
-}
-
 .toc-bar {
   position: sticky;
   top: v-bind(positionValue);
@@ -63,26 +59,6 @@ onMounted(() => {
 .toc-bar--header {
   position: relative;
   z-index: 3;
-}
-
-.max-width {
-  width: 100%;
-  max-width: 1024px;
-}
-
-.max-width-container {
-  display: flex;
-  justify-content: center;
-}
-
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
-}
-
-.section-grid > * {
-  grid-column: 1 / -1;
 }
 
 // STYLES

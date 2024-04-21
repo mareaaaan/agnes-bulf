@@ -20,37 +20,10 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-* {
-  box-sizing: border-box;
-}
 
 // LAYOUT
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1rem;
-}
-
-.section-grid > :slotted(*),
-.section-grid > * {
-  grid-column: 1 / -1;
-}
 
 // STYLES
-
-.section__title {
-  font-size: $l-font-size;
-  font-weight: bold;
-
-  @media (width >= $mobile-width) {
-    font-size: $xl-font-size;
-  }
-}
-
-.service-section {
-  padding-inline: 1rem;
-  padding-block: 2rem;
-}
 
 .videos-container {
   display: grid;
@@ -58,6 +31,12 @@ const props = defineProps({
 
   @media (width >= $mobile-width) {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section__title {
+  @media (width >= $mobile-width) {
+    text-align: center;
   }
 }
 </style>

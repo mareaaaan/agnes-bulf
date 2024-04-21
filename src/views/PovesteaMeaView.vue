@@ -148,19 +148,5 @@ import FeedbackSection from "src/components/FeedbackSection.vue";
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
 
-* {
-  box-sizing: border-box;
-}
-
 // LAYOUT
-
-.max-width {
-  width: 100%;
-  max-width: 1024px;
-}
-
-.max-width-container {
-  display: flex;
-  justify-content: center;
-}
 </style>

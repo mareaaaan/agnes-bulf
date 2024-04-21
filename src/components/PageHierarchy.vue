@@ -59,10 +59,6 @@ onMounted(() => {
 
 // LAYOUT
 
-* {
-  box-sizing: border-box;
-}
-
 // STYLES
 
 .page-hierarchy {

@@ -62,7 +62,7 @@ function onLeave() {
   list-style: none;
   width: min(50%, 300px);
   text-align: center;
-  padding: 2em;
+  padding-block: 2em;
   border-bottom: 0.5px solid white;
 }
 
@@ -85,8 +85,8 @@ function onLeave() {
 }
 
 .link-icon {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   padding: 1em;
 }
 
