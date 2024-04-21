@@ -41,6 +41,6 @@ function toggleSideBar() {
 .nav-bar {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
 }
 </style>

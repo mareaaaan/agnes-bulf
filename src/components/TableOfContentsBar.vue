@@ -54,6 +54,7 @@ onMounted(() => {
 .toc-bar {
   position: sticky;
   top: v-bind(positionValue);
+  z-index: 2;
 }
 
 .toc-bar--header {
