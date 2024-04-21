@@ -49,13 +49,8 @@ b {
     justify-content: center;
 }
 
+.section-grid,
 .grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1rem;
-}
-
-.section-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
