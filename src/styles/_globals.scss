@@ -105,6 +105,11 @@ b {
     }
 }
 
+.section-grid > :slotted(*),
+.section-grid > * {
+    transition: all 0.7s ease-in-out;
+}
+
 .light-background {
     background-color: $light-color;
 }

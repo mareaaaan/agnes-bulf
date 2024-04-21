@@ -1,6 +1,6 @@
 <template>
   <section class="service-section section-grid">
-    <div class="section__text">
+    <div v-motion-fade-visible-once class="section__text">
       <slot name="text"></slot>
     </div>
   </section>

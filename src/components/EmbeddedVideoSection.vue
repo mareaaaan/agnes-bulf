@@ -1,7 +1,9 @@
 <template>
   <section class="service-section section-grid">
-    <h2 class="section__title">Urmărește podcasturile la care am participat</h2>
-    <div class="videos-container">
+    <h2 v-motion-fade-visible-once class="section__title">
+      Urmărește podcasturile la care am participat
+    </h2>
+    <div v-motion-fade-visible-once class="videos-container">
       <EmbeddedVideo
         v-for="(videoUrl, index) in props.videos"
         :key="index"

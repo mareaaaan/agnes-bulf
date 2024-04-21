@@ -1,15 +1,16 @@
 <template>
   <section class="service-section section-grid">
-    <div class="section__image">
+    <div v-motion-fade-visible-once class="section__image">
       <slot name="image"></slot>
     </div>
-    <h2 class="section__title">
+    <h2 v-motion-fade-visible-once class="section__title">
       <slot name="title"></slot>
     </h2>
-    <div class="section__text">
+    <div v-motion-fade-visible-once class="section__text">
       <slot name="text"></slot>
     </div>
     <BaseButton
+      v-motion-fade-visible-once
       class="section__button"
       href="https://ig.me/m/agnesmariapriseceanu"
       >Programează o ședință</BaseButton
