@@ -43,7 +43,7 @@
         </template>
       </CardSection>
 
-      <HomeSection>
+      <HomeSection class="reverse">
         <template #text>
           <p>
             În paralel, sunt profesor de psihologie generală, gazdă a unui club

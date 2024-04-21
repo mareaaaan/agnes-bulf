@@ -39,5 +39,29 @@
   }
 }
 
+.reverse {
+  .section__image {
+    @media (width >= $mobile-width) {
+      grid-column: 1 / 7;
+      grid-row: 1 / 2;
+    }
+
+    @media (width >= $tablet-width) {
+      grid-column: 1 / 6;
+    }
+  }
+
+  .section__text {
+    @media (width >= $mobile-width) {
+      grid-column: 7 / -1;
+      grid-row: 1 / 2;
+    }
+
+    @media (width >= $tablet-width) {
+      grid-column: 6 / -1;
+    }
+  }
+}
+
 // STYLES
 </style>
