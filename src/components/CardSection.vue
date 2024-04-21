@@ -1,6 +1,8 @@
 <template>
   <section class="service-section section-grid">
-    <slot></slot>
+    <div class="section__text">
+      <slot name="text"></slot>
+    </div>
   </section>
 </template>
 
@@ -29,7 +31,7 @@
 }
 
 // STYLES
-:slotted(.section__text) {
+.section__text {
   text-align: center;
   font-size: $xs-font-size;
 

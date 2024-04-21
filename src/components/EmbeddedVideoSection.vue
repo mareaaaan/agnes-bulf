@@ -13,7 +13,6 @@
 
 <script setup>
 const props = defineProps({
-  maxWidth: Boolean,
   // eslint-disable-next-line vue/require-default-prop
   videos: Array,
 });

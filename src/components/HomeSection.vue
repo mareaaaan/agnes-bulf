@@ -1,6 +1,12 @@
 <template>
   <section class="service-section section-grid">
-    <slot></slot>
+    <div class="section__text">
+      <slot name="text"></slot>
+    </div>
+
+    <div class="section__image">
+      <slot name="image"></slot>
+    </div>
   </section>
 </template>
 
@@ -13,10 +19,6 @@
 }
 
 // LAYOUT
-.service-section * {
-  border: 1px solid black;
-}
-
 .section-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -28,7 +30,7 @@
   grid-column: 1 / -1;
 }
 
-:slotted(.section__text) {
+.section__text {
   @media (width >= $mobile-width) {
     grid-column: 1 / 7;
     grid-row: 1 / 2;
@@ -39,8 +41,8 @@
   }
 }
 
-:slotted(.section__image) {
-  img {
+.section__image {
+  :slotted(img) {
     max-width: 100%;
     display: block;
   }
@@ -57,7 +59,7 @@
 
 // STYLES
 
-:slotted(.section__title) {
+.section__title {
   font-size: $l-font-size;
   font-weight: bold;
 
@@ -67,11 +69,11 @@
   }
 }
 
-:slotted(.section__text) {
+.section__text {
   text-align: justify;
-
   font-size: $xs-font-size;
-  p {
+
+  :slotted(p) {
     margin-block-end: 2rem;
   }
 
@@ -86,10 +88,12 @@
   padding-block: 2rem;
 }
 
-:slotted(.section__image) img {
-  border: 4px solid white;
-  border-radius: 0.5rem;
+.section__image {
+  :slotted(img) {
+    border: 4px solid white;
+    border-radius: 0.5rem;
 
-  outline: 1px solid #bdb9ac;
+    outline: 1px solid #bdb9ac;
+  }
 }
 </style>

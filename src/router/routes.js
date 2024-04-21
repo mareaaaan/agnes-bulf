@@ -1,12 +1,11 @@
-import HomeView from "../views/HomeView.vue";
-import ServiciiView from "../views/ServiciiView.vue";
 import PovesteaMeaView from "../views/PovesteaMeaView.vue";
+import ServiciiView from "../views/ServiciiView.vue";
 
 const routes = [
   {
     path: "/",
     name: "Povestea Mea",
-    component: HomeView,
+    component: PovesteaMeaView,
   },
   {
     path: "/servicii/",
@@ -15,23 +14,23 @@ const routes = [
   },
   {
     name: "Ateliere",
-    path: "/povestea_mea/",
+    path: "/",
     component: PovesteaMeaView,
   },
   {
     name: "Tender Melt",
     path: "/",
-    component: HomeView,
+    component: PovesteaMeaView,
   },
   {
     name: "Blog",
     path: "/",
-    component: HomeView,
+    component: PovesteaMeaView,
   },
   {
     name: "Resurse",
     path: "/",
-    component: HomeView,
+    component: PovesteaMeaView,
   },
 ];
 

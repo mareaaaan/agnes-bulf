@@ -2,7 +2,7 @@
   <div class="max-width-container">
     <div class="max-width">
       <HomeSection>
-        <div class="section__text">
+        <template #text>
           <p>Bine ai venit, dragă cititorule!</p>
           <p>
             Mă numesc Agnes Maria Priseceanu. Sunt, mai întâi de toate, om,
@@ -23,14 +23,14 @@
             și prietenă; sunt binecuvântată cu toate aceste roluri și
             recunoscătoare pentru fiecare în parte.
           </p>
-        </div>
-        <div class="section__image">
+        </template>
+        <template #image>
           <img src="../assets/portrait.jpg" alt="Portret cu Agnes" />
-        </div>
+        </template>
       </HomeSection>
 
       <CardSection>
-        <div class="section__text">
+        <template #text>
           <p>
             Sunt psiholog și psihoterapeut. M-am format profesional ca psiholog
             clinician absolvind Facultatea de Psihologie și Științele Educației,
@@ -40,11 +40,11 @@
             psihoterapia familiei organizat de Asociația Multiculturală de
             Psihologie și Psihoterapie.
           </p>
-        </div>
+        </template>
       </CardSection>
 
       <HomeSection>
-        <div class="section__text">
+        <template #text>
           <p>
             În paralel, sunt profesor de psihologie generală, gazdă a unui club
             de carte, <strong>Conectare prin cărți</strong>, și organizator al
@@ -62,18 +62,18 @@
             misiunea de a transmite oamenilor prin parfumul lumânărilor că
             bunătatea și generozitatea sunt valori prețioase la îndemâna oricui.
           </p>
-        </div>
-        <div class="section__image">
+        </template>
+
+        <template #image>
           <img
             src="../assets/handwork.jpg"
-            class="curved-top curved-bottom"
             alt="Agnes lucrand la ceva manual"
           />
-        </div>
+        </template>
       </HomeSection>
 
       <CardSection>
-        <div class="section__text">
+        <template #text>
           <p>
             Cred că toți avem dreptul la vindecare și evoluție prin
             <strong>cunoaștere, relații, conectare autentică</strong>
@@ -83,11 +83,11 @@
             cald, blând, empatic, prezent și pregătit de care am avut mare
             nevoie în perioadele dificile din viață.
           </p>
-        </div>
+        </template>
       </CardSection>
 
       <HomeSection>
-        <div class="section__text">
+        <template #text>
           <p>
             Vreau să fiu acea voce care reamintește permanent oamenilor de forța
             magică a iubirii, a curajului, a vulnerabilității și a puterii
@@ -101,18 +101,17 @@
             interior și să îți găsești puterea creatoare cu care ai venit deja
             pe lume.
           </p>
-        </div>
-        <div class="section__image">
+        </template>
+        <template #image>
           <img
             src="../assets/professional.jpg"
             alt="Agnes scriind intr-o carte"
             class="curved-bottom"
           />
-        </div>
+        </template>
       </HomeSection>
 
       <EmbeddedVideoSection
-        :max-width="true"
         :videos="[
           'https://www.youtube.com/embed/Nli1-gAFiCc?si=UgC4SGGaiIqe3hPc',
           'https://www.youtube.com/embed/VuAejEjAyxM?si=fJur3MUGc7tmTO6F',
@@ -122,8 +121,8 @@
       <FeedbackSection />
 
       <CardSection>
-        <div class="section__text">
-          <p class="center">
+        <template #text>
+          <p>
             Bine ai venit în casa mea virtuală!
             <br />
             Dă-ți voie să uiți cine ai învățat că ești și să te cunoști așa cum
@@ -133,7 +132,7 @@
             <br />
             Ascultă-ți nevoile și folosește-te de autocompasiune.
           </p>
-        </div>
+        </template>
       </CardSection>
     </div>
   </div>
@@ -154,10 +153,6 @@ import FeedbackSection from "src/components/FeedbackSection.vue";
 }
 
 // LAYOUT
-
-.section * {
-  border: 1px solid black;
-}
 
 .max-width {
   width: 100%;
