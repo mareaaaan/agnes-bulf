@@ -84,12 +84,16 @@ defineEmits(["toggleSideBar"]);
 
 .logo__subtitle {
   position: relative;
-  left: 4rem;
   font-family: "Halimun", "Whisper", sans-serif;
-  font-size: $l-font-size;
+  left: 2rem;
+  font-size: $xxs-font-size;
 
-  @media screen and (max-width: $desktop-width) {
-    font-size: $xs-font-size;
+  @media (width >= $mobile-width) {
+    left: 4rem;
+  }
+
+  @media (width >= $desktop-width) {
+    font-size: $font-size;
   }
 }
 </style>
