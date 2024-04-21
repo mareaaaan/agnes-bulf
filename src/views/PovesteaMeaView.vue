@@ -119,6 +119,8 @@
         ]"
       />
 
+      <FeedbackSection />
+
       <CardSection>
         <div class="section__text">
           <p class="center">
@@ -141,9 +143,7 @@
 import HomeSection from "src/components/HomeSection.vue";
 import CardSection from "src/components/CardSection.vue";
 import EmbeddedVideoSection from "src/components/EmbeddedVideoSection.vue";
-import { useMediaQuery } from "@vueuse/core";
-
-const isLargeScreen = useMediaQuery("(width >= 600px)");
+import FeedbackSection from "src/components/FeedbackSection.vue";
 </script>
 
 <style lang="scss" scoped>

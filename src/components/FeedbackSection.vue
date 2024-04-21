@@ -1,22 +1,22 @@
 <template>
   <section class="service-section section-grid">
-    <slot></slot>
+    <h2 class="section__title">Ce spun cei cu care am lucrat?</h2>
+    <CardCarousel class="section__carousel" :items="feedbackItems" />
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import feedbackItems from "src/assets/feedbackData.json";
+</script>
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
+
 * {
   box-sizing: border-box;
 }
 
 // LAYOUT
-.service-section * {
-  // border: 1px solid black;
-}
-
 .section-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -29,12 +29,13 @@
 }
 
 // STYLES
-:slotted(.section__text) {
-  text-align: center;
-  font-size: $xs-font-size;
 
-  @media (width >= $tablet-width) {
-    font-size: $font-size;
+.section__title {
+  font-size: $l-font-size;
+  font-weight: bold;
+
+  @media (width >= $mobile-width) {
+    font-size: $xl-font-size;
   }
 }
 
