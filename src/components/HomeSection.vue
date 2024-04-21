@@ -1,13 +1,18 @@
 <template>
-  <section class="service-section section-grid">
-    <div v-motion-fade-visible-once class="section__text">
-      <slot name="text"></slot>
-    </div>
+  <div class="max-width-container">
+    <slot name="curve"></slot>
+    <div class="max-width">
+      <section class="service-section section-grid">
+        <div v-motion-fade-visible-once class="section__text">
+          <slot name="text"></slot>
+        </div>
 
-    <div v-motion-fade-visible-once class="section__image">
-      <slot name="image"></slot>
+        <div v-motion-fade-visible-once class="section__image">
+          <slot name="image"></slot>
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup></script>

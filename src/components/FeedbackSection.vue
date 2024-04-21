@@ -1,14 +1,18 @@
 <template>
-  <section class="service-section section-grid">
-    <h2 v-motion-fade-visible-once class="section__title">
-      Ce spun cei cu care am lucrat?
-    </h2>
-    <CardCarousel
-      v-motion-fade-visible-once
-      class="section__carousel"
-      :items="feedbackItems"
-    />
-  </section>
+  <div class="max-width-container">
+    <div class="max-width">
+      <section class="service-section section-grid">
+        <h2 v-motion-fade-visible-once class="section__title">
+          Ce spun cei cu care am lucrat?
+        </h2>
+        <CardCarousel
+          v-motion-fade-visible-once
+          class="section__carousel"
+          :items="feedbackItems"
+        />
+      </section>
+    </div>
+  </div>
 </template>
 
 <script setup>

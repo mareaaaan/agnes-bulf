@@ -19,18 +19,19 @@
 <style lang="scss" scoped>
 .curve {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  transform: rotate(180deg);
 }
 
 .curve svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 200px;
+  height: 152px;
 }
 
 .curve .shape-fill {
