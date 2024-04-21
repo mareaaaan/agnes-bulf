@@ -45,6 +45,8 @@ onMounted(() => {
 .table-of-contents {
   padding-inline-end: 1rem;
   padding-block-start: 3rem;
+
+  transition: all 0.7s ease-in-out;
 }
 
 .hieararchy-title {

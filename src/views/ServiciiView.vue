@@ -113,6 +113,7 @@
       </main>
       <TableOfContents
         v-if="isLargeScreen"
+        v-motion-fade-visible-once
         class="table-of-contents"
         :headers="headers"
       />
