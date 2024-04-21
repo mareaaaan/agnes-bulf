@@ -67,14 +67,14 @@ b {
 }
 
 .section__image {
-    :slotted(img) {
+    img {
         max-width: 100%;
         display: block;
     }
 }
 
 .section__image {
-    :slotted(img) {
+    img {
         border: 4px solid white;
         border-radius: 0.5rem;
 
@@ -91,7 +91,7 @@ b {
     text-align: justify;
     font-size: $xs-font-size;
 
-    :slotted(p) {
+    p {
         margin-block-end: 2rem;
     }
 
@@ -109,6 +109,7 @@ b {
         font-size: $xxl-font-size;
     }
 }
+
 .light-background {
     background-color: $light-color;
 }

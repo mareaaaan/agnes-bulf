@@ -103,6 +103,7 @@ const isTextTruncated = computed(() => props.item.text.length > 200);
   margin: 0;
   user-select: none;
   font-size: $s-font-size;
+  text-align: start;
 }
 
 .card-carousel--card--footer p {

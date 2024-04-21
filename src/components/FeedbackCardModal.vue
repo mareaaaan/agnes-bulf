@@ -82,6 +82,7 @@ defineExpose({
   margin: 0;
   user-select: none;
   font-size: $s-font-size;
+  text-align: justify;
 }
 
 .modal-container--footer p {
