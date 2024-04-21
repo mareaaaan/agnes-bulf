@@ -45,7 +45,7 @@ function onLeave() {
 @import "../styles/_globals.scss";
 .sidebar-container {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   height: 100%;
