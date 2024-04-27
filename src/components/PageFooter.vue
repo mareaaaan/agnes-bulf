@@ -7,7 +7,12 @@
         </div>
         <div class="location">nr7, strada Ceva, Pitesti</div>
         <div class="icons">Incons</div>
-        <div class="contact-button">Contacteaza-ma</div>
+        <BaseButton
+          v-motion-fade-in-on-visible
+          class="section__button"
+          href="https://ig.me/m/agnesmariapriseceanu"
+          >Contactează-mă</BaseButton
+        >
         <div class="copyright">©Agnes Maria Priseceanu</div>
       </div>
     </section>
@@ -16,6 +21,7 @@
 
 <script setup>
 import WebsiteLogo from "./WebsiteLogo.vue";
+import BaseButton from "./BaseButton.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -34,7 +40,7 @@ import WebsiteLogo from "./WebsiteLogo.vue";
 
 .location {
   @media (width >= $desktop-width) {
-    grid-column: 1 / 7;
+    grid-column: 1 / 5;
   }
 }
 
@@ -42,15 +48,16 @@ import WebsiteLogo from "./WebsiteLogo.vue";
   grid-column: 1 / 7;
 
   @media (width >= $desktop-width) {
-    grid-column: 7 / 13;
+    grid-column: 5 / 9;
   }
 }
 
-.contact-button {
+.section__button {
   grid-column: 7 / 13;
 
   @media (width >= $desktop-width) {
-    grid-row: 1 / 2;
+    grid-column: 9 / 13;
+    grid-row: 2 / 3;
   }
 }
 
@@ -83,5 +90,9 @@ import WebsiteLogo from "./WebsiteLogo.vue";
   @media (width >= $desktop-width) {
     font-size: $s-font-size;
   }
+}
+
+:deep(.base-button) {
+  padding-inline: 1rem;
 }
 </style>
