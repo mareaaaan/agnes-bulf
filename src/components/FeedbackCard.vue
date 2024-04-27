@@ -58,7 +58,7 @@ watch(expandedCard, (newExpandedCard) => {
         document.body.style.overflow = "hidden";
         from.showNatural();
       },
-      zIndex: 2,
+      zIndex: 3,
     });
   }
 });
