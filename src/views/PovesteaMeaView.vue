@@ -1,5 +1,5 @@
 <template>
-  <HomeSection class="light-background">
+  <HomeSection>
     <template #text>
       <p>Bine ai venit, dragă cititorule!</p>
       <p>
@@ -26,7 +26,7 @@
     </template>
   </HomeSection>
 
-  <CardSection class="light-background">
+  <CardSection>
     <template #text>
       <p>
         Sunt psiholog și psihoterapeut. M-am format profesional ca psiholog
@@ -40,7 +40,7 @@
     </template>
   </CardSection>
 
-  <HomeSection class="reverse light-background">
+  <HomeSection class="reverse">
     <template #text>
       <p>
         În paralel, sunt profesor de psihologie generală, gazdă a unui club de
@@ -65,10 +65,7 @@
     </template>
   </HomeSection>
 
-  <CardSection class="light-background">
-    <template #curve>
-      <TopCurve />
-    </template>
+  <CardSection>
     <template #text>
       <p>
         Cred că toți avem dreptul la vindecare și evoluție prin
@@ -80,9 +77,12 @@
         dificile din viață.
       </p>
     </template>
+    <template #curve>
+      <BottomCurve />
+    </template>
   </CardSection>
 
-  <HomeSection>
+  <HomeSection class="light-background">
     <template #text>
       <p>
         Vreau să fiu acea voce care reamintește permanent oamenilor de forța
@@ -103,15 +103,16 @@
   </HomeSection>
 
   <EmbeddedVideoSection
+    class="light-background"
     :videos="[
       'https://www.youtube.com/embed/Nli1-gAFiCc?si=UgC4SGGaiIqe3hPc',
       'https://www.youtube.com/embed/VuAejEjAyxM?si=fJur3MUGc7tmTO6F',
     ]"
   />
 
-  <FeedbackSection />
+  <FeedbackSection class="light-background" />
 
-  <CardSection>
+  <CardSection class="light-background">
     <template #text>
       <p>
         Bine ai venit în casa mea virtuală!
@@ -132,7 +133,7 @@ import HomeSection from "src/components/HomeSection.vue";
 import CardSection from "src/components/CardSection.vue";
 import EmbeddedVideoSection from "src/components/EmbeddedVideoSection.vue";
 import FeedbackSection from "src/components/FeedbackSection.vue";
-import TopCurve from "src/components/TopCurve.vue";
+import BottomCurve from "src/components/BottomCurve.vue";
 </script>
 
 <style lang="scss" scoped>
