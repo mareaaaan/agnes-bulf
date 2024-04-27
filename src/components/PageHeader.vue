@@ -3,7 +3,7 @@
     <button class="menu-button" @click="$emit('toggleSideBar')">
       <i-material-symbols-arrow-forward-ios-rounded class="menu-icon" />
     </button>
-    <WebsiteLogo />
+    <WebsiteLogo class="logo" />
   </header>
 </template>
 
@@ -22,11 +22,8 @@ defineEmits(["toggleSideBar"]);
   justify-content: center;
   position: relative;
   z-index: 2;
-
-  @media screen and (max-width: $desktop-width) {
-    display: block;
-    overflow: hidden;
-  }
+  display: block;
+  overflow: hidden;
 }
 
 .menu-button {
@@ -59,5 +56,12 @@ defineEmits(["toggleSideBar"]);
   width: 50%;
   height: 50%;
   color: $primary-color;
+}
+
+.logo {
+  padding-block: 0.625rem;
+  @media (width >= $desktop-width) {
+    padding-block-start: 0;
+  }
 }
 </style>

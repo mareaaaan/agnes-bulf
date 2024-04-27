@@ -9,12 +9,6 @@
 
 <style lang="scss" scoped>
 @import "../styles/_globals.scss";
-.logo {
-  padding-block: 0.625rem;
-  @media (width >= $desktop-width) {
-    padding-block-start: 0;
-  }
-}
 
 .logo__title {
   font-family: "Playfair Display", serif;
