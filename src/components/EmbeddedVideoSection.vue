@@ -2,10 +2,10 @@
   <div class="max-width-container">
     <div class="max-width">
       <section class="service-section section-grid">
-        <h2 v-motion-fade-visible-once class="section__title">
+        <h2 v-motion-fade-in-on-visible class="section__title">
           Urmărește podcasturile la care am participat
         </h2>
-        <div v-motion-fade-visible-once class="videos-container">
+        <div v-motion-fade-in-on-visible class="videos-container">
           <EmbeddedVideo
             v-for="(videoUrl, index) in props.videos"
             :key="index"

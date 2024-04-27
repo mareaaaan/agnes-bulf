@@ -2,7 +2,7 @@
   <div class="max-width-container">
     <div class="max-width">
       <section class="service-section section-grid">
-        <div v-motion-fade-visible-once class="section__text">
+        <div v-motion-fade-in-on-visible class="section__text">
           <slot name="text"></slot>
         </div>
       </section>

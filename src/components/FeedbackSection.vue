@@ -2,11 +2,11 @@
   <div class="max-width-container">
     <div class="max-width">
       <section class="service-section section-grid">
-        <h2 v-motion-fade-visible-once class="section__title">
+        <h2 v-motion-fade-in-on-visible class="section__title">
           Ce spun cei cu care am lucrat?
         </h2>
         <CardCarousel
-          v-motion-fade-visible-once
+          v-motion-fade-in-on-visible
           class="section__carousel"
           :items="feedbackItems"
         />
