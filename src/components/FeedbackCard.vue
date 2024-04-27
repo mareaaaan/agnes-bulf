@@ -10,12 +10,14 @@
       </p>
     </div>
     <Teleport to="#app">
-      <FeedbackCardModal
-        v-if="isCardExpanded"
-        ref="expandedCard"
-        :item="item"
-        @close-card="closeCard"
-      />
+      <BlurTransition>
+        <FeedbackCardModal
+          v-if="isCardExpanded"
+          ref="expandedCard"
+          :item="item"
+          @close-card="closeCard"
+        />
+      </BlurTransition>
     </Teleport>
   </div>
 </template>
@@ -23,6 +25,9 @@
 <script setup>
 import { ref, watch, computed } from "vue";
 import { illusory } from "illusory";
+import FeedbackCardModal from "./FeedbackCardModal.vue";
+import BlurTransition from "./transitions/BlurTransition.vue";
+
 const props = defineProps({
   item: {
     type: Object,
@@ -42,12 +47,10 @@ function closeCard() {
   illusory(expandedCard.value.expandedCard, card.value, {
     async beforeAnimate(from, to) {
       to.showNatural();
-    },
-    async beforeDetach() {
       document.body.style.overflow = "auto";
       isCardExpanded.value = false;
     },
-    zIndex: 2,
+    zIndex: 3,
   });
 }
 
