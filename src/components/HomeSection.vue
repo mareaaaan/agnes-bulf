@@ -31,6 +31,10 @@
   @media (width >= $tablet-width) {
     grid-column: 1 / 8;
   }
+
+  @media (width >= $desktop-width) {
+    grid-column: 1 / 9;
+  }
 }
 
 .section__image {
@@ -41,6 +45,10 @@
 
   @media (width >= $tablet-width) {
     grid-column: 8 / -1;
+  }
+
+  @media (width >= $desktop-width) {
+    grid-column: 9 / -1;
   }
 }
 
@@ -54,6 +62,10 @@
     @media (width >= $tablet-width) {
       grid-column: 1 / 6;
     }
+
+    @media (width >= $desktop-width) {
+      grid-column: 1 / 5;
+    }
   }
 
   .section__text {
@@ -64,6 +76,10 @@
 
     @media (width >= $tablet-width) {
       grid-column: 6 / -1;
+    }
+
+    @media (width >= $desktop-width) {
+      grid-column: 5 / -1;
     }
   }
 }

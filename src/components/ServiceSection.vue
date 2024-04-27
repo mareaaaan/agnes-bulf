@@ -34,12 +34,20 @@
     grid-column: 7 / 13;
     align-self: end;
   }
+
+  @media (width >= $desktop-width) {
+    grid-column: 6 / 13;
+  }
 }
 
 .section__image {
   @media (width >= $mobile-width) {
     grid-row: 1 / 2;
     grid-column: 1 / 7;
+  }
+
+  @media (width >= $desktop-width) {
+    grid-column: 1 / 6;
   }
 }
 

@@ -23,12 +23,20 @@
     grid-column: 1 / 7;
     align-self: end;
   }
+
+  @media (width >= $desktop-width) {
+    grid-column: 1 / 8;
+  }
 }
 
 .section__image {
   @media (width >= $mobile-width) {
     grid-row: 1 / 2;
     grid-column: 7 / 13;
+  }
+
+  @media (width >= $desktop-width) {
+    grid-column: 8 / 13;
   }
 }
 
