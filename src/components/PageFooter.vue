@@ -15,7 +15,7 @@
           href="https://ig.me/m/agnesmariapriseceanu"
           >Contactează-mă</BaseButton
         >
-        <div class="copyright">©Agnes Maria Priseceanu</div>
+        <div class="copyright-container">©Agnes Maria Priseceanu</div>
       </div>
     </section>
   </footer>
@@ -94,5 +94,9 @@ import SocialLinksFooter from "./SocialLinksFooter.vue";
 
 :deep(.base-button) {
   padding-inline: 1rem;
+}
+
+.copyright-container {
+  font-size: $xs-font-size;
 }
 </style>
