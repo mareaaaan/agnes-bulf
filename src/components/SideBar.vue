@@ -10,11 +10,7 @@
           >{{ page.name }}
         </RouterLink>
       </li>
-      <div class="social-links">
-        <InstagramLink class="light link-icon" />
-        <FacebookLink class="light link-icon" />
-        <YoutubeLink class="light link-icon" />
-      </div>
+      <SocialLinks :is-dark="false" class="social-links" />
     </ul>
   </SlideTransition>
 </template>
@@ -22,7 +18,7 @@
 <script setup>
 import SlideTransition from "src/components/transitions/SlideTransition.vue";
 import CloseButton from "./CloseButton.vue";
-import InstagramLink from "./InstagramLink.vue";
+import SocialLinks from "./SocialLinks.vue";
 const props = defineProps({
   pages: {
     type: Array,
@@ -84,16 +80,13 @@ function onLeave() {
   right: 0;
 }
 
-.link-icon {
+:deep(.link-icon) {
   width: 60px;
   height: 60px;
   padding: 1em;
 }
 
 .social-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   margin-top: 2em;
 }
 </style>

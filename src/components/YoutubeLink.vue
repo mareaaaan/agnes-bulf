@@ -1,6 +1,6 @@
 <template>
   <LinkIcon
-    class="dark link-icon"
+    class="link-icon"
     :url="'https://www.youtube.com/@agnespriseceanu8418'"
   >
     <i-ion-logo-youtube class="icon" />

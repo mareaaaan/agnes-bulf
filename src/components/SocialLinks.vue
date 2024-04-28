@@ -1,8 +1,11 @@
 <template>
   <div class="social-links">
-    <InstagramLink class="link-icon" :class="{ dark: isDark }" />
-    <FacebookLink class="link-icon" :class="{ dark: isDark }" />
-    <YoutubeLink class="link-icon" :class="{ dark: isDark }" />
+    <InstagramLink
+      class="link-icon"
+      :class="{ dark: isDark, light: !isDark }"
+    />
+    <FacebookLink class="link-icon" :class="{ dark: isDark, light: !isDark }" />
+    <YoutubeLink class="link-icon" :class="{ dark: isDark, light: !isDark }" />
   </div>
 </template>
 
