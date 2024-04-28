@@ -5,7 +5,7 @@
         <div class="logo-container">
           <WebsiteLogo />
         </div>
-        <div class="location">nr7, strada Ceva, Pitesti</div>
+        <div class="location-container"><LocationInfo /></div>
         <div class="icons">Incons</div>
         <BaseButton
           v-motion-fade-in-on-visible
@@ -22,6 +22,7 @@
 <script setup>
 import WebsiteLogo from "./WebsiteLogo.vue";
 import BaseButton from "./BaseButton.vue";
+import LocationInfo from "./LocationInfo.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +39,7 @@ import BaseButton from "./BaseButton.vue";
   overflow: hidden;
 }
 
-.location {
+.location-container {
   @media (width >= $desktop-width) {
     grid-column: 1 / 5;
   }
