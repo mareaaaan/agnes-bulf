@@ -6,7 +6,9 @@
           <WebsiteLogo />
         </div>
         <div class="location-container"><LocationInfo /></div>
-        <div class="icons">Incons</div>
+        <div class="social-links-container">
+          <SocialLinksFooter />
+        </div>
         <BaseButton
           v-motion-fade-in-on-visible
           class="section__button"
@@ -23,6 +25,7 @@
 import WebsiteLogo from "./WebsiteLogo.vue";
 import BaseButton from "./BaseButton.vue";
 import LocationInfo from "./LocationInfo.vue";
+import SocialLinksFooter from "./SocialLinksFooter.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -45,7 +48,7 @@ import LocationInfo from "./LocationInfo.vue";
   }
 }
 
-.icons {
+.social-links-container {
   grid-column: 1 / 7;
 
   @media (width >= $desktop-width) {
@@ -63,10 +66,6 @@ import LocationInfo from "./LocationInfo.vue";
 }
 
 // STYLES
-
-.section-grid > * {
-  border: 1px solid black;
-}
 
 .service-section {
   padding-block-end: 0;
