@@ -14,7 +14,6 @@
   font-size: $xs-font-size;
   border-radius: 10em;
   padding-block: 1em;
-  padding-inline: 2em;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border: 1px solid $secondary-color;

@@ -24,7 +24,11 @@
 @import "../styles/_globals.scss";
 .section__button {
   @media (width >= $mobile-width) {
-    grid-column: 1 / 5;
+    grid-column: 1 / 7;
+  }
+
+  @media (width >= $desktop-width) {
+    grid-column: 1 / 6;
   }
 }
 
