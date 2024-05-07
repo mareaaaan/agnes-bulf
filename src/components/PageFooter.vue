@@ -33,7 +33,7 @@ import SocialLinksFooter from "./SocialLinksFooter.vue";
 
 // LAYOUT
 .logo-container {
-  @media (width >= $desktop-width) {
+  @media (width >= $tablet-width) {
     grid-column: 1 / 7;
     text-align: left;
   }
@@ -42,26 +42,15 @@ import SocialLinksFooter from "./SocialLinksFooter.vue";
   overflow: hidden;
 }
 
-.location-container {
-  @media (width >= $desktop-width) {
-    grid-column: 1 / 5;
-  }
-}
-
 .social-links-container {
   grid-column: 1 / 7;
-
-  @media (width >= $desktop-width) {
-    grid-column: 5 / 9;
-  }
 }
 
 .section__button {
   grid-column: 7 / 13;
 
-  @media (width >= $desktop-width) {
+  @media (width >= $tablet-width) {
     grid-column: 9 / 13;
-    grid-row: 2 / 3;
   }
 }
 
