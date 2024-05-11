@@ -126,6 +126,7 @@
       </p>
     </template>
   </CardSection>
+  <FooterCurve class="light-background" />
 </template>
 
 <script setup>
@@ -134,6 +135,7 @@ import CardSection from "src/components/CardSection.vue";
 import EmbeddedVideoSection from "src/components/EmbeddedVideoSection.vue";
 import FeedbackSection from "src/components/FeedbackSection.vue";
 import BottomCurve from "src/components/BottomCurve.vue";
+import FooterCurve from "src/components/FooterCurve.vue";
 </script>
 
 <style lang="scss" scoped>

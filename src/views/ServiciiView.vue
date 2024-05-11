@@ -119,6 +119,8 @@
       />
     </div>
   </div>
+
+  <FooterCurve class="dark-background" />
 </template>
 
 <script setup>
@@ -127,6 +129,7 @@ import ServiceIntroSection from "src/components/ServiceIntroSection.vue";
 import TableOfContentsBar from "src/components/TableOfContentsBar.vue";
 import TableOfContents from "src/components/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
+import FooterCurve from "src/components/FooterCurve.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
 
