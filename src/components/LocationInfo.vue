@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import MapsLink from "./MapsLink.vue";
+import MapsLink from "./links/MapsLink.vue";
 </script>
 
 <style lang="scss" scoped>

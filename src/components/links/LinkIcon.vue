@@ -14,7 +14,7 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 .link-icon {
   display: flex;
   align-items: center;
