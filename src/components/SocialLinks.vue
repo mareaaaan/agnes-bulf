@@ -6,6 +6,7 @@
     />
     <FacebookLink class="link-icon" :class="{ dark: isDark, light: !isDark }" />
     <YoutubeLink class="link-icon" :class="{ dark: isDark, light: !isDark }" />
+    <TikTokLink class="link-icon" :class="{ dark: isDark, light: !isDark }" />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 import InstagramLink from "./InstagramLink.vue";
 import FacebookLink from "./FacebookLink.vue";
 import YoutubeLink from "./YoutubeLink.vue";
+import TikTokLink from "./TikTokLink.vue";
 
 defineProps({
   isDark: Boolean,
