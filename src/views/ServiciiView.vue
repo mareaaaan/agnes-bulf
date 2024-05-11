@@ -120,7 +120,8 @@
     </div>
   </div>
 
-  <FooterCurve class="dark-background" />
+  <FooterCurve :is-footer-dark="false" />
+  <PageFooter class="light-background" />
 </template>
 
 <script setup>
@@ -130,6 +131,7 @@ import TableOfContentsBar from "src/components/TableOfContentsBar.vue";
 import TableOfContents from "src/components/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
 import FooterCurve from "src/components/FooterCurve.vue";
+import PageFooter from "src/components/PageFooter.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
 

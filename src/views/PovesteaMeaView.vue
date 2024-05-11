@@ -126,7 +126,8 @@
       </p>
     </template>
   </CardSection>
-  <FooterCurve class="light-background" />
+  <FooterCurve :is-footer-dark="true" />
+  <PageFooter class="dark-backround" />
 </template>
 
 <script setup>
