@@ -8,6 +8,7 @@
             <img
               src="../assets/office.jpg"
               alt="Poza cu Agnes zambind pe un fotoliu"
+              class="arch-border"
             />
           </template>
           <template #title>Serviciile mele</template>
@@ -28,6 +29,7 @@
             <img
               src="../assets/individual-therapy.jpg"
               alt="Poza cu doua fotolii, o masuta si un dulap cu carti"
+              class="rounded-border"
             />
           </template>
           <template #title>Psihoterapie individuala</template>
@@ -46,6 +48,7 @@
             <img
               src="../assets/couple-therapy.jpg"
               alt="Poza cu doua maini stranse pe un fundal cu un copac"
+              class="oval-border"
             />
           </template>
           <template #title>Psihoterapie de cuplu</template>
@@ -64,6 +67,7 @@
             <img
               src="../assets/family-therapy.jpg"
               alt="Poza cu doua maini stranse pe un fundal cu un copac"
+              class="rounded-border"
             />
           </template>
           <template #title>Psihoterapie Familie</template>
@@ -80,6 +84,7 @@
             <img
               src="../assets/evaluare-psihologica.jpg"
               alt="Poza cu o presoana dand mai departe o carte portocalie"
+              class="oval-border"
             />
           </template>
           <template #title>Evaluare psihologică</template>
@@ -97,6 +102,7 @@
             <img
               src="../assets/book-club.jpg"
               alt="Poza cu o presoana dand mai departe o carte portocalie"
+              class="rounded-border"
             />
           </template>
           <template #title>Club de carte</template>

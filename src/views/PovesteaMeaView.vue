@@ -22,7 +22,11 @@
       </p>
     </template>
     <template #image>
-      <img src="../assets/portrait.jpg" alt="Portret cu Agnes" />
+      <img
+        src="../assets/portrait.jpg"
+        alt="Portret cu Agnes"
+        class="arch-border"
+      />
     </template>
   </HomeSection>
 
@@ -61,7 +65,11 @@
     </template>
 
     <template #image>
-      <img src="../assets/handwork.jpg" alt="Agnes lucrand la ceva manual" />
+      <img
+        src="../assets/handwork.jpg"
+        alt="Agnes lucrand la ceva manual"
+        class="rounded-border"
+      />
     </template>
   </HomeSection>
 
@@ -98,7 +106,11 @@
       </p>
     </template>
     <template #image>
-      <img src="../assets/professional.jpg" alt="Agnes scriind intr-o carte" />
+      <img
+        src="../assets/professional.jpg"
+        alt="Agnes scriind intr-o carte"
+        class="oval-border"
+      />
     </template>
   </HomeSection>
 

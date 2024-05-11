@@ -70,16 +70,8 @@ b {
 
 .section__image {
     img {
-        // border: 4px solid white;
-        border-radius: 5rem;
-        // border-radius: 25% 0 25% 0 / 25% 0 25% 0;
-
-        // outline: 1px solid #bdb9ac;
-
-
-        box-shadow: 6px 6px 0px 3px $primary-color, 8px 8px 0px 3px rgb(87, 87, 87),
-        -6px -6px 0px 3px $primary-color, -8px -8px 0px 3px burlywood;
-        ;
+        border: 4px solid white;
+        outline: 1px solid #bdb9ac; 
     }
 }
 
@@ -117,4 +109,20 @@ b {
 
 .dark-background {
     background-color: $primary-color;
+}
+
+.rounded-border {
+    border-radius: 25%;
+}
+
+.arch-border {        
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;   
+}
+
+.oval-border {
+    border-radius: 45%;
 }
