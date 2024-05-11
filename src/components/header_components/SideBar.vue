@@ -17,8 +17,8 @@
 
 <script setup>
 import SlideTransition from "src/components/transitions/SlideTransition.vue";
-import CloseButton from "./CloseButton.vue";
-import SocialLinks from "./SocialLinks.vue";
+import CloseButton from "src/components/CloseButton.vue";
+import SocialLinks from "src/components/SocialLinks.vue";
 const props = defineProps({
   pages: {
     type: Array,
@@ -38,7 +38,7 @@ function onLeave() {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 .sidebar-container {
   position: fixed;
   z-index: 3;

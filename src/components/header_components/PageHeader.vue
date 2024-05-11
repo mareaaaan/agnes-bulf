@@ -13,7 +13,7 @@ defineEmits(["toggleSideBar"]);
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 .header-container {
   width: 100%;
   background-color: $light-color;

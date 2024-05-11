@@ -5,11 +5,11 @@
 </template>
 
 <script setup>
-import SocialLinks from "./SocialLinks.vue";
+import SocialLinks from "src/components/SocialLinks.vue";
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 .contact-container {
   display: flex;
   flex-direction: row;

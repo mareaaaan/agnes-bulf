@@ -1,12 +1,12 @@
 <script setup>
-import SlideFromTop from "src/components/transitions/SlideFromTop.vue";
 import { ref } from "vue";
-import PageHeader from "./PageHeader.vue";
-import SideBar from "./SideBar.vue";
-import ContanctHeader from "./ContactHeader.vue";
-import NavBarLinks from "./NavBarLinks.vue";
 import useScrollUp from "src/composables/scrollUp";
 import routes from "src/router/routes";
+import ContanctHeader from "./ContactHeader.vue";
+import PageHeader from "./PageHeader.vue";
+import NavBarLinks from "./NavBarLinks.vue";
+import SlideFromTop from "src/components/transitions/SlideFromTop.vue";
+import SideBar from "./SideBar.vue";
 
 const emit = defineEmits(["toggleSideBar"]);
 
@@ -37,7 +37,7 @@ function toggleSideBar() {
 </template>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 .nav-bar {
   position: sticky;
   top: 0;
