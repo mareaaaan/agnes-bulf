@@ -85,10 +85,9 @@
         dificile din viață.
       </p>
     </template>
-    <template #curve>
-      <BottomCurve />
-    </template>
   </CardSection>
+
+  <ArchBottomCurve :is-light-to-dark="false" />
 
   <HomeSection class="light-background">
     <template #text>
@@ -147,8 +146,8 @@ import HomeSection from "src/components/sections/HomeSection.vue";
 import CardSection from "src/components/sections/CardSection.vue";
 import EmbeddedVideoSection from "src/components/sections/EmbeddedVideoSection.vue";
 import FeedbackSection from "src/components/sections/FeedbackSection.vue";
-import BottomCurve from "src/components/dividers/BottomCurve.vue";
 import FooterCurve from "src/components/dividers/FooterCurve.vue";
+import ArchBottomCurve from "src/components/dividers/ArchBottomCurve.vue";
 </script>
 
 <style lang="scss" scoped>

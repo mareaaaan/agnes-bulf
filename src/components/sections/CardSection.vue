@@ -7,7 +7,6 @@
         </div>
       </section>
     </div>
-    <slot name="curve"></slot>
   </div>
 </template>
 
