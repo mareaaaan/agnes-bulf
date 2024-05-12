@@ -129,10 +129,9 @@
   <FooterCurve :is-footer-dark="false" />
   <PageFooter class="light-background" />
 </template>
-
 <script setup>
-import ServiceSection from "src/components/ServiceSection.vue";
-import ServiceIntroSection from "src/components/ServiceIntroSection.vue";
+import ServiceSection from "src/components/sections/ServiceSection.vue";
+import ServiceIntroSection from "src/components/sections/ServiceIntroSection.vue";
 import TableOfContentsBar from "src/components/table_of_contents/TableOfContentsBar.vue";
 import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";

@@ -17,7 +17,7 @@
 
 <script setup>
 import feedbackItems from "src/assets/feedbackData.json";
-import CardCarousel from "./CardCarousel.vue";
+import CardCarousel from "src/components/cards/CardCarousel.vue";
 </script>
 
 <style lang="scss" scoped>

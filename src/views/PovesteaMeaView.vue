@@ -143,10 +143,10 @@
 </template>
 
 <script setup>
-import HomeSection from "src/components/HomeSection.vue";
-import CardSection from "src/components/cards/CardSection.vue";
-import EmbeddedVideoSection from "src/components/videos/EmbeddedVideoSection.vue";
-import FeedbackSection from "src/components/cards/FeedbackSection.vue";
+import HomeSection from "src/components/sections/HomeSection.vue";
+import CardSection from "src/components/sections/CardSection.vue";
+import EmbeddedVideoSection from "src/components/sections/EmbeddedVideoSection.vue";
+import FeedbackSection from "src/components/sections/FeedbackSection.vue";
 import BottomCurve from "src/components/dividers/BottomCurve.vue";
 import FooterCurve from "src/components/dividers/FooterCurve.vue";
 </script>
