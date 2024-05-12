@@ -147,8 +147,8 @@ import HomeSection from "src/components/HomeSection.vue";
 import CardSection from "src/components/CardSection.vue";
 import EmbeddedVideoSection from "src/components/EmbeddedVideoSection.vue";
 import FeedbackSection from "src/components/FeedbackSection.vue";
-import BottomCurve from "src/components/BottomCurve.vue";
-import FooterCurve from "src/components/FooterCurve.vue";
+import BottomCurve from "src/components/dividers/BottomCurve.vue";
+import FooterCurve from "src/components/dividers/FooterCurve.vue";
 </script>
 
 <style lang="scss" scoped>

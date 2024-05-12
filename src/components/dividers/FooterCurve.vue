@@ -16,7 +16,7 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 .footer-curve-container {
   padding-top: 8rem;
   position: relative;
