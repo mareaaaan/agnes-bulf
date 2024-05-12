@@ -87,7 +87,7 @@
     </template>
   </CardSection>
 
-  <ArchBottomCurve :is-light-to-dark="false" />
+  <ArchDivider :is-light-to-dark="false" />
 
   <HomeSection class="light-background">
     <template #text>
@@ -137,7 +137,7 @@
       </p>
     </template>
   </CardSection>
-  <FooterCurve :is-footer-dark="true" />
+  <WavyDivider :is-light-to-dark="true" />
   <PageFooter class="dark-backround" />
 </template>
 
@@ -146,8 +146,8 @@ import HomeSection from "src/components/sections/HomeSection.vue";
 import CardSection from "src/components/sections/CardSection.vue";
 import EmbeddedVideoSection from "src/components/sections/EmbeddedVideoSection.vue";
 import FeedbackSection from "src/components/sections/FeedbackSection.vue";
-import FooterCurve from "src/components/dividers/FooterCurve.vue";
-import ArchBottomCurve from "src/components/dividers/ArchBottomCurve.vue";
+import WavyDivider from "src/components/dividers/WavyDivider.vue";
+import ArchDivider from "src/components/dividers/ArchDivider.vue";
 </script>
 
 <style lang="scss" scoped>

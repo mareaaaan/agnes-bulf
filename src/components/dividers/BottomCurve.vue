@@ -1,5 +1,5 @@
 <template>
-  <div class="arch-curve">
+  <div class="arch-bottom-curve">
     <svg
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
-.arch-curve {
+.arch-bottom-curve {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -31,18 +31,18 @@ const props = defineProps({
   line-height: 0;
 }
 
-.arch-curve svg {
+.arch-bottom-curve svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
   height: 200px;
 }
 
-.arch-curve .fill-dark {
+.arch-bottom-curve .fill-dark {
   fill: $primary-color;
 }
 
-.arch-curve .fill-light {
+.arch-bottom-curve .fill-light {
   fill: $light-color;
 }
 </style>

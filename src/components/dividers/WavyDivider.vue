@@ -1,14 +1,14 @@
 <template>
   <div
-    class="arch-curve-container"
+    class="wavy-divider"
     :class="props.isLightToDark ? 'light-background' : 'dark-background'"
   >
-    <BottomCurve :is-dark="props.isLightToDark" />
+    <WavyBottomCurve :is-dark="props.isLightToDark" />
   </div>
 </template>
 
 <script setup>
-import BottomCurve from "./BottomCurve.vue";
+import WavyBottomCurve from "./WavyBottomCurve.vue";
 
 const props = defineProps({
   isLightToDark: Boolean,
@@ -17,8 +17,8 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
-.arch-curve-container {
-  padding-top: 10rem;
+.wavy-divider {
+  padding-top: 13rem;
   position: relative;
 }
 </style>

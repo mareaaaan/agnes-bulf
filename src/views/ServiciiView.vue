@@ -126,7 +126,7 @@
     </div>
   </div>
 
-  <FooterCurve :is-footer-dark="false" />
+  <WavyDivider :is-light-to-dark="false" />
   <PageFooter class="light-background" />
 </template>
 <script setup>
@@ -135,7 +135,7 @@ import ServiceIntroSection from "src/components/sections/ServiceIntroSection.vue
 import TableOfContentsBar from "src/components/table_of_contents/TableOfContentsBar.vue";
 import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
-import FooterCurve from "src/components/dividers/FooterCurve.vue";
+import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
