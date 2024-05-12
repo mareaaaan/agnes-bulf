@@ -26,7 +26,7 @@
 import { ref, watch, computed } from "vue";
 import { illusory } from "illusory";
 import FeedbackCardModal from "./FeedbackCardModal.vue";
-import BlurTransition from "./transitions/BlurTransition.vue";
+import BlurTransition from "src/components/transitions/BlurTransition.vue";
 
 const props = defineProps({
   item: {
@@ -79,7 +79,7 @@ const isTextTruncated = computed(() => props.item.text.length > 200);
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 .card-carousel--card {
   margin: 0 10px;
   cursor: pointer;

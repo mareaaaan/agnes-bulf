@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import FeedbackCard from "src/components/FeedbackCard.vue";
+import FeedbackCard from "src/components/cards/FeedbackCard.vue";
 import { ref, computed } from "vue";
 defineProps({
   items: {
@@ -66,7 +66,7 @@ function scrollRight() {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 button {
   background: none;
   color: inherit;

@@ -31,7 +31,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 
 .modal-container {
   position: fixed;
