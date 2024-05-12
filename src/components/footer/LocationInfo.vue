@@ -8,11 +8,11 @@
 </template>
 
 <script setup>
-import MapsLink from "./links/MapsLink.vue";
+import MapsLink from "src/components/links/MapsLink.vue";
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 // LAYOUT
 .location {
   display: flex;

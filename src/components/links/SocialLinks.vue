@@ -11,10 +11,10 @@
 </template>
 
 <script setup>
-import InstagramLink from "./links/InstagramLink.vue";
-import FacebookLink from "./links/FacebookLink.vue";
-import YoutubeLink from "./links/YoutubeLink.vue";
-import TikTokLink from "./links/TikTokLink.vue";
+import InstagramLink from "src/components/links/InstagramLink.vue";
+import FacebookLink from "src/components/links/FacebookLink.vue";
+import YoutubeLink from "src/components/links/YoutubeLink.vue";
+import TikTokLink from "src/components/links/TikTokLink.vue";
 
 defineProps({
   isDark: Boolean,
@@ -22,7 +22,7 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 
 // LAYOUT
 .social-links {

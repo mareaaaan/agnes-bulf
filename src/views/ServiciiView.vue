@@ -137,7 +137,7 @@ import TableOfContentsBar from "src/components/table_of_contents/TableOfContents
 import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
 import FooterCurve from "src/components/dividers/FooterCurve.vue";
-import PageFooter from "src/components/PageFooter.vue";
+import PageFooter from "src/components/footer/PageFooter.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
 

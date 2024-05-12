@@ -12,7 +12,7 @@ const isLargeScreen = useMediaQuery("(width >= 600px)");
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 
 // LAYOUT
 .social-links--footer {

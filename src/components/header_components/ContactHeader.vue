@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import SocialLinks from "src/components/SocialLinks.vue";
+import SocialLinks from "src/components/links/SocialLinks.vue";
 </script>
 
 <style lang="scss" scoped>

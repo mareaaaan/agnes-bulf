@@ -18,7 +18,7 @@
 <script setup>
 import SlideTransition from "src/components/transitions/SlideTransition.vue";
 import CloseButton from "src/components/buttons/CloseButton.vue";
-import SocialLinks from "src/components/SocialLinks.vue";
+import SocialLinks from "src/components/links/SocialLinks.vue";
 const props = defineProps({
   pages: {
     type: Array,

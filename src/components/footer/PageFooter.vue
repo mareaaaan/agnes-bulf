@@ -29,7 +29,7 @@ import SocialLinksFooter from "./SocialLinksFooter.vue";
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 
 // LAYOUT
 .logo-container {
