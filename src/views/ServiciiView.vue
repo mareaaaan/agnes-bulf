@@ -133,8 +133,8 @@
 <script setup>
 import ServiceSection from "src/components/ServiceSection.vue";
 import ServiceIntroSection from "src/components/ServiceIntroSection.vue";
-import TableOfContentsBar from "src/components/TableOfContentsBar.vue";
-import TableOfContents from "src/components/TableOfContents.vue";
+import TableOfContentsBar from "src/components/table_of_contents/TableOfContentsBar.vue";
+import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
 import FooterCurve from "src/components/FooterCurve.vue";
 import PageFooter from "src/components/PageFooter.vue";

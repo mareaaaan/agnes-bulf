@@ -20,7 +20,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import PageHierarchyBar from "./PageHierarchyBar.vue";
-import ExpandIcon from "./ExpandIcon.vue";
+import ExpandIcon from "src/components/ExpandIcon.vue";
 
 const props = defineProps({
   // eslint-disable-next-line vue/require-default-prop
@@ -47,7 +47,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 
 // LAYOUT
 
