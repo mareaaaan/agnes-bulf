@@ -23,7 +23,7 @@
 
 <script setup>
 import WebsiteLogo from "src/components/header_components/WebsiteLogo.vue";
-import BaseButton from "./BaseButton.vue";
+import BaseButton from "src/components/buttons/BaseButton.vue";
 import LocationInfo from "./LocationInfo.vue";
 import SocialLinksFooter from "./SocialLinksFooter.vue";
 </script>

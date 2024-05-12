@@ -7,7 +7,7 @@
 <script setup></script>
 
 <style lang="scss" scoped>
-@import "../styles/_globals.scss";
+@import "../../styles/_globals.scss";
 .base-button {
   background-color: $light-color;
   color: $secondary-color;

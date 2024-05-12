@@ -20,7 +20,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import PageHierarchyBar from "./PageHierarchyBar.vue";
-import ExpandIcon from "src/components/ExpandIcon.vue";
+import ExpandIcon from "src/components/buttons/ExpandIcon.vue";
 
 const props = defineProps({
   // eslint-disable-next-line vue/require-default-prop
