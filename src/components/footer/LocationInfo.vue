@@ -1,6 +1,6 @@
 <template>
   <div class="location">
-    <MapsLink class="location__icon" />
+    <MapsLink class="link-icon grow-and-rotate" />
     <p class="location__text">
       Bulevardul Frații Golești, nr.13, Etajul 4, Pitesti, Romania
     </p>
@@ -22,7 +22,7 @@ import MapsLink from "src/components/links/MapsLink.vue";
 
 // STYLES
 
-.location__icon {
+.link-icon {
   align-self: start;
   padding-inline-end: 0.25rem;
   padding-block-start: 0.1rem;

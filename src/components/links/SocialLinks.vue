@@ -1,12 +1,21 @@
 <template>
   <div class="social-links">
     <InstagramLink
-      class="link-icon"
+      class="link-icon grow-and-rotate"
       :class="{ dark: isDark, light: !isDark }"
     />
-    <FacebookLink class="link-icon" :class="{ dark: isDark, light: !isDark }" />
-    <YoutubeLink class="link-icon" :class="{ dark: isDark, light: !isDark }" />
-    <TikTokLink class="link-icon" :class="{ dark: isDark, light: !isDark }" />
+    <FacebookLink
+      class="link-icon grow-and-rotate"
+      :class="{ dark: isDark, light: !isDark }"
+    />
+    <YoutubeLink
+      class="link-icon grow-and-rotate"
+      :class="{ dark: isDark, light: !isDark }"
+    />
+    <TikTokLink
+      class="link-icon grow-and-rotate"
+      :class="{ dark: isDark, light: !isDark }"
+    />
   </div>
 </template>
 
@@ -38,10 +47,5 @@ defineProps({
 
 .link-icon {
   padding: 0.625rem;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1) rotate(-10deg);
-  }
 }
 </style>
