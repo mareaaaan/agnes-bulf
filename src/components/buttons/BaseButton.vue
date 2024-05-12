@@ -15,7 +15,10 @@
   border-radius: 10em;
   padding-block: 1em;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+
   border: 1px solid $secondary-color;
   box-shadow: 0 0 0 0 $secondary-color;
 }
