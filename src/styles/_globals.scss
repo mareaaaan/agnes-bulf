@@ -97,19 +97,19 @@ $xxxl-font-size: 2.5rem;
 }
 
 .rounded-border {
-    border-radius: 25%;
+    border-radius: 10rem;
 }
 
 .arch-border {        
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 50% 30%;
+    border-top-right-radius: 50% 30%;
 
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;   
 }
 
 .oval-border {
-    border-radius: 45%;
+    border-radius: 50% / 30%;
 }
 
 .grow-and-rotate {
