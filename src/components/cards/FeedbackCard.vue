@@ -2,12 +2,10 @@
   <div ref="card" class="card-carousel--card" @click="expandCard">
     <p class="card-carousel--card--text">
       {{ truncatedText }}
-      <strong v-if="isTextTruncated"><em>...citește mai mult</em></strong>
+      <div v-if="isTextTruncated" class="show-more">...citește mai mult</div>
     </p>
     <div class="card-carousel--card--footer">
-      <p>
-        <strong>{{ item.title }}</strong>
-      </p>
+      <strong>{{ item.title }}</strong>
     </div>
     <Teleport to="#app">
       <BlurTransition>
@@ -81,15 +79,18 @@ const isTextTruncated = computed(() => props.item.text.length > 200);
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
 .card-carousel--card {
-  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: 10px;
+  margin-block-end: 2px;
   cursor: pointer;
   box-shadow:
     0 4px 15px 0 rgba(40, 44, 53, 0.06),
     0 2px 2px 0 rgba(40, 44, 53, 0.08);
   background-color: #fff;
   border-radius: 4px;
-  margin-bottom: 2px;
   transition: 0.2s;
+  user-select: none;
 
   &:hover {
     transform: rotate(-1deg);
@@ -99,23 +100,23 @@ const isTextTruncated = computed(() => props.item.text.length > 200);
 .card-carousel--card--footer {
   border-top: 0;
   padding: 7px 15px;
-}
-
-.card-carousel--card--text {
-  padding: 1rem;
-  margin: 0;
-  user-select: none;
-  font-size: $s-font-size;
-  text-align: start;
-}
-
-.card-carousel--card--footer p {
-  padding: 3px 0;
-  margin-bottom: 2px;
-  user-select: none;
+  margin-block-end: 2px;
+  font-weight: bold;
 
   @media screen and (max-width: $mobile-width) {
     font-size: $s-font-size;
+  }
+}
+
+.card-carousel--card--text {
+  flex-grow: 1;
+  padding: 1rem;
+  font-size: $s-font-size;
+  text-align: start;
+
+  .show-more {
+    font-weight: bold;
+    font-style: italic;
   }
 }
 </style>

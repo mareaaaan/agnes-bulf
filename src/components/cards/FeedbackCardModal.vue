@@ -89,6 +89,7 @@ defineExpose({
   padding: 3px 0;
   margin-bottom: 2px;
   user-select: none;
+  font-weight: bold;
 
   @media screen and (max-width: $mobile-width) {
     font-size: $s-font-size;
