@@ -68,7 +68,7 @@
       <img
         src="../assets/handwork.jpg"
         alt="Agnes lucrand la ceva manual"
-        class="rounded-border"
+        class="oval-border"
       />
     </template>
   </HomeSection>

@@ -29,7 +29,7 @@
             <img
               src="../assets/individual-therapy.jpg"
               alt="Poza cu doua fotolii, o masuta si un dulap cu carti"
-              class="rounded-border"
+              class="oval-border"
             />
           </template>
           <template #title>Psihoterapie individuala</template>
@@ -67,7 +67,7 @@
             <img
               src="../assets/family-therapy.jpg"
               alt="Poza cu doua maini stranse pe un fundal cu un copac"
-              class="rounded-border"
+              class="oval-border"
             />
           </template>
           <template #title>Psihoterapie Familie</template>
@@ -102,7 +102,7 @@
             <img
               src="../assets/book-club.jpg"
               alt="Poza cu o presoana dand mai departe o carte portocalie"
-              class="rounded-border"
+              class="oval-border"
             />
           </template>
           <template #title>Club de carte</template>

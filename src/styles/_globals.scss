@@ -56,7 +56,6 @@ $xxxl-font-size: 2.5rem;
 .section__image {
     img {
         border: 4px solid white;
-        outline: 1px solid #bdb9ac; 
     }
 }
 
@@ -96,16 +95,9 @@ $xxxl-font-size: 2.5rem;
     background-color: $primary-color;
 }
 
-.rounded-border {
-    border-radius: 10rem;
-}
-
 .arch-border {        
     border-top-left-radius: 50% 30%;
-    border-top-right-radius: 50% 30%;
-
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;   
+    border-top-right-radius: 50% 30%; 
 }
 
 .oval-border {
