@@ -24,75 +24,25 @@
           </template>
         </ServiceIntroSection>
 
-        <ServiceSection id="1">
+        <ServiceSection
+          v-for="(service, index) in services"
+          :id="index + 1"
+          :key="index + 1"
+        >
           <template #image>
             <img
-              src="../assets/individual-therapy.jpg"
-              alt="Poza cu doua fotolii, o masuta si un dulap cu carti"
+              :src="getImgUrl(service.img.src)"
+              :alt="service.img.alt"
               class="oval-border"
             />
           </template>
-          <template #title>Psihoterapie individuala</template>
+          <template #title>{{ service.title }}</template>
           <template #text>
-            <p>
-              Fiecare demers terapeutic se bazează pe principiul
-              confidențialității și al sincerității. Psihoterapia individuală
-              este un proces care se desfășoară între tine și psiholog sau
-              psihoterapeut cu respectarea acestor principii.
-            </p>
-          </template>
-        </ServiceSection>
-
-        <ServiceSection id="2">
-          <template #image>
-            <img
-              src="../assets/couple-therapy.jpg"
-              alt="Poza cu doua maini stranse pe un fundal cu un copac"
-              class="oval-border"
-            />
-          </template>
-          <template #title>Psihoterapie de cuplu</template>
-          <template #text>
-            <p>
-              Fiecare demers terapeutic se bazează pe principiul
-              confidențialității și al sincerității. Psihoterapia de cuplu se
-              adresează cuplurilor romantice, cuplurilor de prieteni sau
-              prietene sau și cupluri precum: mamă-fiică, tată-fiu, etc.
-            </p>
-          </template>
-        </ServiceSection>
-
-        <ServiceSection id="3">
-          <template #image>
-            <img
-              src="../assets/family-therapy.jpg"
-              alt="Poza cu doua maini stranse pe un fundal cu un copac"
-              class="oval-border"
-            />
-          </template>
-          <template #title>Psihoterapie Familie</template>
-          <template #text>
-            <p>
-              Fiecare demers terapeutic se bazează pe principiul
-              confidențialității și al sincerității.
-            </p>
-          </template>
-        </ServiceSection>
-
-        <ServiceSection id="4">
-          <template #image>
-            <img
-              src="../assets/evaluare-psihologica.jpg"
-              alt="Poza cu o presoana dand mai departe o carte portocalie"
-              class="oval-border"
-            />
-          </template>
-          <template #title>Evaluare psihologică</template>
-          <template #text>
-            <p>
-              Pellentesque nec faucibus neque, vel vulputate massa. Nam dui
-              odio, tincidunt in purus vel, cursus interdum quam. Ut purus odio,
-              ornare vel nibh id, feugiat aliquet nisl.
+            <p
+              v-for="(paragraph, paragraph_index) in service.text"
+              :key="paragraph_index"
+            >
+              {{ paragraph }}
             </p>
           </template>
         </ServiceSection>
@@ -116,8 +66,12 @@ import TableOfContents from "src/components/table_of_contents/TableOfContents.vu
 import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
+import services from "src/content/services/services.json";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
+
+const getImgUrl = (imageNameWithExtension) =>
+  new URL(`../assets/${imageNameWithExtension}`, import.meta.url).href;
 </script>
 
 <style lang="scss" scoped>
