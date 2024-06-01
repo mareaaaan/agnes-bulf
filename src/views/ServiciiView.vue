@@ -6,7 +6,7 @@
         <ServiceIntroSection id="0">
           <template #image>
             <img
-              src="../assets/office.jpg"
+              src="../assets/agnes-writing.jpg"
               alt="Poza cu Agnes zambind pe un fotoliu"
               class="arch-border"
             />
@@ -96,26 +96,6 @@
             </p>
           </template>
         </ServiceSection>
-
-        <ServiceSection id="5">
-          <template #image>
-            <img
-              src="../assets/book-club.jpg"
-              alt="Poza cu o presoana dand mai departe o carte portocalie"
-              class="oval-border"
-            />
-          </template>
-          <template #title>Club de carte</template>
-          <template #text>
-            <p>
-              Maecens pulvinar, elit at dapibus condimentum, quam felis varius
-              mauris, non cursus purus diam in magna. Curabitur sollicitudin,
-              erat ac eleifend scelerisque, massa felis volutpat risus, ut
-              pretium leo dui maximus sem. Suspendisse euismod lectus quis leo
-              tristique, et tincidunt est maximus.
-            </p>
-          </template>
-        </ServiceSection>
       </main>
       <TableOfContents
         v-if="isLargeScreen"
@@ -146,7 +126,6 @@ const headers = [
   "Psihoterapie de cuplu",
   "Psihoterapie Familie",
   "Evaluare psihologică",
-  "Club de carte",
 ];
 </script>
 

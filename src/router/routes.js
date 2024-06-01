@@ -1,5 +1,6 @@
 import PovesteaMeaView from "../views/PovesteaMeaView.vue";
 import ServiciiView from "../views/ServiciiView.vue";
+import WorkshopsView from "../views/WorkshopsView.vue";
 
 const routes = [
   {
@@ -13,9 +14,9 @@ const routes = [
     component: ServiciiView,
   },
   {
-    name: "Ateliere",
-    path: "/",
-    component: PovesteaMeaView,
+    name: "Workshopuri",
+    path: "/workshopuri/",
+    component: WorkshopsView,
   },
   {
     name: "Tender Melt",
