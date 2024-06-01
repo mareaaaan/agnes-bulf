@@ -1,18 +1,13 @@
 <template>
   <section ref="section" class="section max-width-container page-hierarchy-bar">
     <div class="section-grid max-width">
-      <PageHierarchy :headers="props.headers" />
+      <PageHierarchy />
     </div>
   </section>
 </template>
 
 <script setup>
 import PageHierarchy from "./PageHierarchy.vue";
-
-const props = defineProps({
-  // eslint-disable-next-line vue/require-default-prop
-  headers: Array,
-});
 </script>
 
 <style lang="scss" scoped>

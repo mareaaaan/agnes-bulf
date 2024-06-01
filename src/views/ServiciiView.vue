@@ -1,5 +1,5 @@
 <template>
-  <TableOfContentsBar v-if="!isLargeScreen" :headers="headers" />
+  <TableOfContentsBar v-if="!isLargeScreen" />
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">
@@ -101,7 +101,6 @@
         v-if="isLargeScreen"
         v-motion-fade-in-on-visible
         class="table-of-contents"
-        :headers="headers"
       />
     </div>
   </div>
@@ -119,14 +118,6 @@ import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
-
-const headers = [
-  "Serviciile mele",
-  "Psihoterapie individuala",
-  "Psihoterapie de cuplu",
-  "Psihoterapie Familie",
-  "Evaluare psihologică",
-];
 </script>
 
 <style lang="scss" scoped>

@@ -12,7 +12,7 @@
       </div>
     </section>
     <ExpandTransition>
-      <PageHierarchyBar v-show="isExpanded" :headers="props.headers" />
+      <PageHierarchyBar v-show="isExpanded" />
     </ExpandTransition>
   </aside>
 </template>
@@ -21,11 +21,6 @@
 import { ref, computed, onMounted } from "vue";
 import PageHierarchyBar from "./PageHierarchyBar.vue";
 import ExpandIcon from "src/components/buttons/ExpandIcon.vue";
-
-const props = defineProps({
-  // eslint-disable-next-line vue/require-default-prop
-  headers: Array,
-});
 
 const isExpanded = ref(false);
 

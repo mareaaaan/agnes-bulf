@@ -2,7 +2,7 @@
   <div class="page-hierarchy">
     <ul>
       <li
-        v-for="(header, index) in props.headers"
+        v-for="(header, index) in headers"
         :key="header"
         :class="{ active: index == currentSection }"
         class="header-link-container"
@@ -17,10 +17,7 @@
 import { ref, onMounted, computed } from "vue";
 import { useMediaQuery } from "@vueuse/core";
 
-const props = defineProps({
-  // eslint-disable-next-line vue/require-default-prop
-  headers: Array,
-});
+const headers = ref([]);
 
 const currentSection = ref(0);
 
@@ -48,9 +45,18 @@ onMounted(() => {
     },
   );
 
+  var newHeaders = [];
+
   document.querySelectorAll(".service-section").forEach((section) => {
     observer.observe(section);
+    var title = section.querySelector(".section__title");
+
+    if (title) {
+      newHeaders.push(title.textContent);
+    }
   });
+
+  headers.value = newHeaders;
 });
 </script>
 
