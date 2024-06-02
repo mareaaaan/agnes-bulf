@@ -9,12 +9,7 @@
         <div class="social-links-container">
           <SocialLinksFooter />
         </div>
-        <BaseButton
-          v-motion-fade-in-on-visible
-          class="section__button"
-          href="https://ig.me/m/agnesmariapriseceanu"
-          >Contactează-mă</BaseButton
-        >
+        <ContactButton class="section__button"></ContactButton>
         <div class="copyright-container">©Agnes Maria Priseceanu</div>
       </div>
     </section>
@@ -23,9 +18,9 @@
 
 <script setup>
 import WebsiteLogo from "src/components/header/WebsiteLogo.vue";
-import BaseButton from "src/components/buttons/BaseButton.vue";
 import LocationInfo from "./LocationInfo.vue";
 import SocialLinksFooter from "./SocialLinksFooter.vue";
+import ContactButton from "../buttons/ContactButton.vue";
 </script>
 
 <style lang="scss" scoped>

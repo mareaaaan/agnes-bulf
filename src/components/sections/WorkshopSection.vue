@@ -9,9 +9,7 @@
     <div v-motion-fade-in-on-visible class="section__text">
       <slot name="text"></slot>
     </div>
-    <ContactButton v-motion-fade-in-on-visible class="section__button">
-      Programează o ședință
-    </ContactButton>
+    <ContactButton v-motion-fade-in-on-visible></ContactButton>
   </section>
 </template>
 

@@ -1,10 +1,12 @@
 <template>
-  <a class="base-button">
+  <button class="base-button" @click="$emit('click')">
     <slot></slot>
-  </a>
+  </button>
 </template>
 
-<script setup></script>
+<script setup>
+defineEmits(["click"]);
+</script>
 
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
