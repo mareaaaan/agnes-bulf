@@ -6,7 +6,7 @@
         <ServiceIntroSection id="0">
           <template #image>
             <img
-              :src="getImgUrl(intro.img.src)"
+              :src="getImageSource(intro.img.src)"
               :alt="intro.img.alt"
               class="arch-border"
             />
@@ -29,7 +29,7 @@
         >
           <template #image>
             <img
-              :src="getImgUrl(service.img.src)"
+              :src="getImageSource(service.img.src)"
               :alt="service.img.alt"
               class="oval-border"
             />
@@ -67,11 +67,8 @@ import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import services from "src/content/services/services.json";
 import intro from "src/content/services/intro.json";
-
+import getImageSource from "src/utils";
 const isLargeScreen = useMediaQuery("(width >= 600px)");
-
-const getImgUrl = (imageNameWithExtension) =>
-  new URL(`../assets/${imageNameWithExtension}`, import.meta.url).href;
 </script>
 
 <style lang="scss" scoped>
