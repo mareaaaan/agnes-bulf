@@ -5,7 +5,7 @@
         "type": "intro",
         "title": "Club de carte",
         "image": {
-          "src": "images/club-de-carte.jpg",
+          "src": "book-club.jpg",
           "alt": "Club de carte"
         },
         "text": [
@@ -13,42 +13,6 @@
           "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
           "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
         ]
-      },
-      {
-        "type": "list",
-        "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-        "items": [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
-        ]
-      },
-      {
-        "type": "card",
-        "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
-      },
-      {
-        "type": "hero",
-        "image": {
-          "src": "images/club-de-carte.jpg",
-          "alt": "Club de carte"
-        }
-      },
-      {
-        "type": "content",
-        "image": {
-          "src": "images/club-de-carte.jpg",
-          "alt": "Club de carte"
-        },
-        "text": [
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
-        ]
-      },
-      {
-        "type": "card",
-        "text": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
       }
     ]
   }

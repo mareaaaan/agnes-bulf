@@ -5,27 +5,28 @@
     :key="index"
     :data="section"
   />
-  <WavyDivider :is-light-to-dark="true" />
-  <PageFooter class="dark-background" />
+  <WavyDivider :is-light-to-dark="false" />
+  <PageFooter class="light-background" />
 </template>
 
 <script setup>
 import { useRoute } from "vue-router";
 import detailed_workshops from "src/content/workshops/detailed_workshops.json";
+import IntroSection from "src/components/sections/IntroSection.vue";
 const route = useRoute();
 
 const workshop = detailed_workshops[route.params.workshop];
 
-const getComponent = (section) => {
+const getComponent = (sectionType) => {
   const sectionComponentPairs = {
-    intro: "IntroSection",
+    intro: IntroSection,
     // list: "ListSection",
     // content: "ContentSection",
     // hero: "HeroSection",
     // card: "CardSection",
   };
 
-  return sectionComponentPairs[section.type];
+  return sectionComponentPairs[sectionType];
 };
 </script>
 
