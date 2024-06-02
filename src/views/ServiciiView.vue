@@ -6,20 +6,18 @@
         <ServiceIntroSection id="0">
           <template #image>
             <img
-              src="../assets/agnes-writing.jpg"
-              alt="Poza cu Agnes zambind pe un fotoliu"
+              :src="getImgUrl(intro.img.src)"
+              :alt="intro.img.alt"
               class="arch-border"
             />
           </template>
-          <template #title>Serviciile mele</template>
+          <template #title>{{ intro.title }}</template>
           <template #text>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              ullamcorper metus vel auctor ullamcorper. Fusce quis purus
-              fringilla, laoreet lorem quis, ornare sem. Pellentesque nec
-              faucibus neque, vel vulputate massa. Nam dui odio, tincidunt in
-              purus vel, cursus interdum quam. Ut purus odio, ornare vel nibh
-              id, feugiat aliquet nisl.
+            <p
+              v-for="(paragraph, paragraph_index) in intro.text"
+              :key="paragraph_index"
+            >
+              {{ paragraph }}
             </p>
           </template>
         </ServiceIntroSection>
@@ -47,6 +45,7 @@
           </template>
         </ServiceSection>
       </main>
+
       <TableOfContents
         v-if="isLargeScreen"
         v-motion-fade-in-on-visible
@@ -67,6 +66,7 @@ import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import services from "src/content/services/services.json";
+import intro from "src/content/services/intro.json";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
 
