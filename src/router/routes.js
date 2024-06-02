@@ -1,6 +1,7 @@
 import PovesteaMeaView from "../views/PovesteaMeaView.vue";
 import ServiciiView from "../views/ServiciiView.vue";
 import WorkshopsView from "../views/WorkshopsView.vue";
+import WorkshopView from "../views/WorkshopView.vue";
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     name: "Resurse",
     path: "/",
     component: PovesteaMeaView,
+  },
+  {
+    path: "/workshopuri/:workshop",
+    name: "Workshop",
+    component: WorkshopView,
   },
 ];
 

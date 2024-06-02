@@ -9,12 +9,24 @@
     <div v-motion-fade-in-on-visible class="section__text">
       <slot name="text"></slot>
     </div>
-    <ContactButton v-motion-fade-in-on-visible></ContactButton>
+    <OpenWorkshopButton
+      v-motion-fade-in-on-visible
+      class="section__button"
+      :workshop-name="props.workshopName"
+    ></OpenWorkshopButton>
   </section>
 </template>
 
 <script setup>
-import ContactButton from "../buttons/ContactButton.vue";
+import OpenWorkshopButton from "../buttons/OpenWorkshopButton.vue";
+
+import { defineProps } from "vue";
+const props = defineProps({
+  workshopName: {
+    type: String,
+    default: "",
+  },
+});
 </script>
 
 <style lang="scss" scoped>

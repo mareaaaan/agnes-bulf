@@ -22,10 +22,11 @@
           </template>
         </ServiceIntroSection>
 
-        <ServiceSection
+        <WorkshopSection
           v-for="(workshop, index) in workshops"
           :id="index + 1"
           :key="index + 1"
+          :workshop-name="workshop.name"
         >
           <template #image>
             <img
@@ -43,7 +44,7 @@
               {{ paragraph }}
             </p>
           </template>
-        </ServiceSection>
+        </WorkshopSection>
       </main>
 
       <TableOfContents
@@ -58,10 +59,10 @@
   <PageFooter class="light-background" />
 </template>
 <script setup>
-import ServiceSection from "src/components/sections/ServiceSection.vue";
 import ServiceIntroSection from "src/components/sections/ServiceIntroSection.vue";
 import TableOfContentsBar from "src/components/table_of_contents/TableOfContentsBar.vue";
 import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
+import WorkshopSection from "src/components/sections/WorkshopSection.vue";
 import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
