@@ -1,6 +1,5 @@
 <template>
   <div class="max-width-container">
-    <slot name="curve"></slot>
     <div class="max-width">
       <section class="service-section section-grid">
         <div v-motion-fade-in-on-visible class="section__text">
