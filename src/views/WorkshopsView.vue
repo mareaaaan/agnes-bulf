@@ -6,43 +6,46 @@
         <ServiceIntroSection id="0">
           <template #image>
             <img
-              src="../assets/office.jpg"
-              alt="Poza cu Agnes zambind pe un fotoliu"
+              :src="getImgUrl(intro.img.src)"
+              :alt="intro.img.alt"
               class="arch-border"
             />
           </template>
-          <template #title>Workshopuri</template>
+          <template #title>{{ intro.title }}</template>
           <template #text>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              ullamcorper metus vel auctor ullamcorper. Fusce quis purus
-              fringilla, laoreet lorem quis, ornare sem. Pellentesque nec
-              faucibus neque, vel vulputate massa. Nam dui odio, tincidunt in
-              purus vel, cursus interdum quam. Ut purus odio, ornare vel nibh
-              id, feugiat aliquet nisl.
+            <p
+              v-for="(paragraph, paragraph_index) in intro.text"
+              :key="paragraph_index"
+            >
+              {{ paragraph }}
             </p>
           </template>
         </ServiceIntroSection>
-        <ServiceSection id="1">
+
+        <ServiceSection
+          v-for="(workshop, index) in workshops"
+          :id="index + 1"
+          :key="index + 1"
+        >
           <template #image>
             <img
-              src="../assets/book-club.jpg"
-              alt="Poza cu o presoana dand mai departe o carte portocalie"
+              :src="getImgUrl(workshop.img.src)"
+              :alt="workshop.img.alt"
               class="oval-border"
             />
           </template>
-          <template #title>Club de carte</template>
+          <template #title>{{ workshop.title }}</template>
           <template #text>
-            <p>
-              Maecens pulvinar, elit at dapibus condimentum, quam felis varius
-              mauris, non cursus purus diam in magna. Curabitur sollicitudin,
-              erat ac eleifend scelerisque, massa felis volutpat risus, ut
-              pretium leo dui maximus sem. Suspendisse euismod lectus quis leo
-              tristique, et tincidunt est maximus.
+            <p
+              v-for="(paragraph, paragraph_index) in workshop.text"
+              :key="paragraph_index"
+            >
+              {{ paragraph }}
             </p>
           </template>
         </ServiceSection>
       </main>
+
       <TableOfContents
         v-if="isLargeScreen"
         v-motion-fade-in-on-visible
@@ -62,8 +65,13 @@ import TableOfContents from "src/components/table_of_contents/TableOfContents.vu
 import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
+import workshops from "src/content/workshops/workshops.json";
+import intro from "src/content/workshops/intro.json";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
+
+const getImgUrl = (imageNameWithExtension) =>
+  new URL(`../assets/${imageNameWithExtension}`, import.meta.url).href;
 </script>
 
 <style lang="scss" scoped>
