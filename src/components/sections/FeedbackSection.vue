@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import feedbackItems from "src/assets/feedbackData.json";
+import feedbackItems from "src/content/home/feedbackData.json";
 import CardCarousel from "src/components/cards/CardCarousel.vue";
 </script>
 

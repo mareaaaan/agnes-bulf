@@ -23,7 +23,7 @@
     </template>
     <template #image>
       <img
-        src="../assets/portrait.jpg"
+        :src="getImageSource('portrait.jpg')"
         alt="Portret cu Agnes"
         class="arch-border"
       />
@@ -66,7 +66,7 @@
 
     <template #image>
       <img
-        src="../assets/handwork.jpg"
+        :src="getImageSource('handwork.jpg')"
         alt="Agnes lucrand la ceva manual"
         class="oval-border"
       />
@@ -106,7 +106,7 @@
     </template>
     <template #image>
       <img
-        src="../assets/professional.jpg"
+        :src="getImageSource('professional.jpg')"
         alt="Agnes scriind intr-o carte"
         class="oval-border"
       />
@@ -148,6 +148,7 @@ import EmbeddedVideoSection from "src/components/sections/EmbeddedVideoSection.v
 import FeedbackSection from "src/components/sections/FeedbackSection.vue";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
+import getImageSource from "src/utils";
 </script>
 
 <style lang="scss" scoped>
