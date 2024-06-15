@@ -28,7 +28,7 @@ const imageSource = getImageSource(props.data.image.src);
 // STYLES
 .section__image {
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   background-size: cover;
   margin-block-end: 3rem;
 
@@ -36,6 +36,7 @@ const imageSource = getImageSource(props.data.image.src);
 
   @media (width >= $desktop-width) {
     height: 80vh;
+    background-position: center;
   }
 }
 </style>
