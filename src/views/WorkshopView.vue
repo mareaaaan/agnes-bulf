@@ -15,6 +15,7 @@ import detailed_workshops from "src/content/workshops/detailed_workshops.json";
 import IntroSection from "src/components/sections/IntroSection.vue";
 import ListSection from "src/components/sections/ListSection.vue";
 import CardSection from "src/components/sections/CardSection.vue";
+import HeroSection from "src/components/sections/HeroSection.vue";
 const route = useRoute();
 
 const workshop = detailed_workshops[route.params.workshop];
@@ -24,7 +25,7 @@ const getComponent = (sectionType) => {
     intro: IntroSection,
     list: ListSection,
     // content: "ContentSection",
-    // hero: "HeroSection",
+    hero: HeroSection,
     card: CardSection,
   };
 

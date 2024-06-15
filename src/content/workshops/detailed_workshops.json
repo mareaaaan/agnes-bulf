@@ -23,6 +23,13 @@
         ]
       },
       {
+        "type": "hero",
+        "image": {
+          "src": "bookshelf.jpg",
+          "alt": "Agnes citeste o carte langa o biblioteca"
+        }
+      },
+      {
         "type": "card",
         "text": [
           "Phasellus massa ligula, sodales sed vestibulum at, eleifend vitae nulla. Nunc sodales lacinia vehicula. Aenean commodo, arcu in euismod congue, sapien odio semper sapien, at consequat nisl felis et risus. In in dapibus lacus. Suspendisse a tortor justo. Duis euismod ac magna ut luctus. Pellentesque non dolor laoreet, euismod est vitae, sodales libero. Vivamus vel tempus dolor, a interdum turpis. Nullam vel odio ut elit pulvinar finibus sed ut sem. Quisque scelerisque lacus et odio maximus fringilla. Etiam gravida scelerisque lectus."
