@@ -1,7 +1,7 @@
 <template>
   <div
     class="arch-divider"
-    :class="props.isLightToDark ? 'light-background' : 'dark-background'"
+    :class="props.data.isLightToDark ? 'light-background' : 'dark-background'"
   >
     <BottomCurve :is-dark="props.isLightToDark" />
   </div>
@@ -11,7 +11,10 @@
 import BottomCurve from "./BottomCurve.vue";
 
 const props = defineProps({
-  isLightToDark: Boolean,
+  data: {
+    type: Object,
+    default: () => ({}),
+  },
 });
 </script>
 

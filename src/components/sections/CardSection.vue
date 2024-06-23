@@ -1,5 +1,8 @@
 <template>
-  <div class="max-width-container">
+  <div
+    class="max-width-container"
+    :class="props.data.isLight ? 'light-background' : 'dark-background'"
+  >
     <div class="max-width">
       <section class="service-section section-grid">
         <div v-motion-fade-in-on-visible class="section__text">

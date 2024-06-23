@@ -1,5 +1,8 @@
 <template>
-  <div class="max-width-container">
+  <div
+    class="max-width-container"
+    :class="props.data.isLight ? 'light-background' : 'dark-background'"
+  >
     <div class="max-width">
       <section class="service-section section-grid">
         <h2 v-motion-fade-in-on-visible class="section__title">
@@ -7,7 +10,7 @@
         </h2>
         <div v-motion-fade-in-on-visible class="videos-container">
           <EmbeddedVideo
-            v-for="(videoUrl, index) in props.videos"
+            v-for="(videoUrl, index) in props.data.videos"
             :key="index"
             :url="videoUrl"
           />
@@ -19,8 +22,10 @@
 
 <script setup>
 const props = defineProps({
-  // eslint-disable-next-line vue/require-default-prop
-  videos: Array,
+  data: {
+    type: Object,
+    default: () => ({}),
+  },
 });
 </script>
 
