@@ -1,0 +1,42 @@
+[
+  {
+    "img": {
+      "src": "individual-therapy.jpg",
+      "alt": "Poza cu doua fotolii, o masuta si un dulap cu carti"
+    },
+    "title": "Psihoterapie individuala",
+    "text": [
+      "Fiecare demers terapeutic se bazează pe principiul confidențialității și al sincerității. Psihoterapia individuală este un proces care se desfășoară între tine și psiholog sau psihoterapeut cu respectarea acestor principii."
+    ]
+  },
+  {
+    "img": {
+      "src": "couple-therapy.jpg",
+      "alt": "Poza cu doua maini stranse pe un fundal cu un copac"
+    },
+    "title": "Psihoterapie de cuplu",
+    "text": [
+      "Fiecare demers terapeutic se bazează pe principiul confidențialității și al sincerității. Psihoterapia de cuplu se adresează cuplurilor romantice, cuplurilor de prieteni sau prietene sau și cupluri precum: mamă-fiică, tată-fiu, etc."
+    ]
+  },
+  {
+    "img": {
+      "src": "family-therapy.jpg",
+      "alt": "Poza cu doua maini stranse pe un fundal cu un copac"
+    },
+    "title": "Psihoterapie de grup",
+    "text": [
+      "Fiecare demers terapeutic se bazează pe principiul confidențialității și al sincerității.."
+    ]
+  },
+  {
+    "img": {
+      "src": "evaluare-psihologica.jpg",
+      "alt": "Poza cu o persoana dand mai departe o carte portocalie"
+    },
+    "title": "Evaluare psihologică",
+    "text": [
+      "Pellentesque nec faucibus neque, vel vulputate massa. Nam dui odio, tincidunt in purus vel, cursus interdum quam. Ut purus odio, ornare vel nibh id, feugiat aliquet nisl."
+    ]
+  }
+]

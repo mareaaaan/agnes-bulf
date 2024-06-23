@@ -1,0 +1,40 @@
+{
+  "book-club": {
+    "sections": [
+      {
+        "type": "intro",
+        "title": "Club de carte",
+        "image": {
+          "src": "book-club.jpg",
+          "alt": "Club de carte"
+        },
+        "text": [
+          "Nunc vitae elit cursus, tincidunt libero vitae, viverra nunc. Ut vitae dolor feugiat, congue urna quis, egestas elit. Nullam a tempor magna. Curabitur venenatis est sem, non egestas lectus dapibus nec.",
+          "Cras non magna congue, commodo mauris a, posuere felis. Curabitur placerat sagittis libero, quis commodo est lacinia in. Maecenas sit amet semper tellus. Nullam ipsum lacus, tincidunt sit amet nunc sed, lobortis ullamcorper nisl. Quisque et egestas felis. Proin lacinia pellentesque felis, id pellentesque urna tempor in. Donec accumsan mi ut ex hendrerit porta. Proin congue, turpis vitae laoreet aliquam, massa lectus varius ex, eget auctor nunc massa at lectus. Nullam eu eros sed nisl convallis mollis."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+        "items": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+          "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+        ]
+      },
+      {
+        "type": "hero",
+        "image": {
+          "src": "bookshelf.jpg",
+          "alt": "Agnes citeste o carte langa o biblioteca"
+        }
+      },
+      {
+        "type": "card",
+        "text": [
+          "Phasellus massa ligula, sodales sed vestibulum at, eleifend vitae nulla. Nunc sodales lacinia vehicula. Aenean commodo, arcu in euismod congue, sapien odio semper sapien, at consequat nisl felis et risus. In in dapibus lacus. Suspendisse a tortor justo. Duis euismod ac magna ut luctus. Pellentesque non dolor laoreet, euismod est vitae, sodales libero. Vivamus vel tempus dolor, a interdum turpis. Nullam vel odio ut elit pulvinar finibus sed ut sem. Quisque scelerisque lacus et odio maximus fringilla. Etiam gravida scelerisque lectus."
+        ]
+      }
+    ]
+  }
+}

@@ -9,7 +9,7 @@
 <style>
 .blur-enter-active,
 .blur-leave-active {
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .blur-enter-from,

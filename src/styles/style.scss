@@ -17,14 +17,36 @@
 
 
   background-color: $primary-color;
+  color: $secondary-color;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;  
+}
+
+
+html {
+  scroll-behavior: smooth
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a:link,
 a:visited {
   text-decoration: none;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+b {
+  font-weight: bold;
 }
