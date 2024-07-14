@@ -19,6 +19,10 @@ import TextImageSection from "src/components/sections/TextImageSection.vue";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import { computed } from "vue";
+import { ref } from "vue";
+import { fetchPageData } from "../client";
+
+const data = ref(null);
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
@@ -58,6 +62,12 @@ function addBackgroundColorToSection(section, isLight) {
     isLight,
   };
 }
+
+async function fetchData() {
+  data.value = await fetchPageData("povestea-mea");
+}
+
+fetchData();
 </script>
 
 <style lang="scss" scoped></style>
