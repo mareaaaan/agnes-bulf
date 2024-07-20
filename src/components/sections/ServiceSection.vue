@@ -1,13 +1,21 @@
 <template>
   <section class="service-section section-grid">
     <div v-motion-fade-in-on-visible class="section__image">
-      <slot name="image"></slot>
+      <slot name="image">
+        <img
+          :src="imageBuilder.image(props.data.image)"
+          :alt="props.data.image.alt"
+          class="oval-border"
+        />
+      </slot>
     </div>
     <h2 v-motion-fade-in-on-visible class="section__title">
-      <slot name="title"></slot>
+      <slot name="title">
+        {{ props.data.title }}
+      </slot>
     </h2>
     <div v-motion-fade-in-on-visible class="section__text">
-      <slot name="text"></slot>
+      <slot name="text"><PortableText :value="props.data.content" /></slot>
     </div>
     <ContactButton v-motion-fade-in-on-visible class="section__button">
       Programează o ședință
@@ -17,6 +25,15 @@
 
 <script setup>
 import ContactButton from "../buttons/ContactButton.vue";
+import { defineProps } from "vue";
+import { imageBuilder } from "src/client";
+import { PortableText } from "@portabletext/vue";
+const props = defineProps({
+  data: {
+    type: Object,
+    default: () => ({}),
+  },
+});
 </script>
 
 <style lang="scss" scoped>

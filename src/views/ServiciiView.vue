@@ -3,46 +3,18 @@
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">
-        <ServiceIntroSection id="0">
-          <template #image>
-            <img
-              :src="getImageSource(intro.img.src)"
-              :alt="intro.img.alt"
-              class="arch-border"
-            />
-          </template>
-          <template #title>{{ intro.title }}</template>
-          <template #text>
-            <p
-              v-for="(paragraph, paragraph_index) in intro.text"
-              :key="paragraph_index"
-            >
-              {{ paragraph }}
-            </p>
-          </template>
-        </ServiceIntroSection>
-
+        <component
+          :is="getComponent(section._type)"
+          v-for="(section, index) in data?.pageBuilder"
+          :key="index"
+          :data="section"
+        />
         <ServiceSection
-          v-for="(service, index) in services"
-          :id="index + 1"
-          :key="index + 1"
+          v-for="(service, index) in servicesData"
+          :id="index"
+          :key="index"
+          :data="service"
         >
-          <template #image>
-            <img
-              :src="getImageSource(service.img.src)"
-              :alt="service.img.alt"
-              class="oval-border"
-            />
-          </template>
-          <template #title>{{ service.title }}</template>
-          <template #text>
-            <p
-              v-for="(paragraph, paragraph_index) in service.text"
-              :key="paragraph_index"
-            >
-              {{ paragraph }}
-            </p>
-          </template>
         </ServiceSection>
       </main>
 
@@ -65,10 +37,28 @@ import TableOfContents from "src/components/table_of_contents/TableOfContents.vu
 import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
-import services from "src/content/services/services.json";
-import intro from "src/content/services/intro.json";
-import getImageSource from "src/utils";
+import { ref } from "vue";
+import { fetchObjectData, fetchPageData } from "../client";
+
 const isLargeScreen = useMediaQuery("(width >= 600px)");
+
+const getComponent = (sectionType) => {
+  const sectionComponentPairs = {
+    textWithIllustration: ServiceIntroSection,
+  };
+
+  return sectionComponentPairs[sectionType];
+};
+
+const data = ref(null);
+const servicesData = ref(null);
+
+async function fetchData() {
+  data.value = await fetchPageData("servicii");
+  servicesData.value = await fetchObjectData("service");
+}
+
+fetchData();
 </script>
 
 <style lang="scss" scoped>

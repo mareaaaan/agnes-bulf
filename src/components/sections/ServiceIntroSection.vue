@@ -1,18 +1,36 @@
 <template>
-  <section class="service-section section--intro section-grid">
+  <section class="section--intro section-grid">
     <div v-motion-fade-in-on-visible class="section__image">
-      <slot name="image"></slot>
+      <slot name="image">
+        <img
+          :src="imageBuilder.image(props.data.image)"
+          :alt="props.data.image.alt"
+          class="arch-border"
+        />
+      </slot>
     </div>
     <h2 v-motion-fade-in-on-visible class="section__title">
-      <slot name="title"></slot>
+      <slot name="title">
+        {{ props.data.heading }}
+      </slot>
     </h2>
     <div v-motion-fade-in-on-visible class="section__text">
-      <slot name="text"></slot>
+      <slot name="text"> <PortableText :value="props.data.content" /></slot>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineProps } from "vue";
+import { imageBuilder } from "src/client";
+import { PortableText } from "@portabletext/vue";
+const props = defineProps({
+  data: {
+    type: Object,
+    default: () => ({}),
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";

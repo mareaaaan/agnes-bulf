@@ -32,7 +32,7 @@ const rootMargin = computed(() => {
 });
 
 onMounted(() => {
-  const observer = new IntersectionObserver(
+  const intersectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -45,18 +45,26 @@ onMounted(() => {
     },
   );
 
-  var newHeaders = [];
+  const resetIntersectionObserver = (_mutations, _observer) => {
+    intersectionObserver.disconnect();
 
-  document.querySelectorAll(".service-section").forEach((section) => {
-    observer.observe(section);
-    var title = section.querySelector(".section__title");
+    var newHeaders = [];
 
-    if (title) {
-      newHeaders.push(title.textContent);
-    }
-  });
+    document.querySelectorAll(".service-section").forEach((section) => {
+      intersectionObserver.observe(section);
+      var title = section.querySelector(".section__title");
+      if (title) {
+        newHeaders.push(title.textContent);
+      }
+    });
+    headers.value = newHeaders;
+  };
 
-  headers.value = newHeaders;
+  const mutationObserver = new MutationObserver(resetIntersectionObserver);
+
+  const targetNode = document.getElementsByClassName("main")[0];
+  const config = { childList: true };
+  mutationObserver.observe(targetNode, config);
 });
 </script>
 
