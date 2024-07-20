@@ -7,20 +7,15 @@
       <section class="service-section section-grid">
         <div v-motion-fade-in-on-visible class="section__text">
           <slot name="text">
-            <p
-              v-for="(paragraph, paragraph_index) in props.data.text"
-              :key="paragraph_index"
-            >
-              {{ paragraph }}
-            </p>
+            <PortableText :value="props.data.content" />
           </slot>
         </div>
 
         <div v-motion-fade-in-on-visible class="section__image">
           <slot name="image">
             <img
-              :src="getImageSource(props.data.image.src)"
-              :alt="props.data.image.src"
+              :src="imageBuilder.image(props.data.image)"
+              :alt="props.data.image.alt"
               class="arch-border"
             />
           </slot>
@@ -32,7 +27,8 @@
 
 <script setup>
 import { defineProps } from "vue";
-import getImageSource from "src/utils";
+import { imageBuilder } from "src/client";
+import { PortableText } from "@portabletext/vue";
 const props = defineProps({
   data: {
     type: Object,

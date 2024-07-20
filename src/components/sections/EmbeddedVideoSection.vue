@@ -10,9 +10,9 @@
         </h2>
         <div v-motion-fade-in-on-visible class="videos-container">
           <EmbeddedVideo
-            v-for="(videoUrl, index) in props.data.videos"
+            v-for="(videoLink, index) in props.data.videoLinks"
             :key="index"
-            :url="videoUrl"
+            :url="videoLink.videourl"
           />
         </div>
       </section>
@@ -21,6 +21,7 @@
 </template>
 
 <script setup>
+import { defineProps } from "vue";
 const props = defineProps({
   data: {
     type: Object,
