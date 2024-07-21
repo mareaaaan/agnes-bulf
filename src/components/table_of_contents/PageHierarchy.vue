@@ -91,6 +91,10 @@ onMounted(() => {
   padding-left: 1em;
 }
 
+.header-link {
+  font-weight: 400;
+}
+
 .header-link-container.active {
   border-color: black;
   border-left-width: 2px;
