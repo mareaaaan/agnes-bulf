@@ -21,4 +21,24 @@ async function fetchObjectData(objectType) {
   var data = await client.fetch(query);
   return data;
 }
-export { fetchPageData, fetchObjectData, imageBuilder };
+
+async function fetchWorkShopsData() {
+  const query = `*[_type == 'workshop']{
+    slug, title, image, description
+  }`;
+  var data = await client.fetch(query);
+  return data;
+}
+
+async function fetchWorkShopData(workshopSlug) {
+  const query = `*[_type == 'workshop' && slug.current==$slug][0]`;
+  var data = await client.fetch(query, { slug: workshopSlug });
+  return data;
+}
+export {
+  fetchPageData,
+  fetchObjectData,
+  fetchWorkShopsData,
+  fetchWorkShopData,
+  imageBuilder,
+};

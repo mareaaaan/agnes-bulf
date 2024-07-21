@@ -1,36 +1,28 @@
 <template>
-  <component
-    :is="getComponent(section.type)"
-    v-for="(section, index) in workshop.sections"
-    :key="index"
-    :data="section"
-  />
+  <IntroSection :data="workshopData" />
+  <ContentSection :data="workshopData" />
   <WavyDivider :is-light-to-dark="false" />
   <PageFooter class="light-background" />
 </template>
 
 <script setup>
 import { useRoute } from "vue-router";
-import detailed_workshops from "src/content/workshops/detailed_workshops.json";
 import IntroSection from "src/components/sections/IntroSection.vue";
-import ListSection from "src/components/sections/ListSection.vue";
-import CardSection from "src/components/sections/CardSection.vue";
-import HeroSection from "src/components/sections/HeroSection.vue";
+import WavyDivider from "src/components/dividers/WavyDivider.vue";
+import PageFooter from "src/components/footer/PageFooter.vue";
+import { ref } from "vue";
+import { fetchWorkShopData } from "../client";
+
 const route = useRoute();
 
-const workshop = detailed_workshops[route.params.workshop];
+const workshopSlug = route.params.workshop;
+const workshopData = ref(null);
 
-const getComponent = (sectionType) => {
-  const sectionComponentPairs = {
-    intro: IntroSection,
-    list: ListSection,
-    // content: "ContentSection",
-    hero: HeroSection,
-    card: CardSection,
-  };
+async function fetchData() {
+  workshopData.value = await fetchWorkShopData(workshopSlug);
+}
 
-  return sectionComponentPairs[sectionType];
-};
+fetchData();
 </script>
 
 <style lang="scss" scoped></style>

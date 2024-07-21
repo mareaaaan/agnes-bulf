@@ -78,6 +78,11 @@ onMounted(() => {
 .page-hierarchy {
   text-align: start;
   padding-block-end: 1rem;
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
 }
 
 .header-link-container {

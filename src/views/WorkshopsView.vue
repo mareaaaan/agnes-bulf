@@ -3,48 +3,19 @@
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">
-        <ServiceIntroSection id="0">
-          <template #image>
-            <img
-              :src="getImageSource(intro.img.src)"
-              :alt="intro.img.alt"
-              class="arch-border"
-            />
-          </template>
-          <template #title>{{ intro.title }}</template>
-          <template #text>
-            <p
-              v-for="(paragraph, paragraph_index) in intro.text"
-              :key="paragraph_index"
-            >
-              {{ paragraph }}
-            </p>
-          </template>
-        </ServiceIntroSection>
+        <component
+          :is="getComponent(section._type)"
+          v-for="(section, index) in data?.pageBuilder"
+          :key="index"
+          :data="section"
+        />
 
         <WorkshopSection
-          v-for="(workshop, index) in workshops"
-          :id="index + 1"
-          :key="index + 1"
-          :workshop-name="workshop.name"
-        >
-          <template #image>
-            <img
-              :src="getImageSource(workshop.img.src)"
-              :alt="workshop.img.alt"
-              class="oval-border"
-            />
-          </template>
-          <template #title>{{ workshop.title }}</template>
-          <template #text>
-            <p
-              v-for="(paragraph, paragraph_index) in workshop.text"
-              :key="paragraph_index"
-            >
-              {{ paragraph }}
-            </p>
-          </template>
-        </WorkshopSection>
+          v-for="(workshop, index) in workshopsData"
+          :id="index"
+          :key="index"
+          :data="workshop"
+        />
       </main>
 
       <TableOfContents
@@ -66,10 +37,28 @@ import WorkshopSection from "src/components/sections/WorkshopSection.vue";
 import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
-import workshops from "src/content/workshops/workshops.json";
-import intro from "src/content/workshops/intro.json";
-import getImageSource from "src/utils";
+import { ref } from "vue";
+import { fetchWorkShopsData, fetchPageData } from "../client";
+
 const isLargeScreen = useMediaQuery("(width >= 600px)");
+
+const getComponent = (sectionType) => {
+  const sectionComponentPairs = {
+    textWithIllustration: ServiceIntroSection,
+  };
+
+  return sectionComponentPairs[sectionType];
+};
+
+const data = ref(null);
+const workshopsData = ref(null);
+
+async function fetchData() {
+  data.value = await fetchPageData("servicii");
+  workshopsData.value = await fetchWorkShopsData();
+}
+
+fetchData();
 </script>
 
 <style lang="scss" scoped>

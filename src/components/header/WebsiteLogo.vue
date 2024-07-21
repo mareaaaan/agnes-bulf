@@ -11,6 +11,7 @@
 @import "../../styles/_globals.scss";
 .logo__title {
   font-family: "Playfair Display", serif;
+  font-weight: 500;
 
   font-size: $xl-font-size;
   text-transform: uppercase;

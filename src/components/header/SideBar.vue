@@ -40,6 +40,7 @@ function onLeave() {
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
 .sidebar-container {
+  padding: 0;
   position: fixed;
   z-index: 3;
   top: 0;
