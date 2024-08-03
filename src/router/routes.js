@@ -3,7 +3,7 @@ import ServiciiView from "../views/ServiciiView.vue";
 import WorkshopsView from "../views/WorkshopsView.vue";
 import WorkshopView from "../views/WorkshopView.vue";
 
-const routes = [
+const topLevelRoutes = [
   {
     path: "/",
     name: "Povestea Mea",
@@ -34,6 +34,10 @@ const routes = [
     path: "/",
     component: PovesteaMeaView,
   },
+];
+
+const routes = [
+  ...topLevelRoutes,
   {
     path: "/workshopuri/:workshop",
     name: "Workshop",
@@ -41,4 +45,4 @@ const routes = [
   },
 ];
 
-export default routes;
+export { topLevelRoutes, routes };

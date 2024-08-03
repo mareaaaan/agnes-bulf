@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import useScrollUp from "src/composables/scrollUp";
-import routes from "src/router/routes";
+import { topLevelRoutes } from "src/router/routes";
 import ContanctHeader from "./ContactHeader.vue";
 import PageHeader from "./PageHeader.vue";
 import NavBarLinks from "./NavBarLinks.vue";
@@ -24,13 +24,13 @@ function toggleSideBar() {
     <ContanctHeader />
     <PageHeader @toggle-side-bar="toggleSideBar" />
     <SlideFromTop>
-      <NavBarLinks v-show="isScrollUp" :pages="routes" />
+      <NavBarLinks v-show="isScrollUp" :pages="topLevelRoutes" />
     </SlideFromTop>
   </nav>
   <Teleport to="body">
     <SideBar
       v-show="isSideBarOpen"
-      :pages="routes"
+      :pages="topLevelRoutes"
       @toggle-side-bar="toggleSideBar"
     />
   </Teleport>
