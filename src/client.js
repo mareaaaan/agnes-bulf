@@ -17,13 +17,13 @@ async function fetchPageData(pageSlug) {
 }
 
 async function fetchObjectData(objectType) {
-  const query = `*[_type == '${objectType}']`;
+  const query = `*[_type == '${objectType}'] | order(_createdAt asc)`;
   var data = await client.fetch(query);
   return data;
 }
 
 async function fetchWorkShopsData() {
-  const query = `*[_type == 'workshop']{
+  const query = `*[_type == 'workshop'] | order(_createdAt asc) {
     slug, title, image, description
   }`;
   var data = await client.fetch(query);
