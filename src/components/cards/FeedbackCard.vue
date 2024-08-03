@@ -2,7 +2,7 @@
   <div ref="card" class="card-carousel--card" @click="expandCard">
     <p class="card-carousel--card--text">
       {{ truncatedText }}
-      <div v-if="isTextTruncated" class="show-more">...citește mai mult</div>
+      <span v-if="isTextTruncated" class="show-more">...citește mai mult</span>
     </p>
     <div class="card-carousel--card--footer">
       <strong>{{ item.title }}</strong>
