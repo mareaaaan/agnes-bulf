@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     open: true,
   },
-  base: "/agnes-maria-priseceanu/",
+  base: "/agnes-bulf/",
   plugins: [
     vue(),
     Components({

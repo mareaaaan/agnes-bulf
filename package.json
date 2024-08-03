@@ -1,9 +1,9 @@
 {
-  "name": "agnes-maria-priseceanu",
+  "name": "agnes-bulf",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mareaaaan.github.io/agnes-maria-priseceanu/",
+  "homepage": "https://mareaaaan.github.io/agnes-bulf/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
