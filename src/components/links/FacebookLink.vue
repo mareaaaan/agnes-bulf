@@ -1,5 +1,5 @@
 <template>
-  <LinkIcon :url="'https://www.facebook.com/agnes.priseceanu'">
+  <LinkIcon :url="'https://www.facebook.com/agnes.bulf'">
     <i-ion-social-facebook class="icon" />
   </LinkIcon>
 </template>

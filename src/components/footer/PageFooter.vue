@@ -10,7 +10,7 @@
           <SocialLinksFooter />
         </div>
         <ContactButton class="section__button"></ContactButton>
-        <div class="copyright-container">©Agnes Maria Priseceanu</div>
+        <div class="copyright-container">©Agnes Bulf</div>
       </div>
     </section>
   </footer>
@@ -63,8 +63,15 @@ import ContactButton from "../buttons/ContactButton.vue";
 :deep(.logo__title) {
   font-size: $l-font-size;
 
+  @media (width >= $tablet-width) {
+    font-size: $xl-font-size;
+    position: relative;
+    left: 4rem;
+  }
+
   @media (width >= $desktop-width) {
     font-size: $xxl-font-size;
+    left: 5rem;
   }
 }
 

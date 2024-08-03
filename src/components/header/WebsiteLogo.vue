@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <h1 class="logo__title">Agnes Maria Priseceanu</h1>
+    <h1 class="logo__title">Agnes Bulf</h1>
     <h2 class="logo__subtitle">Psiholog clinician & psihoterapeut</h2>
   </div>
 </template>
@@ -22,9 +22,7 @@
 }
 
 .logo__subtitle {
-  position: relative;
   font-family: "Halimun", "Whisper", sans-serif;
-  left: 2rem;
   font-size: $xxs-font-size;
 
   @media (width >= $mobile-width) {

@@ -1,5 +1,5 @@
 <template>
-  <LinkIcon :url="'https://www.tiktok.com/@agnesmariapriseceanu'">
+  <LinkIcon :url="'https://www.tiktok.com/@agnesbulf'">
     <i-ic-round-tiktok class="icon" />
   </LinkIcon>
 </template>

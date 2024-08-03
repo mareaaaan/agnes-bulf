@@ -6,7 +6,7 @@
 <script setup>
 import BaseButton from "./BaseButton.vue";
 const navigateToContactPage = () => {
-  window.location.assign("https://ig.me/m/agnesmariapriseceanu");
+  window.location.assign("https://ig.me/m/agnes.bulf");
 };
 </script>
 
