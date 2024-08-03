@@ -54,7 +54,7 @@ const data = ref(null);
 const workshopsData = ref(null);
 
 async function fetchData() {
-  data.value = await fetchPageData("servicii");
+  data.value = await fetchPageData("workshopuri");
   workshopsData.value = await fetchWorkShopsData();
 }
 
