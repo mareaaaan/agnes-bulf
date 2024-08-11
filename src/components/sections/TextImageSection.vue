@@ -1,28 +1,29 @@
 <template>
-  <div
-    class="max-width-container"
-    :class="props.data.isLight ? 'light-background' : 'dark-background'"
-  >
-    <div class="max-width">
-      <section class="service-section section-grid">
-        <div v-motion-fade-in-on-visible class="section__text">
-          <slot name="text">
-            <PortableText :value="props.data.content" />
-          </slot>
-        </div>
-
-        <div v-motion-fade-in-on-visible class="section__image">
-          <slot name="image">
-            <img
-              :src="imageBuilder.image(props.data.image)"
-              :alt="props.data.image.alt"
-              class="arch-border"
-            />
-          </slot>
-        </div>
-      </section>
+  <section class="section--base section-grid">
+    <div v-motion-fade-in-on-visible class="section__image">
+      <slot name="image">
+        <img
+          :src="imageBuilder.image(props.data.image)"
+          :alt="props.data.image.alt"
+          class="oval-border"
+        />
+      </slot>
     </div>
-  </div>
+    <h2 v-motion-fade-in-on-visible class="section__title">
+      <slot name="title">
+        {{ props.data.title }}
+      </slot>
+    </h2>
+    <div v-motion-fade-in-on-visible class="section__description">
+      <slot name="text">
+        <PortableText :value="props.data.content" />
+      </slot>
+    </div>
+    <div v-motion-fade-in-on-visible class="section__text">
+      <slot name="text"><PortableText :value="props.data.description" /></slot>
+    </div>
+    <slot name="button"> </slot>
+  </section>
 </template>
 
 <script setup>
@@ -39,36 +40,57 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
-
-// LAYOUT
-
-.section__image {
+.section__button {
   @media (width >= $mobile-width) {
     grid-column: 1 / 7;
-    grid-row: 1 / 2;
-  }
-
-  @media (width >= $tablet-width) {
-    grid-column: 1 / 6;
   }
 
   @media (width >= $desktop-width) {
-    grid-column: 1 / 5;
+    grid-column: 1 / 6;
   }
 }
 
-.section__text {
+.section__title {
   @media (width >= $mobile-width) {
-    grid-column: 7 / -1;
     grid-row: 1 / 2;
-  }
-
-  @media (width >= $tablet-width) {
-    grid-column: 6 / -1;
+    grid-column: 7 / 13;
+    align-self: center;
   }
 
   @media (width >= $desktop-width) {
-    grid-column: 5 / -1;
+    grid-column: 6 / 13;
+  }
+}
+
+.section__image {
+  @media (width >= $mobile-width) {
+    grid-row: 1 / 3;
+    grid-column: 1 / 7;
+  }
+
+  @media (width >= $desktop-width) {
+    grid-column: 1 / 6;
+  }
+}
+
+.section__description {
+  @media (width >= $mobile-width) {
+    grid-row: 2 / 3;
+    grid-column: 7 / 13;
+  }
+
+  @media (width >= $desktop-width) {
+    grid-column: 6 / 13;
+  }
+}
+
+// STYLES
+
+.service-section {
+  scroll-margin-top: 7rem;
+
+  @media (width >= $mobile-width) {
+    scroll-margin-top: 10rem;
   }
 }
 </style>

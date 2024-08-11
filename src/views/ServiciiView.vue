@@ -31,7 +31,6 @@
 </template>
 <script setup>
 import ServiceSection from "src/components/sections/ServiceSection.vue";
-import ServiceIntroSection from "src/components/sections/ServiceIntroSection.vue";
 import TableOfContentsBar from "src/components/table_of_contents/TableOfContentsBar.vue";
 import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
@@ -39,12 +38,13 @@ import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import { ref } from "vue";
 import { fetchObjectData, fetchPageData } from "../client";
+import IntroSection from "src/components/sections/IntroSection.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
-    textWithIllustration: ServiceIntroSection,
+    textWithIllustration: IntroSection,
   };
 
   return sectionComponentPairs[sectionType];

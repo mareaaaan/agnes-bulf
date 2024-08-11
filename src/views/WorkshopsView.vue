@@ -30,7 +30,6 @@
   <PageFooter class="light-background" />
 </template>
 <script setup>
-import ServiceIntroSection from "src/components/sections/ServiceIntroSection.vue";
 import TableOfContentsBar from "src/components/table_of_contents/TableOfContentsBar.vue";
 import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
 import WorkshopSection from "src/components/sections/WorkshopSection.vue";
@@ -39,12 +38,13 @@ import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import { ref } from "vue";
 import { fetchWorkShopsData, fetchPageData } from "../client";
+import IntroSection from "src/components/sections/IntroSection.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
-    textWithIllustration: ServiceIntroSection,
+    textWithIllustration: IntroSection,
   };
 
   return sectionComponentPairs[sectionType];

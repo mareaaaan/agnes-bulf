@@ -59,6 +59,29 @@ $xxxl-font-size: 2.5rem;
     }
 }
 
+.section--base {
+    padding-inline: 1rem;
+    padding-block: 3rem;
+}
+
+.section--base {
+    scroll-margin-top: 7rem;
+  
+    @media (width >= $mobile-width) {
+      scroll-margin-top: 10rem;
+    }
+  }
+
+.section__button {
+    @media (width >= $mobile-width) {
+        grid-column: 1 / 7;
+    }
+
+    @media (width >= $desktop-width) {
+        grid-column: 1 / 6;
+    }
+}
+
 .service-section, .section--intro {
     padding-inline: 1rem;
     padding-block: 3rem;
@@ -111,3 +134,6 @@ $xxxl-font-size: 2.5rem;
         transform: scale(1.1) rotate(-10deg);
     }
 }
+
+
+// new styles

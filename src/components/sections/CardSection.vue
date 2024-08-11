@@ -1,18 +1,11 @@
 <template>
-  <div
-    class="max-width-container"
-    :class="props.data.isLight ? 'light-background' : 'dark-background'"
-  >
-    <div class="max-width">
-      <section class="service-section section-grid">
-        <div v-motion-fade-in-on-visible class="section__text">
-          <slot name="text">
-            <PortableText :value="props.data.content" />
-          </slot>
-        </div>
-      </section>
+  <section class="section--base section-grid">
+    <div v-motion-fade-in-on-visible class="section__text">
+      <slot name="text">
+        <PortableText :value="props.data.content" />
+      </slot>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

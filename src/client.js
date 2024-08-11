@@ -13,6 +13,7 @@ const imageBuilder = imageUrlBuilder(client);
 async function fetchPageData(pageSlug) {
   const query = `*[_type == 'page' && slug.current==$slug][0]`;
   var data = await client.fetch(query, { slug: pageSlug });
+  console.log(data);
   return data;
 }
 
@@ -24,7 +25,7 @@ async function fetchObjectData(objectType) {
 
 async function fetchWorkShopsData() {
   const query = `*[_type == 'workshop'] | order(_createdAt asc) {
-    slug, title, image, description
+    slug, title, image, content
   }`;
   var data = await client.fetch(query);
   return data;

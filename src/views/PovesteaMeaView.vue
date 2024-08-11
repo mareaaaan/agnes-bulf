@@ -10,23 +10,23 @@
 </template>
 
 <script setup>
-import CardSection from "src/components/sections/CardSection.vue";
-import HomeIntroSection from "src/components/sections/HomeIntroSection.vue";
 import EmbeddedVideoSection from "src/components/sections/EmbeddedVideoSection.vue";
 import FeedbackSection from "src/components/sections/FeedbackSection.vue";
-import TextImageSection from "src/components/sections/TextImageSection.vue";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import { computed, ref } from "vue";
 import { fetchPageData } from "../client";
+import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
+import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
+import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
 
 const data = ref(null);
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
-    introTextWithIllustration: HomeIntroSection,
-    textWithIllustration: TextImageSection,
-    floatingText: CardSection,
+    introTextWithIllustration: ContainerizedIntroSection,
+    textWithIllustration: ContainerizedTextImageSection,
+    floatingText: ContainerizedCardSection,
     videos: EmbeddedVideoSection,
     feedback: FeedbackSection,
     arch_divider: ArchDivider,

@@ -50,13 +50,15 @@ onMounted(() => {
 
     var newHeaders = [];
 
-    document.querySelectorAll(".service-section").forEach((section) => {
-      intersectionObserver.observe(section);
-      var title = section.querySelector(".section__title");
-      if (title) {
-        newHeaders.push(title.textContent);
-      }
-    });
+    document
+      .querySelectorAll(".section--base:not(.section--intro)")
+      .forEach((section) => {
+        intersectionObserver.observe(section);
+        var title = section.querySelector(".section__title");
+        if (title) {
+          newHeaders.push(title.textContent);
+        }
+      });
     headers.value = newHeaders;
   };
 
