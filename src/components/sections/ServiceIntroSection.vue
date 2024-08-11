@@ -14,7 +14,7 @@
         {{ props.data.heading }}
       </slot>
     </h2>
-    <div v-motion-fade-in-on-visible class="section__text">
+    <div v-motion-fade-in-on-visible class="section__description">
       <slot name="text"> <PortableText :value="props.data.content" /></slot>
     </div>
   </section>
@@ -39,7 +39,7 @@ const props = defineProps({
   @media (width >= $mobile-width) {
     grid-row: 1 / 2;
     grid-column: 1 / 7;
-    align-self: end;
+    align-self: center;
   }
 
   @media (width >= $desktop-width) {
@@ -49,12 +49,24 @@ const props = defineProps({
 
 .section__image {
   @media (width >= $mobile-width) {
-    grid-row: 1 / 2;
+    grid-row: 1 / 3;
     grid-column: 7 / 13;
   }
 
   @media (width >= $desktop-width) {
     grid-column: 8 / 13;
+  }
+}
+
+.section__description {
+  @media (width >= $mobile-width) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 7;
+    align-self: start;
+  }
+
+  @media (width >= $desktop-width) {
+    grid-column: 1 / 8;
   }
 }
 
