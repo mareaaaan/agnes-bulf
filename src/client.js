@@ -13,7 +13,6 @@ const imageBuilder = imageUrlBuilder(client);
 async function fetchPageData(pageSlug) {
   const query = `*[_type == 'page' && slug.current==$slug][0]`;
   var data = await client.fetch(query, { slug: pageSlug });
-  console.log(data);
   return data;
 }
 

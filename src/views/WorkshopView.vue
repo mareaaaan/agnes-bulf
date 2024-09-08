@@ -18,6 +18,7 @@ import { fetchWorkShopData } from "../client";
 import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
+import addOrientationToSections from "src/utils";
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
@@ -34,8 +35,17 @@ const route = useRoute();
 const workshopSlug = route.params.workshop;
 const workshopData = ref(null);
 
+function enrichData(data) {
+  console.log(data);
+  data.pageBuilder = addOrientationToSections(data.pageBuilder);
+  console.log(data);
+  return data;
+}
+
 async function fetchData() {
-  workshopData.value = await fetchWorkShopData(workshopSlug);
+  var data = await fetchWorkShopData(workshopSlug);
+  data = enrichData(data);
+  workshopData.value = data;
 }
 
 fetchData();

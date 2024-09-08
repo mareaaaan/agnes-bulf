@@ -1,5 +1,8 @@
 <template>
-  <section class="section--base section-grid">
+  <section
+    class="section--base section-grid"
+    :class="props.data.orientation === 'right' ? 'right' : 'left'"
+  >
     <div v-motion-fade-in-on-visible class="section__image">
       <slot name="image">
         <img
@@ -44,57 +47,115 @@ const props = defineProps({
   container-type: inline-size;
 }
 
-.section__button {
-  @media (width >= $mobile-width) {
-    grid-column: 1 / 7;
+.section-grid.left {
+  .section__button {
+    @media (width >= $mobile-width) {
+      grid-column: 1 / 7;
+    }
+
+    @media (width >= $desktop-width) {
+      grid-column: 1 / 6;
+    }
   }
 
-  @media (width >= $desktop-width) {
-    grid-column: 1 / 6;
-  }
-}
+  .section__title {
+    @media (width >= $mobile-width) {
+      grid-row: 1 / 2;
+      grid-column: 7 / 13;
+      align-self: center;
+    }
 
-.section__title {
-  @media (width >= $mobile-width) {
-    grid-row: 1 / 2;
-    grid-column: 7 / 13;
-    align-self: center;
-  }
-
-  @media (width >= $tablet-width) {
-    grid-column: 6 / 13;
-  }
-}
-
-.section__image {
-  @media (width >= $mobile-width) {
-    grid-row: 1 / 3;
-    grid-column: 1 / 7;
+    @media (width >= $tablet-width) {
+      grid-column: 6 / 13;
+    }
   }
 
-  @media (width >= $tablet-width) {
-    grid-column: 1 / 6;
-  }
-}
-
-.section__description {
-  @media (width >= $mobile-width) {
-    grid-row: 2 / 3;
-    grid-column: 7 / 13;
-  }
-
-  @media (width >= $tablet-width) {
-    grid-column: 6 / 13;
-  }
-}
-
-@container (min-width: #{$desktop-width}) {
   .section__image {
-    grid-column: 1 / 5;
+    @media (width >= $mobile-width) {
+      grid-row: 1 / 3;
+      grid-column: 1 / 7;
+    }
+
+    @media (width >= $tablet-width) {
+      grid-column: 1 / 6;
+    }
   }
 
   .section__description {
-    grid-column: 5 / 13;
+    @media (width >= $mobile-width) {
+      grid-row: 2 / 3;
+      grid-column: 7 / 13;
+    }
+
+    @media (width >= $tablet-width) {
+      grid-column: 6 / 13;
+    }
+  }
+
+  @container (min-width: #{$desktop-width}) {
+    .section__image {
+      grid-column: 1 / 5;
+    }
+
+    .section__description {
+      grid-column: 5 / 13;
+    }
+  }
+}
+
+.section-grid.right {
+  .section__button {
+    @media (width >= $mobile-width) {
+      grid-column: 7 / 13;
+    }
+
+    @media (width >= $desktop-width) {
+      grid-column: 6 / 13;
+    }
+  }
+
+  .section__title {
+    @media (width >= $mobile-width) {
+      grid-row: 1 / 2;
+      grid-column: 1 / 7;
+      align-self: center;
+    }
+
+    @media (width >= $tablet-width) {
+      grid-column: 1 / 6;
+    }
+  }
+
+  .section__image {
+    @media (width >= $mobile-width) {
+      grid-row: 1 / 3;
+      grid-column: 7 / 13;
+    }
+
+    @media (width >= $tablet-width) {
+      grid-column: 6 / 13;
+    }
+  }
+
+  .section__description {
+    @media (width >= $mobile-width) {
+      grid-row: 2 / 3;
+      grid-column: 1 / 7;
+    }
+
+    @media (width >= $tablet-width) {
+      grid-column: 1 / 6;
+    }
+  }
+
+  @container (min-width: #{$desktop-width}) {
+    .section__image {
+      grid-column: 9 / 13;
+    }
+
+    .section__description {
+      grid-column: 1 / 9;
+    }
   }
 }
 
