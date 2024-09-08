@@ -40,6 +40,10 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
+.section-grid {
+  container-type: inline-size;
+}
+
 .section__button {
   @media (width >= $mobile-width) {
     grid-column: 1 / 7;
@@ -57,7 +61,7 @@ const props = defineProps({
     align-self: center;
   }
 
-  @media (width >= $desktop-width) {
+  @media (width >= $tablet-width) {
     grid-column: 6 / 13;
   }
 }
@@ -68,7 +72,7 @@ const props = defineProps({
     grid-column: 1 / 7;
   }
 
-  @media (width >= $desktop-width) {
+  @media (width >= $tablet-width) {
     grid-column: 1 / 6;
   }
 }
@@ -79,8 +83,18 @@ const props = defineProps({
     grid-column: 7 / 13;
   }
 
-  @media (width >= $desktop-width) {
+  @media (width >= $tablet-width) {
     grid-column: 6 / 13;
+  }
+}
+
+@container (min-width: #{$desktop-width}) {
+  .section__image {
+    grid-column: 1 / 5;
+  }
+
+  .section__description {
+    grid-column: 5 / 13;
   }
 }
 
