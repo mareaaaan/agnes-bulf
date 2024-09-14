@@ -11,7 +11,11 @@ const client = createClient({
 const imageBuilder = imageUrlBuilder(client);
 
 async function fetchPageData(pageSlug) {
-  const query = `*[_type == 'page' && slug.current==$slug][0]`;
+  const query = `*[_type == 'page' && slug.current==$slug][0]{
+    title,
+    pageBuilder,
+    hierarchy[] ->
+  }`;
   var data = await client.fetch(query, { slug: pageSlug });
   return data;
 }
@@ -34,30 +38,9 @@ async function fetchHomePageData() {
   return data;
 }
 
-async function fetchObjectData(objectType) {
-  const query = `*[_type == '${objectType}'] | order(_createdAt asc)`;
-  var data = await client.fetch(query);
-  return data;
-}
-
-async function fetchWorkShopsData() {
-  const query = `*[_type == 'workshop'] | order(_createdAt asc) {
-    slug, title, image, content
-  }`;
-  var data = await client.fetch(query);
-  return data;
-}
-
 async function fetchWorkShopData(workshopSlug) {
   const query = `*[_type == 'workshop' && slug.current==$slug][0]`;
   var data = await client.fetch(query, { slug: workshopSlug });
   return data;
 }
-export {
-  fetchPageData,
-  fetchObjectData,
-  fetchWorkShopsData,
-  fetchWorkShopData,
-  fetchHomePageData,
-  imageBuilder,
-};
+export { fetchPageData, fetchWorkShopData, fetchHomePageData, imageBuilder };

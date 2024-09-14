@@ -11,7 +11,7 @@
         />
 
         <WorkshopSection
-          v-for="(workshop, index) in workshopsData"
+          v-for="(workshop, index) in data?.hierarchy"
           :id="index"
           :key="index"
           :data="workshop"
@@ -37,7 +37,7 @@ import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import { ref } from "vue";
-import { fetchWorkShopsData, fetchPageData } from "../client";
+import { fetchPageData } from "../client";
 import IntroSection from "src/components/sections/IntroSection.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
@@ -51,11 +51,9 @@ const getComponent = (sectionType) => {
 };
 
 const data = ref(null);
-const workshopsData = ref(null);
 
 async function fetchData() {
   data.value = await fetchPageData("workshopuri");
-  workshopsData.value = await fetchWorkShopsData();
 }
 
 fetchData();

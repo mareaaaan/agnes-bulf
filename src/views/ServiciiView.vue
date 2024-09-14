@@ -10,7 +10,7 @@
           :data="section"
         />
         <ServiceSection
-          v-for="(service, index) in servicesData"
+          v-for="(service, index) in data?.hierarchy"
           :id="index"
           :key="index"
           :data="service"
@@ -37,7 +37,7 @@ import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import { ref } from "vue";
-import { fetchObjectData, fetchPageData } from "../client";
+import { fetchPageData } from "../client";
 import IntroSection from "src/components/sections/IntroSection.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 600px)");
@@ -51,11 +51,9 @@ const getComponent = (sectionType) => {
 };
 
 const data = ref(null);
-const servicesData = ref(null);
 
 async function fetchData() {
   data.value = await fetchPageData("servicii");
-  servicesData.value = await fetchObjectData("service");
 }
 
 fetchData();
