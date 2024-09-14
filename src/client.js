@@ -16,6 +16,24 @@ async function fetchPageData(pageSlug) {
   return data;
 }
 
+async function fetchHomePageData() {
+  const pageSlug = "povestea-mea";
+  const query = `*[_type == 'page' && slug.current==$slug][0]{
+   pageBuilder[]{
+    _type != 'feedback' => @,
+    _type == 'feedback' => @{
+      _type,
+      feedback[] -> {
+        "title": Product[0] -> title,
+        text
+      }
+    }
+   }
+  }`;
+  var data = await client.fetch(query, { slug: pageSlug });
+  return data;
+}
+
 async function fetchObjectData(objectType) {
   const query = `*[_type == '${objectType}'] | order(_createdAt asc)`;
   var data = await client.fetch(query);
@@ -40,5 +58,6 @@ export {
   fetchObjectData,
   fetchWorkShopsData,
   fetchWorkShopData,
+  fetchHomePageData,
   imageBuilder,
 };

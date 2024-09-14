@@ -15,7 +15,7 @@ import FeedbackSection from "src/components/sections/FeedbackSection.vue";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import { ref } from "vue";
-import { fetchPageData } from "../client";
+import { fetchHomePageData } from "../client";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
@@ -83,7 +83,7 @@ function enrichData(data) {
 }
 
 async function fetchData() {
-  var pageData = await fetchPageData("povestea-mea");
+  var pageData = await fetchHomePageData();
   pageData = enrichData(pageData);
   data.value = pageData;
 }

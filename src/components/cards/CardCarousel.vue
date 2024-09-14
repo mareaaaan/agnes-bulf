@@ -4,7 +4,7 @@
       ref="mediaScroller"
       class="media-scroller snaps-inline remove-scrollbar"
     >
-      <FeedbackCard v-for="item in items" :key="item.id" :item="item" />
+      <FeedbackCard v-for="item in props.items" :key="item.id" :item="item" />
     </div>
 
     <div class="button-group">
@@ -21,7 +21,7 @@
 <script setup>
 import FeedbackCard from "src/components/cards/FeedbackCard.vue";
 import { ref, computed } from "vue";
-defineProps({
+const props = defineProps({
   items: {
     type: Array,
     required: true,

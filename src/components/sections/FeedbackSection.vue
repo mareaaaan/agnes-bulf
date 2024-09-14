@@ -11,7 +11,7 @@
         <CardCarousel
           v-motion-fade-in-on-visible
           class="section__carousel"
-          :items="feedbackItems"
+          :items="data.feedback"
         />
       </section>
     </div>
@@ -19,7 +19,6 @@
 </template>
 
 <script setup>
-import feedbackItems from "src/content/home/feedbackData.json";
 import CardCarousel from "src/components/cards/CardCarousel.vue";
 
 const props = defineProps({

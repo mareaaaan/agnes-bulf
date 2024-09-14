@@ -36,9 +36,7 @@ const workshopSlug = route.params.workshop;
 const workshopData = ref(null);
 
 function enrichData(data) {
-  console.log(data);
   data.pageBuilder = addOrientationToSections(data.pageBuilder);
-  console.log(data);
   return data;
 }
 
