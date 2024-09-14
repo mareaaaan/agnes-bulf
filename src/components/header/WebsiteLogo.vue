@@ -1,7 +1,9 @@
 <template>
   <div class="logo">
     <h1 class="logo__title">Agnes Bulf</h1>
-    <h2 class="logo__subtitle">Psiholog clinician & psihoterapeut</h2>
+    <h2 class="logo__subtitle">
+      Psiholog clinician & psihoterapeut de familie
+    </h2>
   </div>
 </template>
 
