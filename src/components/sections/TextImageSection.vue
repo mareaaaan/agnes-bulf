@@ -19,11 +19,8 @@
     </h2>
     <div v-motion-fade-in-on-visible class="section__description">
       <slot name="text">
-        <PortableText :value="props.data.content" />
+        <PortableText :value="props.data.text" />
       </slot>
-    </div>
-    <div v-motion-fade-in-on-visible class="section__text">
-      <slot name="text"><PortableText :value="props.data.description" /></slot>
     </div>
     <slot name="button"> </slot>
   </section>
@@ -33,6 +30,7 @@
 import { defineProps } from "vue";
 import { imageBuilder } from "src/client";
 import { PortableText } from "@portabletext/vue";
+
 const props = defineProps({
   data: {
     type: Object,

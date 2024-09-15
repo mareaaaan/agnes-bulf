@@ -13,7 +13,7 @@ const imageBuilder = imageUrlBuilder(client);
 async function fetchPageData(pageSlug) {
   const query = `*[_type == 'page' && slug.current==$slug][0]{
     title,
-    pageBuilder,
+    'content': content.content[] ,
     hierarchy[] ->
   }`;
   var data = await client.fetch(query, { slug: pageSlug });
@@ -22,18 +22,25 @@ async function fetchPageData(pageSlug) {
 
 async function fetchHomePageData() {
   const pageSlug = "povestea-mea";
-  const query = `*[_type == 'page' && slug.current==$slug][0]{
-   pageBuilder[]{
-    _type != 'feedback' => @,
-    _type == 'feedback' => @{
-      _type,
-      feedback[] -> {
-        "title": Product[0] -> title,
-        text
+  const query = `
+  *[_type == 'page' && slug.current==$slug][0] {
+    title,
+    'content': content.content[] {
+      !(_type in ['feedbackList', 'videoList']) => @,
+      _type == 'feedbackList' => @ {
+        _type,
+        'Feedback': Feedback[] -> {
+          "title": Product[0] -> title,
+          text
+        }
+      },
+      _type == 'videoList' => @ {
+        _type,
+       'Video': Video[] -> 
       }
     }
-   }
-  }`;
+  }
+  `;
   var data = await client.fetch(query, { slug: pageSlug });
   return data;
 }

@@ -2,7 +2,7 @@
   <section class="section--base section-grid">
     <div v-motion-fade-in-on-visible class="section__text">
       <slot name="text">
-        <PortableText :value="props.data.content" />
+        <PortableText :value="props.data.text" />
       </slot>
     </div>
   </section>

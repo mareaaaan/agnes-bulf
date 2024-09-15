@@ -10,9 +10,9 @@
         </h2>
         <div v-motion-fade-in-on-visible class="videos-container">
           <EmbeddedVideo
-            v-for="(videoLink, index) in props.data.videoLinks"
+            v-for="(video, index) in props.data.Video"
             :key="index"
-            :url="videoLink.videourl"
+            :url="video.url"
           />
         </div>
       </section>

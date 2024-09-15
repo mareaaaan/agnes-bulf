@@ -36,7 +36,7 @@ import WorkshopSection from "src/components/sections/WorkshopSection.vue";
 import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 import { fetchPageData } from "../client";
 import IntroSection from "src/components/sections/IntroSection.vue";
 
@@ -56,7 +56,9 @@ async function fetchData() {
   data.value = await fetchPageData("workshopuri");
 }
 
-fetchData();
+onBeforeMount(() => {
+  fetchData();
+});
 </script>
 
 <style lang="scss" scoped>

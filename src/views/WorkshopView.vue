@@ -13,7 +13,7 @@
 import { useRoute } from "vue-router";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 import { fetchWorkShopData } from "../client";
 import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
@@ -46,7 +46,9 @@ async function fetchData() {
   workshopData.value = data;
 }
 
-fetchData();
+onBeforeMount(() => {
+  fetchData();
+});
 </script>
 
 <style lang="scss" scoped></style>

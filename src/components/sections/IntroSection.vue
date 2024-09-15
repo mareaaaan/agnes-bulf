@@ -15,7 +15,7 @@
       </slot>
     </h2>
     <div v-motion-fade-in-on-visible class="section__description">
-      <slot name="text"> <PortableText :value="props.data.content" /></slot>
+      <slot name="text"> <PortableText :value="props.data.text" /></slot>
     </div>
   </section>
 </template>

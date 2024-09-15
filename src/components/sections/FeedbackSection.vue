@@ -11,7 +11,7 @@
         <CardCarousel
           v-motion-fade-in-on-visible
           class="section__carousel"
-          :items="data.feedback"
+          :items="data.Feedback"
         />
       </section>
     </div>

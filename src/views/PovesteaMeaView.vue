@@ -1,7 +1,7 @@
 <template>
   <component
     :is="getComponent(section._type)"
-    v-for="(section, index) in data.pageBuilder"
+    v-for="(section, index) in data?.content"
     :key="index"
     :data="section"
   />
@@ -14,7 +14,7 @@ import EmbeddedVideoSection from "src/components/sections/EmbeddedVideoSection.v
 import FeedbackSection from "src/components/sections/FeedbackSection.vue";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 import { fetchHomePageData } from "../client";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
@@ -28,8 +28,8 @@ const getComponent = (sectionType) => {
     introTextWithIllustration: ContainerizedIntroSection,
     textWithIllustration: ContainerizedTextImageSection,
     floatingText: ContainerizedCardSection,
-    videos: EmbeddedVideoSection,
-    feedback: FeedbackSection,
+    videoList: EmbeddedVideoSection,
+    feedbackList: FeedbackSection,
     arch_divider: ArchDivider,
   };
 
@@ -74,11 +74,11 @@ function addBackgroundColortoSections(sections) {
 }
 
 function enrichData(data) {
-  data.pageBuilder = addOrientationToSections(data.pageBuilder);
+  data.content = addOrientationToSections(data.content);
 
-  data.pageBuilder = addBackgroundColortoSections(data.pageBuilder);
+  data.content = addBackgroundColortoSections(data.content);
 
-  data.pageBuilder = addIntroSection(data.pageBuilder);
+  data.content = addIntroSection(data.content);
   return data;
 }
 
@@ -88,7 +88,9 @@ async function fetchData() {
   data.value = pageData;
 }
 
-fetchData();
+onBeforeMount(() => {
+  fetchData();
+});
 </script>
 
 <style lang="scss" scoped></style>
