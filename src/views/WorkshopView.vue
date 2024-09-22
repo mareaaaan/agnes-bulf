@@ -1,7 +1,8 @@
 <template>
+  <ContainerizedProductTitleSection :data="data" />
   <component
     :is="getComponent(section._type)"
-    v-for="(section, index) in workshopData.pageBuilder"
+    v-for="(section, index) in data?.content?.content"
     :key="index"
     :data="section"
   />
@@ -19,11 +20,14 @@ import ContainerizedIntroSection from "src/components/sections/ContainerizedIntr
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import addOrientationToSections from "src/utils";
+import ContainerizedTextSection from "src/components/sections/ContainerizedTextSection.vue";
+import ContainerizedProductTitleSection from "src/components/sections/ContainerizedProductTitleSection.vue";
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
     introTextWithIllustration: ContainerizedIntroSection,
     textWithIllustration: ContainerizedTextImageSection,
+    textBlock: ContainerizedTextSection,
     floatingText: ContainerizedCardSection,
   };
 
@@ -33,17 +37,21 @@ const getComponent = (sectionType) => {
 const route = useRoute();
 
 const workshopSlug = route.params.workshop;
-const workshopData = ref(null);
+const data = ref({
+  content: {
+    content: [],
+  },
+});
 
 function enrichData(data) {
-  data.pageBuilder = addOrientationToSections(data.pageBuilder);
+  data.content.content = addOrientationToSections(data.content.content);
   return data;
 }
 
 async function fetchData() {
-  var data = await fetchWorkShopData(workshopSlug);
-  data = enrichData(data);
-  workshopData.value = data;
+  var tempData = await fetchWorkShopData(workshopSlug);
+  tempData = enrichData(tempData);
+  data.value = tempData;
 }
 
 onBeforeMount(() => {
