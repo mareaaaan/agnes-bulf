@@ -3,19 +3,20 @@
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">
-        <component
-          :is="getComponent(section._type)"
-          v-for="(section, index) in data?.pageBuilder"
-          :key="index"
-          :data="section"
-        />
-        <ServiceSection
+        <div class="description">
+          <component
+            :is="getComponent(section._type)"
+            v-for="(section, index) in data?.content"
+            :key="index"
+            :data="section"
+          />
+        </div>
+        <ServiceBlock
           v-for="(service, index) in data?.hierarchy"
           :id="index"
-          :key="index"
+          :key="service"
           :data="service"
-        >
-        </ServiceSection>
+        />
       </main>
 
       <TableOfContents
@@ -30,7 +31,8 @@
   <PageFooter class="light-background" />
 </template>
 <script setup>
-import ServiceSection from "src/components/sections/ServiceSection.vue";
+import ServiceBlock from "src/components/sections/ServiceBlock.vue";
+import TextSection from "src/components/sections/TextSection.vue";
 import TableOfContentsBar from "src/components/table_of_contents/TableOfContentsBar.vue";
 import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
 import { useMediaQuery } from "@vueuse/core";
@@ -40,11 +42,12 @@ import { ref, onBeforeMount } from "vue";
 import { fetchPageData } from "../client";
 import IntroSection from "src/components/sections/IntroSection.vue";
 
-const isLargeScreen = useMediaQuery("(width >= 600px)");
+const isLargeScreen = useMediaQuery("(width >= 1024px)");
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
     textWithIllustration: IntroSection,
+    textBlock: TextSection,
   };
 
   return sectionComponentPairs[sectionType];
@@ -69,13 +72,13 @@ onBeforeMount(() => {
 .main {
   grid-column: 1 / -1;
 
-  @media (width >= $mobile-width) {
+  @media (width >= $desktop-width) {
     grid-column: 1 / 10;
   }
 }
 
 .table-of-contents {
-  @media (width >= $mobile-width) {
+  @media (width >= $desktop-width) {
     grid-column: 10 / 13;
   }
 }

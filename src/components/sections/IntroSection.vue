@@ -69,14 +69,4 @@ const props = defineProps({
     grid-column: 1 / 8;
   }
 }
-
-// STYLES
-
-.service-section {
-  scroll-margin-top: 7rem;
-
-  @media (width >= $mobile-width) {
-    scroll-margin-top: 10rem;
-  }
-}
 </style>

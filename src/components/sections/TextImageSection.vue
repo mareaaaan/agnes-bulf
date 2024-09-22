@@ -12,11 +12,6 @@
         />
       </slot>
     </div>
-    <h2 v-motion-fade-in-on-visible class="section__title">
-      <slot name="title">
-        {{ props.data.title }}
-      </slot>
-    </h2>
     <div v-motion-fade-in-on-visible class="section__description">
       <slot name="text">
         <PortableText :value="props.data.text" />
@@ -46,8 +41,13 @@ const props = defineProps({
 }
 
 .section-grid.left {
-  .section__button {
+  .section__image {
     @media (width >= $mobile-width) {
+      grid-row: 1 / 2;
+      grid-column: 1 / 8;
+    }
+
+    @media (width >= $tablet-width) {
       grid-column: 1 / 7;
     }
 
@@ -56,114 +56,57 @@ const props = defineProps({
     }
   }
 
-  .section__title {
-    @media (width >= $mobile-width) {
-      grid-row: 1 / 2;
-      grid-column: 7 / 13;
-      align-self: center;
-    }
-
-    @media (width >= $tablet-width) {
-      grid-column: 6 / 13;
-    }
-  }
-
-  .section__image {
-    @media (width >= $mobile-width) {
-      grid-row: 1 / 3;
-      grid-column: 1 / 7;
-    }
-
-    @media (width >= $tablet-width) {
-      grid-column: 1 / 6;
-    }
-  }
-
   .section__description {
     @media (width >= $mobile-width) {
-      grid-row: 2 / 3;
-      grid-column: 7 / 13;
+      grid-row: 1 / 2;
+      grid-column: 8 / 13;
     }
 
     @media (width >= $tablet-width) {
+      grid-column: 7 / 13;
+    }
+
+    @media (width >= $desktop-width) {
       grid-column: 6 / 13;
-    }
-  }
-
-  @container (min-width: #{$desktop-width}) {
-    .section__image {
-      grid-column: 1 / 5;
-    }
-
-    .section__description {
-      grid-column: 5 / 13;
     }
   }
 }
 
 .section-grid.right {
-  .section__button {
+  .section__image {
     @media (width >= $mobile-width) {
+      grid-row: 1 / 2;
+      grid-column: 6 / 13;
+    }
+
+    @media (width >= $tablet-width) {
       grid-column: 7 / 13;
     }
 
     @media (width >= $desktop-width) {
-      grid-column: 6 / 13;
-    }
-  }
-
-  .section__title {
-    @media (width >= $mobile-width) {
-      grid-row: 1 / 2;
-      grid-column: 1 / 7;
-      align-self: center;
-    }
-
-    @media (width >= $tablet-width) {
-      grid-column: 1 / 6;
-    }
-  }
-
-  .section__image {
-    @media (width >= $mobile-width) {
-      grid-row: 1 / 3;
-      grid-column: 7 / 13;
-    }
-
-    @media (width >= $tablet-width) {
-      grid-column: 6 / 13;
+      grid-column: 8 / 13;
     }
   }
 
   .section__description {
     @media (width >= $mobile-width) {
-      grid-row: 2 / 3;
-      grid-column: 1 / 7;
+      grid-row: 1 / 2;
+      grid-column: 1 / 6;
     }
 
     @media (width >= $tablet-width) {
-      grid-column: 1 / 6;
-    }
-  }
-
-  @container (min-width: #{$desktop-width}) {
-    .section__image {
-      grid-column: 9 / 13;
+      grid-column: 1 / 7;
     }
 
-    .section__description {
-      grid-column: 1 / 9;
+    @media (width >= $desktop-width) {
+      grid-column: 1 / 8;
     }
   }
 }
 
 // STYLES
 
-.service-section {
-  scroll-margin-top: 7rem;
-
-  @media (width >= $mobile-width) {
-    scroll-margin-top: 10rem;
-  }
+.section__description {
+  align-content: center;
 }
 </style>

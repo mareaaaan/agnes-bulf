@@ -40,7 +40,7 @@ import { ref, onBeforeMount } from "vue";
 import { fetchPageData } from "../client";
 import IntroSection from "src/components/sections/IntroSection.vue";
 
-const isLargeScreen = useMediaQuery("(width >= 600px)");
+const isLargeScreen = useMediaQuery("(width >= 1024px)");
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
@@ -69,13 +69,13 @@ onBeforeMount(() => {
 .main {
   grid-column: 1 / -1;
 
-  @media (width >= $mobile-width) {
+  @media (width >= $desktop-width) {
     grid-column: 1 / 10;
   }
 }
 
 .table-of-contents {
-  @media (width >= $mobile-width) {
+  @media (width >= $desktop-width) {
     grid-column: 10 / 13;
   }
 }

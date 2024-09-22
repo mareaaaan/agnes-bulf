@@ -21,7 +21,7 @@ const headers = ref([]);
 
 const currentSection = ref(0);
 
-const isLargeScreen = useMediaQuery("(width >= 600px)");
+const isLargeScreen = useMediaQuery("(width >= 1024px)");
 
 const rootMargin = computed(() => {
   if (isLargeScreen.value) {
@@ -50,15 +50,13 @@ onMounted(() => {
 
     var newHeaders = [];
 
-    document
-      .querySelectorAll(".section--base:not(.section--intro)")
-      .forEach((section) => {
-        intersectionObserver.observe(section);
-        var title = section.querySelector(".section__title");
-        if (title) {
-          newHeaders.push(title.textContent);
-        }
-      });
+    document.querySelectorAll(".product").forEach((section) => {
+      intersectionObserver.observe(section);
+      var title = section.querySelector(".section__title--product");
+      if (title) {
+        newHeaders.push(title.textContent);
+      }
+    });
     headers.value = newHeaders;
   };
 
