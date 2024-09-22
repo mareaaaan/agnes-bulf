@@ -3,17 +3,18 @@
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">
-        <component
-          :is="getComponent(section._type)"
-          v-for="(section, index) in data?.pageBuilder"
-          :key="index"
-          :data="section"
-        />
-
-        <WorkshopSection
+        <div class="description">
+          <component
+            :is="getComponent(section._type)"
+            v-for="(section, index) in data?.content"
+            :key="index"
+            :data="section"
+          />
+        </div>
+        <WorkshopBlock
           v-for="(workshop, index) in data?.hierarchy"
           :id="index"
-          :key="index"
+          :key="workshop"
           :data="workshop"
         />
       </main>
@@ -30,21 +31,23 @@
   <PageFooter class="light-background" />
 </template>
 <script setup>
+import TextSection from "src/components/sections/TextSection.vue";
 import TableOfContentsBar from "src/components/table_of_contents/TableOfContentsBar.vue";
 import TableOfContents from "src/components/table_of_contents/TableOfContents.vue";
-import WorkshopSection from "src/components/sections/WorkshopSection.vue";
 import { useMediaQuery } from "@vueuse/core";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import { ref, onBeforeMount } from "vue";
 import { fetchPageData } from "../client";
 import IntroSection from "src/components/sections/IntroSection.vue";
+import WorkshopBlock from "src/components/sections/WorkshopBlock.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 1024px)");
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
     textWithIllustration: IntroSection,
+    textBlock: TextSection,
   };
 
   return sectionComponentPairs[sectionType];

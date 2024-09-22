@@ -24,18 +24,10 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
-.section-grid.left {
-  .section__title {
-    @media (width >= $mobile-width) {
-      grid-row: 1 / 2;
-      align-self: center;
-    }
-  }
-}
 
 // STYLES
 
 .section--base {
-  padding-block-end: 0 !important;
+  padding-block-end: 1rem !important;
 }
 </style>

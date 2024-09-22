@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import TextImageSection from "./TextImageSection.vue";
 import CardSection from "./CardSection.vue";
 import TextSection from "./TextSection.vue";
@@ -46,10 +46,6 @@ const getComponent = (sectionType) => {
 
   return sectionComponentPairs[sectionType];
 };
-
-onMounted(() => {
-  console.log(props.data);
-});
 </script>
 
 <style lang="scss" scoped>
@@ -57,7 +53,7 @@ onMounted(() => {
 .product {
   scroll-margin-top: 7rem;
 
-  @media (width >= $mobile-width) {
+  @media (width >= $desktop-width) {
     scroll-margin-top: 12rem;
   }
 }
