@@ -45,7 +45,17 @@ const data = ref({
 
 function enrichData(data) {
   data.content.content = addOrientationToSections(data.content.content);
+  data.content.content = addProductDetailsSection(data.content.content, data);
   return data;
+}
+
+function addProductDetailsSection(sections, data) {
+  sections[0].details = {
+    date: data.date,
+    duration: data.duration,
+    location: data.location,
+  };
+  return sections;
 }
 
 async function fetchData() {
