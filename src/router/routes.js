@@ -2,6 +2,8 @@ import PovesteaMeaView from "../views/PovesteaMeaView.vue";
 import ServiciiView from "../views/ServiciiView.vue";
 import WorkshopsView from "../views/WorkshopsView.vue";
 import WorkshopView from "../views/WorkshopView.vue";
+import ResurseView from "../views/ResurseView.vue";
+import ContactView from "../views/ContactView.vue";
 
 const topLevelRoutes = [
   {
@@ -20,19 +22,14 @@ const topLevelRoutes = [
     component: WorkshopsView,
   },
   {
-    name: "Tender Melt",
-    path: "/",
-    component: PovesteaMeaView,
-  },
-  {
-    name: "Blog",
-    path: "/",
-    component: PovesteaMeaView,
-  },
-  {
     name: "Resurse",
-    path: "/",
-    component: PovesteaMeaView,
+    path: "/resurse/",
+    component: ResurseView,
+  },
+  {
+    name: "Contact",
+    path: "/contact/",
+    component: ContactView,
   },
 ];
 

@@ -45,9 +45,40 @@ async function fetchHomePageData() {
   return data;
 }
 
+async function fetchResursePageData() {
+  const pageSlug = "resurse";
+  const query = `
+  *[_type == 'page' && slug.current==$slug][0] {
+    title,
+    'content': content.content[] {
+      !(_type in ['feedbackList', 'videoList']) => @,
+      _type == 'feedbackList' => @ {
+        _type,
+        'Feedback': Feedback[] -> {
+          "title": Product[0] -> title,
+          text
+        }
+      },
+      _type == 'videoList' => @ {
+        _type,
+       'Video': Video[] -> 
+      }
+    }
+  }
+  `;
+  var data = await client.fetch(query, { slug: pageSlug });
+  return data;
+}
+
 async function fetchWorkShopData(workshopSlug) {
   const query = `*[_type == 'workshop' && slug.current==$slug][0]`;
   var data = await client.fetch(query, { slug: workshopSlug });
   return data;
 }
-export { fetchPageData, fetchWorkShopData, fetchHomePageData, imageBuilder };
+export {
+  fetchPageData,
+  fetchWorkShopData,
+  fetchHomePageData,
+  fetchResursePageData,
+  imageBuilder,
+};
