@@ -1,5 +1,6 @@
 <template>
   <TableOfContentsBar v-if="!isLargeScreen" />
+  <PageTitle :data="data" />
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">
@@ -40,17 +41,15 @@ import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import { ref, onBeforeMount } from "vue";
 import { fetchPageData } from "../client";
-import IntroSection from "src/components/sections/IntroSection.vue";
-import { addTitleSection } from "src/utils";
 import PageTitle from "src/components/sections/PageTitle.vue";
+import TextImageSection from "src/components/sections/TextImageSection.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 1024px)");
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
-    textWithIllustration: IntroSection,
+    textWithIllustration: TextImageSection,
     textBlock: TextSection,
-    pageTitle: PageTitle,
   };
 
   return sectionComponentPairs[sectionType];
@@ -59,7 +58,6 @@ const getComponent = (sectionType) => {
 const data = ref(null);
 
 function enrichData(data) {
-  data.content = addTitleSection(data.content, data.title);
   return data;
 }
 

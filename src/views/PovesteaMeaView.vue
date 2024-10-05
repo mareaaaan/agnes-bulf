@@ -1,4 +1,5 @@
 <template>
+  <PageTitle :data="data" />
   <component
     :is="getComponent(section._type)"
     v-for="(section, index) in data?.content"
@@ -18,35 +19,22 @@ import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import { ref, onBeforeMount } from "vue";
 import { fetchHomePageData } from "../client";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
-import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
-import { addOrientationToSections, addTitleSection } from "src/utils";
+import { addOrientationToSections } from "src/utils";
 
 const data = ref(null);
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
-    introTextWithIllustration: ContainerizedIntroSection,
     textWithIllustration: ContainerizedTextImageSection,
     floatingText: ContainerizedCardSection,
     videoList: EmbeddedVideoSection,
     feedbackList: FeedbackSection,
     arch_divider: ArchDivider,
-    pageTitle: PageTitle,
   };
 
   return sectionComponentPairs[sectionType];
 };
-
-function addIntroSection(sections) {
-  var introSection = sections.find(
-    (section) => section._type === "textWithIllustration",
-  );
-  const index = sections.indexOf(introSection);
-  introSection._type = "introTextWithIllustration";
-  sections[index] = introSection;
-  return sections;
-}
 
 function getDivider(_type, isLightToDark) {
   return {
@@ -79,10 +67,6 @@ function enrichData(data) {
   data.content = addOrientationToSections(data.content);
 
   data.content = addBackgroundColortoSections(data.content);
-
-  data.content = addIntroSection(data.content);
-
-  data.content = addTitleSection(data.content, data.title);
   return data;
 }
 

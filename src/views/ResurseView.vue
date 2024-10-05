@@ -1,4 +1,5 @@
 <template>
+  <PageTitle :data="data" />
   <component
     :is="getComponent(section._type)"
     v-for="(section, index) in data?.content"
@@ -17,22 +18,19 @@ import FeedbackSection from "src/components/sections/FeedbackSection.vue";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
-import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
-import { addOrientationToSections, addTitleSection } from "src/utils";
+import { addOrientationToSections } from "src/utils";
 import PageTitle from "src/components/sections/PageTitle.vue";
 
 const data = ref(null);
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
-    introTextWithIllustration: ContainerizedIntroSection,
     textWithIllustration: ContainerizedTextImageSection,
     floatingText: ContainerizedCardSection,
     videoList: EmbeddedVideoSection,
     feedbackList: FeedbackSection,
     arch_divider: ArchDivider,
-    pageTitle: PageTitle,
   };
 
   return sectionComponentPairs[sectionType];
@@ -40,8 +38,6 @@ const getComponent = (sectionType) => {
 
 function enrichData(data) {
   data.content = addOrientationToSections(data.content);
-
-  data.content = addTitleSection(data.content, data.title);
   return data;
 }
 
@@ -49,7 +45,6 @@ async function fetchData() {
   var pageData = await fetchResursePageData();
   pageData = enrichData(pageData);
   data.value = pageData;
-  console.log(pageData);
 }
 
 onBeforeMount(() => {

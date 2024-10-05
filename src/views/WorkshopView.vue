@@ -15,17 +15,14 @@ import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import PageFooter from "src/components/footer/PageFooter.vue";
 import { ref, onBeforeMount } from "vue";
 import { fetchWorkShopData } from "../client";
-import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import { addOrientationToSections, addTitleSection } from "src/utils";
 import ContainerizedTextSection from "src/components/sections/ContainerizedTextSection.vue";
-import ContainerizedProductTitleSection from "src/components/sections/ContainerizedProductTitleSection.vue";
 import PageTitle from "src/components/sections/PageTitle.vue";
 
 const getComponent = (sectionType) => {
   const sectionComponentPairs = {
-    introTextWithIllustration: ContainerizedIntroSection,
     textWithIllustration: ContainerizedTextImageSection,
     textBlock: ContainerizedTextSection,
     floatingText: ContainerizedCardSection,
