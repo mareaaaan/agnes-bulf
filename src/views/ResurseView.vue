@@ -1,5 +1,5 @@
 <template>
-  <PageTitle :data="data" />
+  <PageTitle v-if="data" :data="data" />
   <component
     :is="getComponent(section._type)"
     v-for="(section, index) in data?.content"
@@ -19,7 +19,7 @@ import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
-import { addOrientationToSections } from "src/utils";
+import { addOrientationToSections, addImageBordersToSections } from "src/utils";
 import PageTitle from "src/components/sections/PageTitle.vue";
 
 const data = ref(null);
@@ -38,6 +38,7 @@ const getComponent = (sectionType) => {
 
 function enrichData(data) {
   data.content = addOrientationToSections(data.content);
+  data.content = addImageBordersToSections(data.content);
   return data;
 }
 

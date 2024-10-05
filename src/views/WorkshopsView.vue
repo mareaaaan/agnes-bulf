@@ -1,6 +1,6 @@
 <template>
   <TableOfContentsBar v-if="!isLargeScreen" />
-  <PageTitle :data="data" />
+  <PageTitle v-if="data" :data="data" />
   <div class="max-width-container">
     <div class="grid max-width">
       <main class="main">
@@ -41,8 +41,9 @@ import PageFooter from "src/components/footer/PageFooter.vue";
 import { ref, onBeforeMount } from "vue";
 import { fetchPageData } from "../client";
 import WorkshopBlock from "src/components/sections/WorkshopBlock.vue";
-import { addTitleSection } from "src/utils";
+import PageTitle from "src/components/sections/PageTitle.vue";
 import TextImageSection from "src/components/sections/TextImageSection.vue";
+import { addOrientationToSections } from "src/utils";
 
 const isLargeScreen = useMediaQuery("(width >= 1024px)");
 
@@ -58,7 +59,7 @@ const getComponent = (sectionType) => {
 const data = ref(null);
 
 function enrichData(data) {
-  data.content = addTitleSection(data.content, data.title);
+  data.content = addOrientationToSections(data.content);
   return data;
 }
 

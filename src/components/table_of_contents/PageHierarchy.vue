@@ -62,7 +62,7 @@ onMounted(() => {
 
   const mutationObserver = new MutationObserver(resetIntersectionObserver);
 
-  const targetNode = document.getElementsByClassName("main")[0];
+  const targetNode = document.querySelector(".main");
   const config = { childList: true };
   mutationObserver.observe(targetNode, config);
 });

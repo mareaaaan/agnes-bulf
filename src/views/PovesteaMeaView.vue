@@ -1,5 +1,5 @@
 <template>
-  <PageTitle :data="data" />
+  <PageTitle v-if="data" :data="data" />
   <component
     :is="getComponent(section._type)"
     v-for="(section, index) in data?.content"
@@ -20,7 +20,7 @@ import { ref, onBeforeMount } from "vue";
 import { fetchHomePageData } from "../client";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
-import { addOrientationToSections } from "src/utils";
+import { addOrientationToSections, addImageBordersToSections } from "src/utils";
 
 const data = ref(null);
 
@@ -67,6 +67,8 @@ function enrichData(data) {
   data.content = addOrientationToSections(data.content);
 
   data.content = addBackgroundColortoSections(data.content);
+
+  data.content = addImageBordersToSections(data.content);
   return data;
 }
 

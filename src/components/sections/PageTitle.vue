@@ -9,17 +9,13 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted } from "vue";
+import { defineProps } from "vue";
 
 const props = defineProps({
   data: {
-    type: String,
+    type: Object,
     default: () => {},
   },
-});
-
-onMounted(() => {
-  console.log(props.data);
 });
 </script>
 

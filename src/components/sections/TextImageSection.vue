@@ -8,7 +8,9 @@
         <img
           :src="imageBuilder.image(props.data.image)"
           :alt="props.data.image.alt"
-          class="oval-border"
+          :class="
+            props.data.image.border ? props.data.image.border : 'oval-border'
+          "
         />
       </slot>
     </div>

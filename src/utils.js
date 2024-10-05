@@ -20,4 +20,19 @@ function addTitleSection(sections, title) {
   return sections;
 }
 
-export { addOrientationToSections, addTitleSection };
+function addImageBordersToSections(sections) {
+  var count = 0;
+  sections.forEach((section) => {
+    if (section._type === "textWithIllustration") {
+      section.image = {
+        ...section.image,
+        border: count == 0 ? "arch-border" : "oval-border",
+      };
+
+      count++;
+    }
+  });
+  return sections;
+}
+
+export { addOrientationToSections, addTitleSection, addImageBordersToSections };
