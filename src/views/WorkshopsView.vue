@@ -41,6 +41,8 @@ import { ref, onBeforeMount } from "vue";
 import { fetchPageData } from "../client";
 import IntroSection from "src/components/sections/IntroSection.vue";
 import WorkshopBlock from "src/components/sections/WorkshopBlock.vue";
+import { addTitleSection } from "src/utils";
+import PageTitle from "src/components/sections/PageTitle.vue";
 
 const isLargeScreen = useMediaQuery("(width >= 1024px)");
 
@@ -48,6 +50,7 @@ const getComponent = (sectionType) => {
   const sectionComponentPairs = {
     textWithIllustration: IntroSection,
     textBlock: TextSection,
+    pageTitle: PageTitle,
   };
 
   return sectionComponentPairs[sectionType];
@@ -55,8 +58,15 @@ const getComponent = (sectionType) => {
 
 const data = ref(null);
 
+function enrichData(data) {
+  data.content = addTitleSection(data.content, data.title);
+  return data;
+}
+
 async function fetchData() {
-  data.value = await fetchPageData("workshopuri");
+  var pageData = await fetchPageData("workshopuri");
+  pageData = enrichData(pageData);
+  data.value = pageData;
 }
 
 onBeforeMount(() => {

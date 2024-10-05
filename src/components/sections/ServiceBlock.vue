@@ -22,7 +22,7 @@ import { computed } from "vue";
 import TextImageSection from "./TextImageSection.vue";
 import CardSection from "./CardSection.vue";
 import TextSection from "./TextSection.vue";
-import addOrientationToSections from "src/utils";
+import { addOrientationToSections } from "src/utils";
 import DetailsSection from "./DetailsSection.vue";
 import ProductTitleSection from "./ProductTitleSection.vue";
 

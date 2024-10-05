@@ -17,7 +17,7 @@
 import ProductTitleSection from "./ProductTitleSection.vue";
 import TextImageSection from "./TextImageSection.vue";
 import { computed } from "vue";
-import addOrientationToSections from "src/utils";
+import { addOrientationToSections } from "src/utils";
 
 const props = defineProps({
   data: {

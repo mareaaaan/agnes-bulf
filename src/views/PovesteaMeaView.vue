@@ -12,6 +12,7 @@
 <script setup>
 import EmbeddedVideoSection from "src/components/sections/EmbeddedVideoSection.vue";
 import FeedbackSection from "src/components/sections/FeedbackSection.vue";
+import PageTitle from "src/components/sections/PageTitle.vue";
 import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import { ref, onBeforeMount } from "vue";
@@ -19,7 +20,7 @@ import { fetchHomePageData } from "../client";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
-import addOrientationToSections from "src/utils";
+import { addOrientationToSections, addTitleSection } from "src/utils";
 
 const data = ref(null);
 
@@ -31,6 +32,7 @@ const getComponent = (sectionType) => {
     videoList: EmbeddedVideoSection,
     feedbackList: FeedbackSection,
     arch_divider: ArchDivider,
+    pageTitle: PageTitle,
   };
 
   return sectionComponentPairs[sectionType];
@@ -79,6 +81,8 @@ function enrichData(data) {
   data.content = addBackgroundColortoSections(data.content);
 
   data.content = addIntroSection(data.content);
+
+  data.content = addTitleSection(data.content, data.title);
   return data;
 }
 

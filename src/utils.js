@@ -1,4 +1,4 @@
-export default function addOrientationToSections(sections) {
+function addOrientationToSections(sections) {
   var count = 0;
   sections.forEach((section) => {
     if (section._type === "textWithIllustration") {
@@ -8,3 +8,16 @@ export default function addOrientationToSections(sections) {
   });
   return sections;
 }
+
+function addTitleSection(sections, title) {
+  sections = [
+    {
+      _type: "pageTitle",
+      title: title,
+    },
+    ...sections,
+  ];
+  return sections;
+}
+
+export { addOrientationToSections, addTitleSection };

@@ -19,7 +19,8 @@ import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import ContainerizedIntroSection from "src/components/sections/ContainerizedIntroSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
-import addOrientationToSections from "src/utils";
+import { addOrientationToSections, addTitleSection } from "src/utils";
+import PageTitle from "src/components/sections/PageTitle.vue";
 
 const data = ref(null);
 
@@ -31,6 +32,7 @@ const getComponent = (sectionType) => {
     videoList: EmbeddedVideoSection,
     feedbackList: FeedbackSection,
     arch_divider: ArchDivider,
+    pageTitle: PageTitle,
   };
 
   return sectionComponentPairs[sectionType];
@@ -38,6 +40,8 @@ const getComponent = (sectionType) => {
 
 function enrichData(data) {
   data.content = addOrientationToSections(data.content);
+
+  data.content = addTitleSection(data.content, data.title);
   return data;
 }
 
