@@ -1,6 +1,6 @@
 <template>
   <footer class="footer-container">
-    <section class="service-section max-width-container toc-bar--header">
+    <section class="section--base max-width-container toc-bar--header">
       <div class="section-grid max-width">
         <div class="logo-container">
           <WebsiteLogo />
@@ -51,7 +51,7 @@ import ContactButton from "../buttons/ContactButton.vue";
 
 // STYLES
 
-.service-section {
+.section--base {
   padding-block-end: 0;
 }
 

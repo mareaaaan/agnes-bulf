@@ -4,7 +4,7 @@
     :class="props.data.isLight ? 'light-background' : 'dark-background'"
   >
     <div class="max-width">
-      <section class="service-section section-grid">
+      <section class="section--base section-grid">
         <h2 v-motion-fade-in-on-visible class="section__title">
           Ce spun cei cu care am lucrat?
         </h2>

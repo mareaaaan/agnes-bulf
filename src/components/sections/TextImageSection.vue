@@ -46,9 +46,6 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../../styles/_globals.scss";
-.section-grid {
-  container-type: inline-size;
-}
 
 .section-grid.left {
   .section__image {
