@@ -12,37 +12,18 @@
         />
       </slot>
     </div>
-    <div v-motion-fade-in-on-visible class="section__description">
+    <div v-motion-fade-in-on-visible class="section__text">
       <slot name="text">
-        <PortableText :value="props.data.text" />
-        <div
-          v-if="props.data.details"
-          v-motion-fade-in-on-visible
-          class="details-container"
-        >
-          <div class="detail">
-            <BaseIcon class="icon dark">
-              <i-material-symbols-location-on-outline-rounded class="icon" />
-            </BaseIcon>
-            <p class="text">
-              {{ props.data.details.location.locationAddress }}
-            </p>
-          </div>
-          <div class="detail">
-            <BaseIcon class="icon dark">
-              <i-material-symbols:calendar-today-outline-sharp class="icon" />
-            </BaseIcon>
-            <p class="text">{{ props.data.details.date }}</p>
-          </div>
-          <div class="detail">
-            <BaseIcon class="icon dark">
-              <i-material-symbols:nest-clock-farsight-analog-outline-rounded
-                class="icon"
-              />
-            </BaseIcon>
-            <p class="text">{{ props.data.details.duration }}</p>
-          </div>
+        <h2 v-if="props.data.heading" class="title">
+          {{ props.data.heading }}
+        </h2>
+        <div class="text">
+          <PortableText :value="props.data.text" />
         </div>
+        <ProductDetails
+          v-if="props.data.details"
+          :details="props.data.details"
+        />
       </slot>
     </div>
     <slot name="button"> </slot>
@@ -53,6 +34,7 @@
 import { defineProps } from "vue";
 import { imageBuilder } from "src/client";
 import { PortableText } from "@portabletext/vue";
+import ProductDetails from "./ProductDetails.vue";
 
 const props = defineProps({
   data: {
@@ -84,7 +66,7 @@ const props = defineProps({
     }
   }
 
-  .section__description {
+  .section__text {
     @media (width >= $mobile-width) {
       grid-row: 1 / 2;
       grid-column: 8 / 13;
@@ -116,7 +98,7 @@ const props = defineProps({
     }
   }
 
-  .section__description {
+  .section__text {
     @media (width >= $mobile-width) {
       grid-row: 1 / 2;
       grid-column: 1 / 6;
@@ -134,31 +116,16 @@ const props = defineProps({
 
 // STYLES
 
-.section__description {
+.section__text {
   align-content: center;
 }
 
-.details-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
+.title {
+  text-align: center;
+  margin-bottom: 4rem;
 
-// STYLES
-.detail {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-.icon {
-  padding: 0.625rem;
-}
-
-.text {
-  font-weight: bold;
-  text-align: left;
-  align-self: center;
-  margin-block-end: 0 !important;
+  @media (width >= $mobile-width) {
+    text-align: start;
+  }
 }
 </style>

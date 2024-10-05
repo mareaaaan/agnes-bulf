@@ -5,7 +5,7 @@
         {{ props.data.title }}
       </slot>
     </h2>
-    <div v-motion-fade-in-on-visible class="section__description">
+    <div v-motion-fade-in-on-visible class="section__text">
       <slot name="text">
         <PortableText :value="props.data.text" />
       </slot>
@@ -39,7 +39,7 @@ const props = defineProps({
     }
   }
 
-  .section__description {
+  .section__text {
     @media (width >= $mobile-width) {
       grid-row: 2 / 3;
     }
