@@ -35,6 +35,7 @@ async function fetchHomePageData() {
         }
       },
       _type == 'videoList' => @ {
+        heading,
         _type,
        'Video': Video[] -> 
       }
@@ -60,6 +61,7 @@ async function fetchResursePageData() {
         }
       },
       _type == 'videoList' => @ {
+        heading,
         _type,
        'Video': Video[] -> 
       }

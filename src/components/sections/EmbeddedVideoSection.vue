@@ -6,7 +6,7 @@
     <div class="max-width">
       <section class="service-section section-grid">
         <h2 v-motion-fade-in-on-visible class="section__title">
-          Urmărește podcasturile la care am participat
+          {{ props.data.heading }}
         </h2>
         <div v-motion-fade-in-on-visible class="videos-container">
           <EmbeddedVideo
