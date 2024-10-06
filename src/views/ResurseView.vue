@@ -6,8 +6,8 @@
     :key="index"
     :data="section"
   />
-  <WavyDivider :is-light-to-dark="false" />
-  <PageFooter class="light-background" />
+  <WavyDivider :is-light-to-dark="true" />
+  <PageFooter class="dark-background" />
 </template>
 
 <script setup>
@@ -19,7 +19,11 @@ import WavyDivider from "src/components/dividers/WavyDivider.vue";
 import ArchDivider from "src/components/dividers/ArchDivider.vue";
 import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
-import { addOrientationToSections, addImageBordersToSections } from "src/utils";
+import {
+  addOrientationToSections,
+  addImageBordersToSections,
+  addBackgroundColortoSections,
+} from "src/utils";
 import PageTitle from "src/components/sections/PageTitle.vue";
 
 const data = ref(null);
@@ -38,7 +42,11 @@ const getComponent = (sectionType) => {
 
 function enrichData(data) {
   data.content = addOrientationToSections(data.content);
+
+  data.content = addBackgroundColortoSections(data.content);
+
   data.content = addImageBordersToSections(data.content);
+
   return data;
 }
 

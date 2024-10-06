@@ -35,4 +35,36 @@ function addImageBordersToSections(sections) {
   return sections;
 }
 
-export { addOrientationToSections, addTitleSection, addImageBordersToSections };
+function getDivider(_type, isLightToDark) {
+  return {
+    _type,
+    isLightToDark,
+  };
+}
+
+function addBackgroundColorToSection(section, isLight) {
+  return {
+    ...section,
+    isLight,
+  };
+}
+
+function addBackgroundColortoSections(sections) {
+  sections = [
+    ...sections
+      .slice(0, sections.length / 2)
+      .map((section) => addBackgroundColorToSection(section, false)),
+    getDivider("arch_divider", false),
+    ...sections
+      .slice(sections.length / 2)
+      .map((section) => addBackgroundColorToSection(section, true)),
+  ];
+  return sections;
+}
+
+export {
+  addOrientationToSections,
+  addTitleSection,
+  addImageBordersToSections,
+  addBackgroundColortoSections,
+};
