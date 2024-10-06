@@ -42,6 +42,10 @@ const props = defineProps({
   text-transform: capitalize;
   font-weight: 500;
   color: $secondary-color;
+
+  &:hover {
+    color: darken($secondary-color, 30%);
+  }
 }
 
 .link::before {

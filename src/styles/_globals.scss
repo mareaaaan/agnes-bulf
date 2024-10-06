@@ -76,14 +76,28 @@ $xxxl-font-size: 2.5rem;
 
 .section__text {
     text-align: justify;
-    font-size: $xs-font-size;
 
     p {
+        font-size: $xs-font-size;   
         margin-block-end: 2rem;
+
+        @media (width >= $mobile-width) {
+            font-size: $font-size;
+        }
     }
 
-    @media (width >= $tablet-width) {
-        font-size: $font-size;
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        transition: color 0.2s ease-in-out;
+        color: gray;
+
+        &:hover {
+            color: darken(gray, 30%);
+            text-decoration: underline !important;
+        }
     }
 }
 
