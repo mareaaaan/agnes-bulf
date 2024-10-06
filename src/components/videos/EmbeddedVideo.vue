@@ -29,6 +29,9 @@ const props = defineProps({
     height: 100%;
     max-width: 100%;
     display: block;
+
+    border-radius: 2rem;
+    border: 4px solid white;
   }
 }
 </style>
