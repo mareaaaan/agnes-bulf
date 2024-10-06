@@ -34,17 +34,15 @@ const props = defineProps({
 @import "../../styles/_globals.scss";
 
 // LAYOUT
-
-// STYLES
-
 .videos-container {
   display: grid;
   gap: 1rem;
 
   @media (width >= $mobile-width) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
+// STYLES
 
 .section__title {
   @media (width >= $mobile-width) {
