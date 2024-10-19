@@ -13,8 +13,9 @@
 <script setup>
 import { fetchPageData } from "src/client";
 import { ref, onBeforeMount } from "vue";
-import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 import ContainerizedTextImageSection from "src/components/sections/ContainerizedTextImageSection.vue";
+import ContainerizedQuestionsAndAnswersSection from "src/components/sections/ContainerizedQuestionsAndAnswersSection.vue";
+import ContainerizedCardSection from "src/components/sections/ContainerizedCardSection.vue";
 
 const data = ref(null);
 
@@ -22,6 +23,7 @@ const getComponent = (sectionType) => {
   const sectionComponentPairs = {
     textWithIllustration: ContainerizedTextImageSection,
     floatingText: ContainerizedCardSection,
+    qAndA: ContainerizedQuestionsAndAnswersSection,
   };
 
   return sectionComponentPairs[sectionType];
