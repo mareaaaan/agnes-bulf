@@ -20,9 +20,13 @@
 .expand-icon {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 2px;
-  width: 14px;
-  height: 14px;
+
   fill: $secondary-color;
+
+  transition: transform 0.3s;
+
+  &.expanded {
+    transform: rotate(90deg);
+  }
 }
 </style>

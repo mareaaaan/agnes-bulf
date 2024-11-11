@@ -81,10 +81,8 @@ button {
 }
 
 .expand-icon {
-  transition: transform 0.3s;
-
-  &.expanded {
-    transform: rotate(90deg);
-  }
+  margin-left: 2px;
+  width: 14px;
+  height: 14px;
 }
 </style>

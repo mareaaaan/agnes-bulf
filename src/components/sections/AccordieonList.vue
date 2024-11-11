@@ -1,7 +1,7 @@
 <template>
   <div>
     <AccordieonElement v-for="(item, index) in props.items" :key="index">
-      <template #label>
+      <template #label__text>
         {{ item.label }}
       </template>
       <template #content>

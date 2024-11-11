@@ -1,7 +1,15 @@
 <template>
   <div class="container" @click="isActive = !isActive">
-    <div class="label section__title">
-      <slot name="label"></slot>
+    <div class="label-container">
+      <div class="label__text">
+        <slot name="label__text"></slot>
+      </div>
+      <div class="label__icon">
+        <ExpandIcon
+          class="expand-icon"
+          :class="{ expanded: isActive }"
+        ></ExpandIcon>
+      </div>
     </div>
 
     <div :class="{ active: isActive }" class="content-contaier">
@@ -25,11 +33,22 @@ const isActive = ref(false);
   padding-block: 1rem;
 }
 
-.label {
+.label-container {
   position: relative;
+  display: flex;
+  justify-content: space-between;
   font-size: $xl-font-size;
   cursor: pointer;
   margin-bottom: 1rem;
+}
+
+.label__text {
+  text-align: start;
+}
+
+.expand-icon {
+  min-width: 25px;
+  min-height: 25px;
 }
 
 .content-contaier {
