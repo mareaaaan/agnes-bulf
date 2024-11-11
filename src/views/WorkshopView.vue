@@ -51,9 +51,10 @@ function enrichData(data) {
 
 function addProductDetailsSection(sections, data) {
   sections[0].details = {
-    date: data.date,
-    duration: data.duration,
-    location: data.location,
+    date: data.date ? data.date : null,
+    duration: data.duration ? data.duration : null,
+    location: data.location ? data.location : null,
+    instagram: data.instagram ? data.instagram : null,
   };
   return sections;
 }
