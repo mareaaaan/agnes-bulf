@@ -79,7 +79,7 @@ $xxxl-font-size: 2.5rem;
 
     p {
         font-size: $xs-font-size;   
-        margin-block-end: 2rem;
+        margin-block: 1rem;
 
         @media (width >= $mobile-width) {
             font-size: $font-size;

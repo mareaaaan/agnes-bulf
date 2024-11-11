@@ -43,6 +43,7 @@ const props = defineProps({
 
 .detail {
   display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
