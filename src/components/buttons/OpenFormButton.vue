@@ -1,6 +1,6 @@
 <template>
   <BaseButton @click="navigateToForm()">
-    <slot>Contactează-mă</slot>
+    <slot>Completează formularul</slot>
   </BaseButton>
 </template>
 <script setup>
