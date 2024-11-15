@@ -9,9 +9,12 @@
     />
     <DetailsSection :data="props.data">
       <template #button>
-        <ContactButton v-motion-fade-in-on-visible class="section__button">
+        <OpenContactPageButton
+          v-motion-fade-in-on-visible
+          class="section__button"
+        >
           Programează o ședință
-        </ContactButton>
+        </OpenContactPageButton>
       </template>
     </DetailsSection>
   </div>
@@ -25,6 +28,7 @@ import TextSection from "./TextSection.vue";
 import { addOrientationToSections } from "src/utils";
 import DetailsSection from "./DetailsSection.vue";
 import ProductTitleSection from "./ProductTitleSection.vue";
+import OpenContactPageButton from "../buttons/OpenContactPageButton.vue";
 
 const props = defineProps({
   data: {
