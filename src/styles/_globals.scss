@@ -77,17 +77,19 @@ $xxxl-font-size: 2.5rem;
 .section__text {
     text-align: justify;
 
-    p {
-        font-size: $xs-font-size;   
-        margin-block: 1rem;
+    font-size: $xs-font-size;  
+    
+    @media (width >= $mobile-width) {
+        font-size: $font-size;
+    }
 
-        @media (width >= $mobile-width) {
-            font-size: $font-size;
-        }
+
+    p {
+        margin-block: 1rem;
     }
 
     li {
-        margin-bottom: 0.5rem;
+        margin-block: 0.5rem;
     }
 
     a {
