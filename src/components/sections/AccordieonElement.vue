@@ -37,7 +37,7 @@ const isActive = ref(false);
   position: relative;
   display: flex;
   justify-content: space-between;
-  font-size: $xl-font-size;
+  font-size: $l-font-size;
   cursor: pointer;
   margin-bottom: 1rem;
 }
