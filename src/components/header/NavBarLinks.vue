@@ -37,6 +37,7 @@ const props = defineProps({
 }
 
 .link > * {
+  font-family: "Lato", sans-serif;
   text-decoration: none;
   font-size: $xs-font-size;
   text-transform: capitalize;
