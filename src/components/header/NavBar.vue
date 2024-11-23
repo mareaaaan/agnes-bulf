@@ -7,11 +7,20 @@ import PageHeader from "./PageHeader.vue";
 import NavBarLinks from "./NavBarLinks.vue";
 import SlideFromTop from "src/components/transitions/SlideFromTop.vue";
 import SideBar from "./SideBar.vue";
+import { vElementHover } from "@vueuse/components";
+import { computed } from "vue";
 
 const emit = defineEmits(["toggleSideBar"]);
 
 const isSideBarOpen = ref(false);
+const isHovered = ref(false);
 const { isScrollUp } = useScrollUp();
+
+const isNavBarLinksOpen = computed(() => isScrollUp.value || isHovered.value);
+
+function onHover(state) {
+  isHovered.value = state;
+}
 
 function toggleSideBar() {
   isSideBarOpen.value = !isSideBarOpen.value;
@@ -20,11 +29,11 @@ function toggleSideBar() {
 </script>
 
 <template>
-  <nav class="nav-bar">
+  <nav v-element-hover="onHover" class="nav-bar">
     <ContanctHeader />
     <PageHeader @toggle-side-bar="toggleSideBar" />
     <SlideFromTop>
-      <NavBarLinks v-show="isScrollUp" :pages="topLevelRoutes" />
+      <NavBarLinks v-show="isNavBarLinksOpen" :pages="topLevelRoutes" />
     </SlideFromTop>
   </nav>
   <Teleport to="body">
