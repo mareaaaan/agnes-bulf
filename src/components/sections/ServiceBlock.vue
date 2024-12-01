@@ -25,7 +25,7 @@ import { computed } from "vue";
 import TextImageSection from "./TextImageSection.vue";
 import CardSection from "./CardSection.vue";
 import TextSection from "./TextSection.vue";
-import { addOrientationToSections } from "src/utils";
+import { addOrientationToSections, addImageBordersToSections } from "src/utils";
 import DetailsSection from "./DetailsSection.vue";
 import ProductTitleSection from "./ProductTitleSection.vue";
 import OpenContactPageButton from "../buttons/OpenContactPageButton.vue";
@@ -38,7 +38,9 @@ const props = defineProps({
 });
 
 const enrichedSections = computed(() => {
-  return addOrientationToSections(props.data.content.content);
+  var sections = addOrientationToSections(props.data.content.content);
+  sections = addImageBordersToSections(sections);
+  return sections;
 });
 
 const getComponent = (sectionType) => {

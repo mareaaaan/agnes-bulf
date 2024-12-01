@@ -26,7 +26,7 @@ function addImageBordersToSections(sections) {
     if (section._type === "textWithIllustration") {
       section.image = {
         ...section.image,
-        border: count == 0 ? "arch-border" : "oval-border",
+        border: count % 2 == 0 ? "arch-border" : "oval-border",
       };
 
       count++;
