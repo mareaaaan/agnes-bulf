@@ -20,13 +20,14 @@ function addTitleSection(sections, title) {
   return sections;
 }
 
-function addImageBordersToSections(sections) {
+function addImageBordersToSections(sections, reverse = false) {
   var count = 0;
+  const modulus = reverse ? 1 : 0;
   sections.forEach((section) => {
     if (section._type === "textWithIllustration") {
       section.image = {
         ...section.image,
-        border: count % 2 == 0 ? "arch-border" : "oval-border",
+        border: count % 2 == modulus ? "arch-border" : "oval-border",
       };
 
       count++;

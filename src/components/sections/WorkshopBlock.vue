@@ -17,17 +17,23 @@
 import ProductTitleSection from "./ProductTitleSection.vue";
 import TextImageSection from "./TextImageSection.vue";
 import { computed } from "vue";
-import { addOrientationToSections } from "src/utils";
+import { addImageBordersToSections, addOrientationToSections } from "src/utils";
 
 const props = defineProps({
   data: {
     type: Object,
     default: () => ({}),
   },
+  id: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const enrichedSections = computed(() => {
-  return addOrientationToSections(props.data.content.content);
+  var sections = addOrientationToSections(props.data.content.content);
+  sections = addImageBordersToSections(sections, props.id % 2);
+  return sections;
 });
 </script>
 
